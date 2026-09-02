@@ -1,0 +1,4400 @@
+{
+  "_meta": {
+    "schemaVersion": "1.2",
+    "coverage": "All 120 Stanford Dogs classes (keys generated from class_names.json)",
+    "status": "Entries sourced from the project team's own research plus supplementary drafting; verify against a cited veterinary source before deployment.",
+    "verifyAgainst": [
+      "OFA/CHIC breed requirements: https://www.ofa.org/browse-by-breed",
+      "KC Breed Health & Conservation Plans: https://www.thekennelclub.org.uk/health-and-dog-care/what-we-do-for-dog-health/breeding-resources-and-health-schemes/breed-health-and-conservation-plans/",
+      "UFAW Genetic Welfare Problems: https://www.ufaw.org.uk",
+      "VetCompass prevalence study (192 breeds): https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5604186/",
+      "Merck Veterinary Manual: https://www.merckvetmanual.com"
+    ],
+    "riskDefinitions": {
+      "high": "CHIC-required screening and/or well-documented high prevalence in the breed",
+      "moderate": "Documented breed predisposition without strong prevalence data",
+      "low": "Reported in the breed but uncommon"
+    }
+  },
+  "affenpinscher": {
+    "profile": {
+      "size": "Toy, 3-6 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Bold, curious, comical terrier-like toy"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping a step, brief hind-leg hop",
+        "prevention": "Keep lean; ask vet to grade knees at annual checks"
+      },
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "moderate",
+        "earlySigns": "Limping on one hind leg at 5-8 months old",
+        "prevention": "Early orthopaedic assessment; surgery is curative if caught"
+      },
+      {
+        "condition": "Brachycephalic airway compromise",
+        "risk": "moderate",
+        "earlySigns": "Snoring, noisy breathing, poor heat tolerance",
+        "prevention": "Avoid midday heat and hard exercise; keep lean"
+      },
+      {
+        "condition": "Dental crowding and periodontal disease",
+        "risk": "high",
+        "earlySigns": "Bad breath, visible tartar, reluctance to chew",
+        "prevention": "Daily brushing; professional cleaning as advised"
+      }
+    ],
+    "careTips": [
+      "Short-faced toy breed — walk at dawn or dusk only in Singapore's heat",
+      "Use a harness, never a neck collar"
+    ]
+  },
+  "afghan hound": {
+    "profile": {
+      "size": "Large, 20-27 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Aloof, dignified, independent sighthound"
+    },
+    "watchlist": [
+      {
+        "condition": "Anaesthetic sensitivity (sighthound)",
+        "risk": "high",
+        "earlySigns": "Slow or difficult recovery from sedation",
+        "prevention": "Tell every vet it is a sighthound before any procedure"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness after rest, reluctance to jump",
+        "prevention": "Screened parents; keep lean; controlled growth as a puppy"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat thinning, low energy",
+        "prevention": "Thyroid panel if coat or energy changes"
+      },
+      {
+        "condition": "Chylothorax",
+        "risk": "low",
+        "earlySigns": "Laboured breathing, exercise intolerance",
+        "prevention": "No prevention; needs prompt veterinary imaging"
+      }
+    ],
+    "careTips": [
+      "Low body fat changes drug handling — sighthound-aware anaesthesia is essential",
+      "Coat needs frequent grooming to prevent painful mats"
+    ]
+  },
+  "african hunting dog": {
+    "profile": {
+      "size": "WILD SPECIES, 18-36 kg",
+      "lifespan": "10-12 years (wild)",
+      "temperament": "Wild African painted dog, not a domestic breed"
+    },
+    "watchlist": [
+      {
+        "condition": "Not applicable — wild species",
+        "risk": "low",
+        "earlySigns": "N/A",
+        "prevention": "N/A"
+      }
+    ],
+    "careTips": [
+      "This is Lycaon pictus, a wild African species included in the Stanford Dogs dataset",
+      "No pet health guidance applies; the app should flag this as a non-domestic prediction"
+    ]
+  },
+  "airedale": {
+    "profile": {
+      "size": "Large, 20-29 kg",
+      "lifespan": "10-13 years",
+      "temperament": "Confident, energetic, the 'king of terriers'"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Altered gait, difficulty rising",
+        "prevention": "Screened parents; keep lean"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, dull coat, lethargy",
+        "prevention": "Annual thyroid panel in middle age"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Umbilical hernia",
+        "risk": "low",
+        "earlySigns": "Soft swelling at the navel in puppies",
+        "prevention": "Surgical repair, often at neutering"
+      }
+    ],
+    "careTips": [
+      "Dense coat needs regular stripping or clipping in humid climates",
+      "High-energy working terrier — needs a job, not just walks"
+    ]
+  },
+  "american staffordshire terrier": {
+    "profile": {
+      "size": "Medium, 18-32 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Confident, people-loving, strong"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, bunny-hopping gait",
+        "prevention": "CHIC hip screening; keep lean lifelong"
+      },
+      {
+        "condition": "Cerebellar ataxia (NCL-A)",
+        "risk": "moderate",
+        "earlySigns": "Wobbliness and incoordination from 3-5 years",
+        "prevention": "DNA test available — check parents were tested"
+      },
+      {
+        "condition": "Skin allergies (atopy)",
+        "risk": "high",
+        "earlySigns": "Paw licking, ear infections, itchy belly",
+        "prevention": "Identify triggers early; year-round parasite control"
+      },
+      {
+        "condition": "Cruciate ligament rupture",
+        "risk": "moderate",
+        "earlySigns": "Sudden hind-leg lameness",
+        "prevention": "Keep lean; avoid weekend-warrior exercise spikes"
+      }
+    ],
+    "careTips": [
+      "Check local ownership regulations — this breed type is restricted in Singapore",
+      "Skin problems flare in humid climates; keep coat dry"
+    ]
+  },
+  "appenzeller": {
+    "profile": {
+      "size": "Medium to Large, 22-32 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Reliable, energetic, fearless"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Difficulty rising, stiff hind leg gait",
+        "prevention": "Maintain lean body weight during growth"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "moderate",
+        "earlySigns": "Swollen hard abdomen, anxiety, gagging",
+        "prevention": "Feed multiple small meals daily"
+      },
+      {
+        "condition": "Cataracts",
+        "risk": "moderate",
+        "earlySigns": "Opaque eye lens, vision impairment",
+        "prevention": "Annual veterinary eye checks"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "low",
+        "earlySigns": "Intermittent hopping step while running",
+        "prevention": "Keep weight in healthy range"
+      }
+    ],
+    "careTips": [
+      "Requires substantial daily exercise and working tasks to keep busy",
+      "Brush thick double coat weekly to handle regular shedding"
+    ]
+  },
+  "australian terrier": {
+    "profile": {
+      "size": "Small, 5-7 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Alert, plucky, confident small terrier"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps, intermittent hop",
+        "prevention": "Keep lean; annual knee checks"
+      },
+      {
+        "condition": "Diabetes mellitus",
+        "risk": "moderate",
+        "earlySigns": "Increased drinking and urination, weight loss",
+        "prevention": "Lean weight; prompt vet check for these signs"
+      },
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "low",
+        "earlySigns": "Hind-leg limp in young dogs",
+        "prevention": "Early orthopaedic assessment"
+      },
+      {
+        "condition": "Allergic skin disease",
+        "risk": "moderate",
+        "earlySigns": "Scratching, paw licking, recurrent ear issues",
+        "prevention": "Parasite control; early allergy workup"
+      }
+    ],
+    "careTips": [
+      "Harsh coat needs periodic hand-stripping",
+      "Strong prey drive — secure recall before off-leash"
+    ]
+  },
+  "basenji": {
+    "profile": {
+      "size": "Small-medium, 9-12 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Independent, catlike, famously barkless"
+    },
+    "watchlist": [
+      {
+        "condition": "Fanconi syndrome",
+        "risk": "high",
+        "earlySigns": "Excessive drinking/urination, weight loss (typically 4-7 years)",
+        "prevention": "DNA test exists; monitor urine glucose from age 3"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, hesitancy in dim light",
+        "prevention": "DNA-tested parents; annual eye exams"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel at annual checks"
+      },
+      {
+        "condition": "Immunoproliferative enteropathy",
+        "risk": "low",
+        "earlySigns": "Chronic diarrhoea, weight loss",
+        "prevention": "Early gastroenterology workup"
+      }
+    ],
+    "careTips": [
+      "Fanconi screening is the single most important test for this breed",
+      "Very high prey drive and escape ability — secure fencing essential"
+    ]
+  },
+  "basset": {
+    "profile": {
+      "size": "Medium to Large, 20-29 kg",
+      "lifespan": "12-13 years",
+      "temperament": "Charming, patient, low-key"
+    },
+    "watchlist": [
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "high",
+        "earlySigns": "Back stiffness, dragging paws, crying in pain",
+        "prevention": "Avoid stairs, keep lean weight"
+      },
+      {
+        "condition": "Otitis Externa (Ear infections)",
+        "risk": "high",
+        "earlySigns": "Head shaking, foul smell, ear discharge",
+        "prevention": "Clean long, heavy ears weekly"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Pacing, swollen abdomen, gagging",
+        "prevention": "Feed in elevated slow-feeder bowls"
+      },
+      {
+        "condition": "Glaucoma",
+        "risk": "moderate",
+        "earlySigns": "Red eyes, squinting, cloudy appearance",
+        "prevention": "Regular ophthalmic checks"
+      }
+    ],
+    "careTips": [
+      "Wipe long ears dry after drinking water to prevent ear infections",
+      "Keep slim to protect heavy long spine from excessive pressure"
+    ]
+  },
+  "beagle": {
+    "profile": {
+      "size": "Small to Medium, 9-11 kg",
+      "lifespan": "10-15 years",
+      "temperament": "Merry, curious, friendly"
+    },
+    "watchlist": [
+      {
+        "condition": "Obesity",
+        "risk": "high",
+        "earlySigns": "Disappearance of waist, unwillingness to run",
+        "prevention": "Strictly measure food, eliminate free-feeding"
+      },
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "moderate",
+        "earlySigns": "Yelping when touched, stiff neck or spine",
+        "prevention": "Prevent jumping off high structures, maintain optimal weight"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "moderate",
+        "earlySigns": "Uncontrolled shaking, drooling, loss of consciousness",
+        "prevention": "Neurological evaluation and medication management"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Head shaking, red ear canal, foul odor",
+        "prevention": "Clean heavy floppy ears weekly"
+      }
+    ],
+    "careTips": [
+      "Keep on a secure leash outdoors as their scent drive causes them to wander",
+      "Manage food intake closely as Beagles are food-obsessed"
+    ]
+  },
+  "bedlington terrier": {
+    "profile": {
+      "size": "Small-medium, 8-10 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Gentle at home, spirited outdoors, lamb-like"
+    },
+    "watchlist": [
+      {
+        "condition": "Copper toxicosis (copper storage hepatopathy)",
+        "risk": "high",
+        "earlySigns": "Lethargy, vomiting, jaundice, poor appetite",
+        "prevention": "DNA test (COMMD1) is essential; copper-restricted diet if affected"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Keep lean; annual knee grading"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "low",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; eye exams"
+      }
+    ],
+    "careTips": [
+      "Copper toxicosis is the defining health issue — DNA status should be known before purchase",
+      "Curly coat needs regular trimming"
+    ]
+  },
+  "bernese mountain dog": {
+    "profile": {
+      "size": "Large to Extra Large, 35-55 kg",
+      "lifespan": "7-10 years",
+      "temperament": "Good-natured, calm, strong"
+    },
+    "watchlist": [
+      {
+        "condition": "Histiocytic Sarcoma (Cancer)",
+        "risk": "high",
+        "earlySigns": "Lethargy, appetite loss, unexplained weight loss",
+        "prevention": "Frequent routine screening in adult/senior years"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Reluctance to climb stairs, stiff gait",
+        "prevention": "Keep body weight lean, controlled growth"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Distended belly, non-productive gagging",
+        "prevention": "Slow feeder bowls, limit post-feed exercise"
+      },
+      {
+        "condition": "Von Willebrand's Disease",
+        "risk": "moderate",
+        "earlySigns": "Prolonged bleeding after cuts",
+        "prevention": "Genetic DNA testing"
+      }
+    ],
+    "careTips": [
+      "Keep cool in summer months; coat retains significant heat",
+      "Brush thick triple-colored coat twice weekly to remove dead hair"
+    ]
+  },
+  "black-and-tan coonhound": {
+    "profile": {
+      "size": "Large, 29-45 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Easygoing, vocal, tireless tracker"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, reluctance to jump",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Head shaking, odour",
+        "prevention": "Weekly cleaning and drying of long pendulous ears"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "low",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel if signs appear"
+      }
+    ],
+    "careTips": [
+      "Loud sustained baying makes this a poor fit for apartment living",
+      "Powerful scenting drive — recall is unreliable off-leash"
+    ]
+  },
+  "blenheim spaniel": {
+    "profile": {
+      "size": "Small, 6-8 kg",
+      "lifespan": "9-14 years",
+      "temperament": "Gentle, affectionate, graceful"
+    },
+    "watchlist": [
+      {
+        "condition": "Mitral Valve Disease (MVD)",
+        "risk": "high",
+        "earlySigns": "Heart murmur on auscultation, exercise intolerance, coughing",
+        "prevention": "Annual heart checks by a vet starting at age 1"
+      },
+      {
+        "condition": "Syringomyelia (SM)",
+        "risk": "high",
+        "earlySigns": "Phantom scratching at neck, touch sensitivity around head",
+        "prevention": "MRI screening prior to breeding selection"
+      },
+      {
+        "condition": "Dry Eye / Curly Coat Syndrome",
+        "risk": "moderate",
+        "earlySigns": "Thick eye discharge, rough flaky coat",
+        "prevention": "DNA testing and tear-replacements if diagnosed"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "moderate",
+        "earlySigns": "Head shaking, unpleasant ear odor",
+        "prevention": "Clean and dry heavy floppy ears regularly"
+      }
+    ],
+    "careTips": [
+      "Schedule routine veterinary cardiac checks every year",
+      "Maintain a calm environment and avoid strenuous activity in warm weather"
+    ]
+  },
+  "bloodhound": {
+    "profile": {
+      "size": "Large, 36-50 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Gentle, determined, unmatched nose"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Head shaking, foul odour",
+        "prevention": "Weekly cleaning of very long ears; dry thoroughly"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "Screened parents; slow growth; lean weight"
+      },
+      {
+        "condition": "Skin fold dermatitis",
+        "risk": "moderate",
+        "earlySigns": "Redness or odour in facial folds",
+        "prevention": "Clean and dry folds several times weekly"
+      }
+    ],
+    "careTips": [
+      "Bloat risk is among the highest of any breed — owners must know the signs",
+      "Facial folds and long ears both need routine hygiene in humid climates"
+    ]
+  },
+  "bluetick": {
+    "profile": {
+      "size": "Large, 20-36 kg",
+      "lifespan": "11-12 years",
+      "temperament": "Devoted, intelligent, vocal"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Hind leg lameness, reluctance to climb stairs",
+        "prevention": "Keep weight lean"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Unpleasant ear odor, head shaking",
+        "prevention": "Clean and dry long drooping ears regularly"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Hard swollen abdomen, gagging without vomiting",
+        "prevention": "Feed multiple smaller meals"
+      },
+      {
+        "condition": "Cataracts",
+        "risk": "low",
+        "earlySigns": "Opaque lens, vision impairment",
+        "prevention": "Annual eye checks"
+      }
+    ],
+    "careTips": [
+      "Be mindful of baying bark in close-neighbor living environments",
+      "Provide long daily walks or runs to channel athletic stamina"
+    ]
+  },
+  "border collie": {
+    "profile": {
+      "size": "Medium, 14-20 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Tenacious, energetic, brilliant"
+    },
+    "watchlist": [
+      {
+        "condition": "Collie Eye Anomaly (CEA)",
+        "risk": "high",
+        "earlySigns": "Vision loss, cloudiness",
+        "prevention": "Genetic screening of parent dogs"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness after hard running, reluctance to jump",
+        "prevention": "Maintain lean weight and moderate exercise during puppyhood"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "moderate",
+        "earlySigns": "Sudden seizures, loss of motor control",
+        "prevention": "Neurological evaluation"
+      },
+      {
+        "condition": "MDR1 Drug Sensitivity",
+        "risk": "moderate",
+        "earlySigns": "Severe toxic reaction to certain medications",
+        "prevention": "MDR1 genetic testing prior to treatment"
+      }
+    ],
+    "careTips": [
+      "Requires multi-hour daily physical exercise and advanced mental tasks",
+      "Thrives in agility, flyball, or high-level obedience training"
+    ]
+  },
+  "border terrier": {
+    "profile": {
+      "size": "Small, 5-7 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Good-tempered, hardy, affectionate terrier"
+    },
+    "watchlist": [
+      {
+        "condition": "Canine epileptoid cramping syndrome",
+        "risk": "moderate",
+        "earlySigns": "Episodes of cramping, staggering, without loss of consciousness",
+        "prevention": "Often diet-responsive; discuss with vet"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee checks"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "low",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents"
+      },
+      {
+        "condition": "Heart murmurs",
+        "risk": "low",
+        "earlySigns": "Cough, exercise intolerance",
+        "prevention": "Annual auscultation"
+      }
+    ],
+    "careTips": [
+      "One of the hardier small terriers, but still needs dental care",
+      "Harsh coat benefits from hand-stripping twice yearly"
+    ]
+  },
+  "borzoi": {
+    "profile": {
+      "size": "Giant, 27-48 kg",
+      "lifespan": "9-14 years",
+      "temperament": "Quiet, dignified, independent sighthound"
+    },
+    "watchlist": [
+      {
+        "condition": "Anaesthetic sensitivity (sighthound)",
+        "risk": "high",
+        "earlySigns": "Prolonged or difficult recovery from sedation",
+        "prevention": "Inform every vet before any procedure"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Osteosarcoma (bone cancer)",
+        "risk": "moderate",
+        "earlySigns": "Persistent limping, swelling on a limb",
+        "prevention": "Prompt imaging for any unexplained limp in a large dog"
+      },
+      {
+        "condition": "Cardiomyopathy",
+        "risk": "moderate",
+        "earlySigns": "Exercise intolerance, cough, fainting",
+        "prevention": "Cardiac screening in middle age"
+      }
+    ],
+    "careTips": [
+      "Deep-chested giant — bloat awareness is essential",
+      "Sighthound anaesthesia protocol must be flagged at every clinic"
+    ]
+  },
+  "boston bull": {
+    "profile": {
+      "size": "Small, 6-11 kg",
+      "lifespan": "11-13 years",
+      "temperament": "Friendly, lively, intelligent"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic Syndrome",
+        "risk": "high",
+        "earlySigns": "Heavy snoring, wheezing, low tolerance for humidity",
+        "prevention": "Keep in cool indoor areas, avoid hot midday walks"
+      },
+      {
+        "condition": "Corneal ulcers",
+        "risk": "high",
+        "earlySigns": "Red eyes, squinting, rubbing eyes on paws",
+        "prevention": "Avoid dusty environments, monitor prominent eyes daily"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Temporary skipping step in rear legs",
+        "prevention": "Maintain proper body weight"
+      },
+      {
+        "condition": "Deafness",
+        "risk": "moderate",
+        "earlySigns": "Failure to respond to loud sound cues",
+        "prevention": "BAER testing in puppyhood"
+      }
+    ],
+    "careTips": [
+      "Avoid high heat exposure and keep indoors with good ventilation",
+      "Use gentle eye-wipes to clean dust around large protruding eyes"
+    ]
+  },
+  "bouvier des flandres": {
+    "profile": {
+      "size": "Large, 27-50 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Calm, powerful, protective herding dog"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "Screened parents; slow growth; lean weight"
+      },
+      {
+        "condition": "Glaucoma",
+        "risk": "moderate",
+        "earlySigns": "Red painful eye, squinting - EMERGENCY",
+        "prevention": "Annual eye pressure checks"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes, lethargy",
+        "prevention": "Thyroid panel in middle age"
+      }
+    ],
+    "careTips": [
+      "Heavy weatherproof coat is poorly suited to tropical humidity",
+      "Needs experienced handling and early socialisation"
+    ]
+  },
+  "boxer": {
+    "profile": {
+      "size": "Large, 25-32 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Fun-loving, bright, active"
+    },
+    "watchlist": [
+      {
+        "condition": "Boxer Cardiomyopathy (ARVC)",
+        "risk": "high",
+        "earlySigns": "Fainting, lethargy, irregular heartbeat",
+        "prevention": "Annual Holter monitor screening"
+      },
+      {
+        "condition": "Cancer (mast cell tumors, lymphoma)",
+        "risk": "high",
+        "earlySigns": "Skin lumps, swollen lymph nodes, lethargy",
+        "prevention": "Frequent skin checks and routine vet checkups"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen hard abdomen, non-productive retching",
+        "prevention": "Limit active running right after eating"
+      },
+      {
+        "condition": "Aortic Stenosis",
+        "risk": "moderate",
+        "earlySigns": "Tiring quickly, collapse during exercise",
+        "prevention": "Screening echocardiograms"
+      }
+    ],
+    "careTips": [
+      "Provide high-energy play in temperate weather; susceptible to heat exhaustion",
+      "Incorporate early leash training to manage their bouncy enthusiasm"
+    ]
+  },
+  "brabancon griffon": {
+    "profile": {
+      "size": "Toy, 3-6 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Alert, humanlike expression, sensitive"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic airway compromise",
+        "risk": "high",
+        "earlySigns": "Snoring, noisy breathing, heat intolerance",
+        "prevention": "Keep cool and lean; avoid exertion in heat"
+      },
+      {
+        "condition": "Eye injuries and corneal ulcers",
+        "risk": "high",
+        "earlySigns": "Squinting, tearing, pawing at eye",
+        "prevention": "Same-day vet for any squint; prominent eyes are vulnerable"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee checks"
+      },
+      {
+        "condition": "Syringomyelia",
+        "risk": "low",
+        "earlySigns": "Air-scratching at neck, yelping when touched",
+        "prevention": "Neurology referral if signs appear"
+      }
+    ],
+    "careTips": [
+      "Flat-faced toy breed — heat and eye injuries are the two urgent risks",
+      "Harness rather than collar"
+    ]
+  },
+  "briard": {
+    "profile": {
+      "size": "Large, 25-45 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Confident, protective, heart wrapped in fur"
+    },
+    "watchlist": [
+      {
+        "condition": "Congenital stationary night blindness",
+        "risk": "moderate",
+        "earlySigns": "Difficulty seeing in dim light from puppyhood",
+        "prevention": "DNA test available (RPE65)"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Altered gait, reluctance to jump",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "low",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel if signs appear"
+      }
+    ],
+    "careTips": [
+      "Long coat requires serious grooming commitment, especially in humidity",
+      "Strong herding instincts need channelling"
+    ]
+  },
+  "brittany spaniel": {
+    "profile": {
+      "size": "Medium, 14-20 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Bright, eager, happy"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Limping, reluctance to run or jump",
+        "prevention": "Keep lean; controlled exercise during development"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "moderate",
+        "earlySigns": "Seizures, loss of consciousness",
+        "prevention": "Neurological examination"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, hair loss, lethargy",
+        "prevention": "Annual blood thyroid panel"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "moderate",
+        "earlySigns": "Head shaking, odor in ear canal",
+        "prevention": "Clean and dry floppy ears after active outdoors"
+      }
+    ],
+    "careTips": [
+      "Requires high daily exercise and field/game interaction",
+      "Positive reinforcement training works best for their sensitive nature"
+    ]
+  },
+  "bull mastiff": {
+    "profile": {
+      "size": "Giant, 45-59 kg",
+      "lifespan": "7-9 years",
+      "temperament": "Calm, devoted, powerful guardian"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness, difficulty with stairs",
+        "prevention": "Screened parents; slow controlled growth; lifelong lean weight"
+      },
+      {
+        "condition": "Cancer (lymphoma, mast cell)",
+        "risk": "high",
+        "earlySigns": "New lumps, lethargy, weight loss",
+        "prevention": "Check every new lump promptly; twice-yearly exams from age 5"
+      },
+      {
+        "condition": "Brachycephalic airway compromise",
+        "risk": "moderate",
+        "earlySigns": "Noisy breathing, poor heat tolerance",
+        "prevention": "Avoid heat and exertion; keep lean"
+      }
+    ],
+    "careTips": [
+      "Short lifespan and high cancer rate — set owner expectations honestly",
+      "Very heat-sensitive; unsuited to midday activity in the tropics"
+    ]
+  },
+  "cairn": {
+    "profile": {
+      "size": "Small, 6-8 kg",
+      "lifespan": "13-15 years",
+      "temperament": "Cheerful, busy, hardy working terrier"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee grading"
+      },
+      {
+        "condition": "Portosystemic shunt",
+        "risk": "moderate",
+        "earlySigns": "Poor growth, disorientation after meals",
+        "prevention": "Bile acid testing in poorly growing puppies"
+      },
+      {
+        "condition": "Globoid cell leukodystrophy (Krabbe)",
+        "risk": "low",
+        "earlySigns": "Weakness and incoordination in young dogs",
+        "prevention": "DNA test available"
+      },
+      {
+        "condition": "Allergic skin disease",
+        "risk": "moderate",
+        "earlySigns": "Scratching, paw licking, ear infections",
+        "prevention": "Parasite control; early allergy workup"
+      }
+    ],
+    "careTips": [
+      "Hardy and long-lived; dental care is the main routine need",
+      "Strong digging and prey instincts"
+    ]
+  },
+  "cardigan": {
+    "profile": {
+      "size": "Small-medium, 11-17 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Affectionate, alert, even-tempered corgi"
+    },
+    "watchlist": [
+      {
+        "condition": "Intervertebral disc disease",
+        "risk": "high",
+        "earlySigns": "Yelping when lifted, reluctance to jump, hind-leg weakness",
+        "prevention": "Keep lean; ramps not stairs; discourage jumping off furniture"
+      },
+      {
+        "condition": "Degenerative myelopathy",
+        "risk": "moderate",
+        "earlySigns": "Hind-paw knuckling, dragging toes from about 8 years",
+        "prevention": "DNA test identifies at-risk dogs"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; annual eye exams"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "low",
+        "earlySigns": "Altered gait",
+        "prevention": "Screened parents; lean weight"
+      }
+    ],
+    "careTips": [
+      "Long-backed build makes weight control a spinal-health issue",
+      "Herding drive needs an outlet"
+    ]
+  },
+  "chesapeake bay retriever": {
+    "profile": {
+      "size": "Large, 25-36 kg",
+      "lifespan": "10-13 years",
+      "temperament": "Tough, independent, water-loving"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "CHIC screening; lean weight; controlled growth"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents"
+      },
+      {
+        "condition": "Exercise-induced collapse",
+        "risk": "moderate",
+        "earlySigns": "Wobbly hind legs after intense exercise",
+        "prevention": "DNA test available; manage exercise intensity"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "moderate",
+        "earlySigns": "Head shaking, odour",
+        "prevention": "Dry ears thoroughly after swimming"
+      }
+    ],
+    "careTips": [
+      "Oily water-resistant coat still needs drying in humid climates",
+      "Independent temperament needs consistent early training"
+    ]
+  },
+  "chihuahua": {
+    "profile": {
+      "size": "Toy, 1.5-3 kg",
+      "lifespan": "12-20 years",
+      "temperament": "Alert, courageous, devoted"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping steps, holding leg up off ground",
+        "prevention": "Maintain slim weight, discourage jumping from heights"
+      },
+      {
+        "condition": "Mitral Valve Disease (MVD)",
+        "risk": "high",
+        "earlySigns": "Coughing, tiring easily, fast breathing while resting",
+        "prevention": "Annual cardiac checks and stethoscope exams"
+      },
+      {
+        "condition": "Hypoglycemia",
+        "risk": "high",
+        "earlySigns": "Tremors, weakness, disorientation, pale gums",
+        "prevention": "Ensure frequent, balanced nutrition in small portions"
+      },
+      {
+        "condition": "Open Fontanelle (Molera)",
+        "risk": "moderate",
+        "earlySigns": "Soft spot on top of skull, head sensitivity",
+        "prevention": "Protect delicate head area from accidental trauma"
+      }
+    ],
+    "careTips": [
+      "Provide warm bedding or apparel when staying in air-conditioned spaces",
+      "Brush small teeth regularly to avoid early tooth loss"
+    ]
+  },
+  "chow": {
+    "profile": {
+      "size": "Medium-large, 20-32 kg",
+      "lifespan": "9-15 years",
+      "temperament": "Aloof, dignified, independent"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, altered gait",
+        "prevention": "Screened parents; keep lean"
+      },
+      {
+        "condition": "Entropion",
+        "risk": "high",
+        "earlySigns": "Squinting, tearing, rubbing at eyes",
+        "prevention": "Surgical correction; check puppies early"
+      },
+      {
+        "condition": "Glaucoma",
+        "risk": "moderate",
+        "earlySigns": "Red painful eye, squinting - EMERGENCY",
+        "prevention": "Annual eye pressure checks"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat loss, lethargy",
+        "prevention": "Thyroid panel in middle age"
+      }
+    ],
+    "careTips": [
+      "Very dense double coat is poorly suited to tropical heat",
+      "Eyelid conformation makes eye checks a routine necessity"
+    ]
+  },
+  "clumber": {
+    "profile": {
+      "size": "Medium-large, 25-39 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Mellow, gentle, deliberate spaniel"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, reluctance to jump",
+        "prevention": "Screened parents; strict weight control"
+      },
+      {
+        "condition": "Entropion and ectropion",
+        "risk": "high",
+        "earlySigns": "Squinting, tearing, drooping lower lids",
+        "prevention": "Surgical correction where needed; routine eye hygiene"
+      },
+      {
+        "condition": "Obesity",
+        "risk": "high",
+        "earlySigns": "No visible waist",
+        "prevention": "Measured meals — this breed gains weight easily"
+      },
+      {
+        "condition": "Intervertebral disc disease",
+        "risk": "moderate",
+        "earlySigns": "Yelping when lifted, reluctance to jump",
+        "prevention": "Lean weight; avoid high jumps"
+      }
+    ],
+    "careTips": [
+      "Heavy, low-slung build makes weight control the central health task",
+      "Ear and eye hygiene needed weekly"
+    ]
+  },
+  "cocker spaniel": {
+    "profile": {
+      "size": "Medium, 11-15 kg",
+      "lifespan": "10-14 years",
+      "temperament": "Gentle, smart, happy"
+    },
+    "watchlist": [
+      {
+        "condition": "Otitis Externa (Ear infections)",
+        "risk": "high",
+        "earlySigns": "Head shaking, foul odor, red ear canals",
+        "prevention": "Clean and thoroughly dry floppy ears weekly"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "high",
+        "earlySigns": "Loss of night vision, dilated pupils",
+        "prevention": "Genetic DNA testing of breeding parents"
+      },
+      {
+        "condition": "Cataracts",
+        "risk": "high",
+        "earlySigns": "Opaque lens, bumping into furniture",
+        "prevention": "Annual ophthalmic checks"
+      },
+      {
+        "condition": "Dilated Cardiomyopathy (DCM)",
+        "risk": "moderate",
+        "earlySigns": "Coughing, tiring easily during walks",
+        "prevention": "Dietary monitoring and regular vet checkups"
+      }
+    ],
+    "careTips": [
+      "Thoroughly dry floppy ears after swimming or baths to prevent infections",
+      "Brush long silky coat regularly to prevent severe tangles"
+    ]
+  },
+  "collie": {
+    "profile": {
+      "size": "Large, 20-34 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Loyal, sensitive, responsive"
+    },
+    "watchlist": [
+      {
+        "condition": "Collie eye anomaly",
+        "risk": "high",
+        "earlySigns": "Usually no visible signs; found only on eye exam",
+        "prevention": "DNA test and eye screening of parents is essential"
+      },
+      {
+        "condition": "MDR1 drug sensitivity",
+        "risk": "high",
+        "earlySigns": "Severe reaction to certain common drugs",
+        "prevention": "DNA test — record the result at every clinic"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; annual exams"
+      },
+      {
+        "condition": "Dermatomyositis",
+        "risk": "low",
+        "earlySigns": "Skin lesions on face and legs in young dogs",
+        "prevention": "Avoid strong sun exposure; early dermatology referral"
+      }
+    ],
+    "careTips": [
+      "MDR1 and CEA status are the two things every Collie owner should know",
+      "Heavy coat needs management in tropical climates"
+    ]
+  },
+  "curly-coated retriever": {
+    "profile": {
+      "size": "Large, 27-41 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Confident, proud, intelligent"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Limping, stiffness after exercise",
+        "prevention": "Keep body weight lean"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen hard stomach, unproductive gagging",
+        "prevention": "Avoid exercise right after feeding"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, vision loss",
+        "prevention": "Genetic screening of parents"
+      },
+      {
+        "condition": "Pattern Baldness (Alopecia)",
+        "risk": "low",
+        "earlySigns": "Symmetrical hair thinning behind ears or legs",
+        "prevention": "Skin monitoring"
+      }
+    ],
+    "careTips": [
+      "Never brush crisp tight curls when dry; dampen with water to air-dry",
+      "Engage in daily swimming or retrieve games to burn stamina"
+    ]
+  },
+  "dandie dinmont": {
+    "profile": {
+      "size": "Small, 8-11 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Independent, determined, affectionate"
+    },
+    "watchlist": [
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "high",
+        "earlySigns": "Back stiffness, crying when moved, weak back legs",
+        "prevention": "Use ramps; avoid jumping off elevated furniture"
+      },
+      {
+        "condition": "Glaucoma",
+        "risk": "high",
+        "earlySigns": "Eye pain, excessive tearing, cloudy eye appearance",
+        "prevention": "Annual ophthalmic checks"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Lethargy, weight gain, coat thinning",
+        "prevention": "Blood thyroid panel screening"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "low",
+        "earlySigns": "Seizures, loss of motor function",
+        "prevention": "Neurological examination"
+      }
+    ],
+    "careTips": [
+      "Support long back carefully when lifting to prevent spinal strain",
+      "Hand-strip or trim crisp coat regularly to maintain proper texture"
+    ]
+  },
+  "dhole": {
+    "profile": {
+      "size": "WILD SPECIES, 12-20 kg",
+      "lifespan": "10-13 years (wild)",
+      "temperament": "Wild Asiatic wild dog, not a domestic breed"
+    },
+    "watchlist": [
+      {
+        "condition": "Not applicable — wild species",
+        "risk": "low",
+        "earlySigns": "N/A",
+        "prevention": "N/A"
+      }
+    ],
+    "careTips": [
+      "This is Cuon alpinus, an endangered wild Asian canid in the Stanford Dogs dataset",
+      "No pet health guidance applies; the app should flag this as a non-domestic prediction"
+    ]
+  },
+  "dingo": {
+    "profile": {
+      "size": "WILD/FERAL, 13-20 kg",
+      "lifespan": "10-13 years",
+      "temperament": "Australian wild or semi-feral canid, not a domestic breed"
+    },
+    "watchlist": [
+      {
+        "condition": "Not applicable — wild/feral canid",
+        "risk": "low",
+        "earlySigns": "N/A",
+        "prevention": "N/A"
+      }
+    ],
+    "careTips": [
+      "Included in the Stanford Dogs dataset but not a domestic breed; ownership is regulated in Australia",
+      "The app should flag this as a non-domestic prediction"
+    ]
+  },
+  "doberman": {
+    "profile": {
+      "size": "Large, 32-45 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Fearless, loyal, alert"
+    },
+    "watchlist": [
+      {
+        "condition": "Dilated Cardiomyopathy (DCM)",
+        "risk": "high",
+        "earlySigns": "Weakness, exercise collapse, rapid breathing",
+        "prevention": "Annual cardiac ultrasound and Holter monitoring"
+      },
+      {
+        "condition": "Von Willebrand's Disease (vWD)",
+        "risk": "high",
+        "earlySigns": "Excessive bleeding after injury or surgery",
+        "prevention": "Genetic screening for vWD gene"
+      },
+      {
+        "condition": "Wobbler Syndrome (Cervical Vertebral Instability)",
+        "risk": "moderate",
+        "earlySigns": "Wobbly hind leg gait, neck pain",
+        "prevention": "Avoid neck pressure; use harnesses instead of choke collars"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Retching without vomiting, swollen stomach",
+        "prevention": "Feed multiple small meals, avoid post-meal exertion"
+      }
+    ],
+    "careTips": [
+      "Prioritize early cardiac screening as DCM is prevalent in the breed",
+      "Provide consistent mental challenges and physical outlets daily"
+    ]
+  },
+  "english foxhound": {
+    "profile": {
+      "size": "Large, 29-34 kg",
+      "lifespan": "10-13 years",
+      "temperament": "Sociable, tireless, pack-oriented"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, reluctance to jump",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "low",
+        "earlySigns": "Seizures typically starting 1-5 years",
+        "prevention": "Medication; seizure diary"
+      },
+      {
+        "condition": "Renal disease",
+        "risk": "low",
+        "earlySigns": "Increased drinking and urination",
+        "prevention": "Routine bloodwork at annual checks"
+      }
+    ],
+    "careTips": [
+      "Bred for endurance in packs — very high exercise needs and poor apartment suitability",
+      "Generally hardy with few breed-specific problems"
+    ]
+  },
+  "english setter": {
+    "profile": {
+      "size": "Large, 20-36 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Gentle, mellow, sociable gundog"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, reluctance to jump",
+        "prevention": "CHIC hip screening; keep lean"
+      },
+      {
+        "condition": "Deafness",
+        "risk": "moderate",
+        "earlySigns": "Not responding to sound, hard to wake",
+        "prevention": "BAER testing available in puppies"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, dull coat, lethargy",
+        "prevention": "Thyroid panel in middle age"
+      },
+      {
+        "condition": "Elbow dysplasia",
+        "risk": "low",
+        "earlySigns": "Front-limb lameness",
+        "prevention": "Screened parents; controlled growth"
+      }
+    ],
+    "careTips": [
+      "Feathered coat needs regular brushing to prevent mats",
+      "Needs substantial daily exercise as a working gundog"
+    ]
+  },
+  "english springer": {
+    "profile": {
+      "size": "Medium, 18-23 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Friendly, playful, obedient"
+    },
+    "watchlist": [
+      {
+        "condition": "Otitis Externa (Ear infections)",
+        "risk": "high",
+        "earlySigns": "Head shaking, red ear canal, foul odor",
+        "prevention": "Clean and dry floppy ears regularly"
+      },
+      {
+        "condition": "Phosphofructokinase (PFK) Deficiency",
+        "risk": "moderate",
+        "earlySigns": "Muscle weakness, dark urine after exertion",
+        "prevention": "DNA testing before breeding"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, loss of peripheral vision",
+        "prevention": "Genetic eye screening"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Difficulty rising, reluctance to climb stairs",
+        "prevention": "Keep lean during development"
+      }
+    ],
+    "careTips": [
+      "Regular grooming and ear inspection are essential after field play",
+      "Thrives on daily outdoor activity and scent games"
+    ]
+  },
+  "entlebucher": {
+    "profile": {
+      "size": "Medium, 20-30 kg",
+      "lifespan": "11-13 years",
+      "temperament": "Lively, confident, agile Swiss herder"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Altered gait, reluctance to jump",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; eye exams"
+      },
+      {
+        "condition": "Intervertebral disc disease",
+        "risk": "low",
+        "earlySigns": "Yelping when lifted, hind-leg weakness",
+        "prevention": "Keep lean; limit high jumps"
+      }
+    ],
+    "careTips": [
+      "A true working herder — needs daily physical and mental work",
+      "Smallest of the Swiss mountain dogs but still high-drive"
+    ]
+  },
+  "eskimo dog": {
+    "profile": {
+      "size": "Large, 27-47 kg",
+      "lifespan": "10-15 years",
+      "temperament": "Hardy, independent, powerful sled dog"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "Annual eye exams"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat thinning, lethargy",
+        "prevention": "Thyroid panel if coat or energy changes"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "low",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      }
+    ],
+    "careTips": [
+      "Arctic double coat makes this breed a poor fit for tropical climates",
+      "Very high exercise requirement and strong prey drive"
+    ]
+  },
+  "flat-coated retriever": {
+    "profile": {
+      "size": "Large, 25-36 kg",
+      "lifespan": "8-10 years",
+      "temperament": "Optimistic, playful, devoted"
+    },
+    "watchlist": [
+      {
+        "condition": "Malignant Histiocytosis (Cancer)",
+        "risk": "high",
+        "earlySigns": "Lethargy, unexplained weight loss, weakness",
+        "prevention": "Frequent senior vet checkups from age 5"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness rising, reluctance to run",
+        "prevention": "Keep body weight lean"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended belly, non-productive retching",
+        "prevention": "Use slow feeders"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "low",
+        "earlySigns": "Intermittent hopping step",
+        "prevention": "Maintain lean weight"
+      }
+    ],
+    "careTips": [
+      "Retains youthful 'puppy-like' energy for years; daily outdoor exercise essential",
+      "Brush flat silky coat weekly to prevent feathering mats behind legs"
+    ]
+  },
+  "french bulldog": {
+    "profile": {
+      "size": "Small, 8-14 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Playful, adaptable, affectionate"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "risk": "high",
+        "earlySigns": "Loud snoring, noisy breathing, heat intolerance",
+        "prevention": "Avoid hot humid weather and keep in air-conditioned environments"
+      },
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "high",
+        "earlySigns": "Back pain, reluctance to jump, hind leg weakness",
+        "prevention": "Discourage jumping off high furniture, keep lean"
+      },
+      {
+        "condition": "Skin fold dermatitis",
+        "risk": "high",
+        "earlySigns": "Redness, odor, and itching within facial wrinkles",
+        "prevention": "Clean and dry skin folds daily"
+      },
+      {
+        "condition": "Corneal ulcers",
+        "risk": "moderate",
+        "earlySigns": "Squinting, excessive tearing, cloudiness in eye",
+        "prevention": "Protect protruding eyes from dust and sharp vegetation"
+      }
+    ],
+    "careTips": [
+      "Exercise in cool morning or evening hours to prevent heatstroke",
+      "Use a chest harness instead of a collar to protect the airway"
+    ]
+  },
+  "german shepherd": {
+    "profile": {
+      "size": "Large, 30-40 kg",
+      "lifespan": "9-13 years",
+      "temperament": "Courageous, intelligent, loyal"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Bunny-hopping gait, difficulty rising, lameness",
+        "prevention": "Keep lean during puppy growth phase, joint support"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching, restlessness",
+        "prevention": "Avoid vigorous exercise right after heavy meals"
+      },
+      {
+        "condition": "Degenerative Myelopathy (DM)",
+        "risk": "moderate",
+        "earlySigns": "Knuckling of hind paws, loss of coordination",
+        "prevention": "Genetic screening for DM gene mutation"
+      },
+      {
+        "condition": "Exocrine Pancreatic Insufficiency (EPI)",
+        "risk": "moderate",
+        "earlySigns": "Chronic diarrhea, extreme hunger with weight loss",
+        "prevention": "Early diagnostic blood testing and pancreatic enzyme replacement"
+      }
+    ],
+    "careTips": [
+      "Provide mental stimulation and structured job tasks to prevent boredom",
+      "Incorporate daily socialization and obedience work from early puppyhood"
+    ]
+  },
+  "german short-haired pointer": {
+    "profile": {
+      "size": "Large, 20-32 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Driven, affectionate, tireless gundog"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, reluctance to jump",
+        "prevention": "CHIC screening; lean weight"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      },
+      {
+        "condition": "Von Willebrand's disease",
+        "risk": "moderate",
+        "earlySigns": "Prolonged bleeding after injury or surgery",
+        "prevention": "DNA test before any procedure"
+      },
+      {
+        "condition": "Lymphedema",
+        "risk": "low",
+        "earlySigns": "Swelling of limbs in young dogs",
+        "prevention": "Veterinary assessment"
+      }
+    ],
+    "careTips": [
+      "Extremely high exercise needs — unsuitable for sedentary households",
+      "Short coat still needs sun and heat management in the tropics"
+    ]
+  },
+  "giant schnauzer": {
+    "profile": {
+      "size": "Large, 25-48 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Bold, energetic, powerful working dog"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, altered gait",
+        "prevention": "Screened parents; controlled growth; lean weight"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat loss, lethargy",
+        "prevention": "Annual thyroid panel"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss gastropexy"
+      },
+      {
+        "condition": "Toe cancer (squamous cell carcinoma)",
+        "risk": "moderate",
+        "earlySigns": "Swollen toe, nail loss, persistent limp",
+        "prevention": "Check any persistently swollen toe promptly"
+      }
+    ],
+    "careTips": [
+      "Needs experienced handling, early socialisation, and serious daily work",
+      "Harsh coat requires regular stripping or clipping"
+    ]
+  },
+  "golden retriever": {
+    "profile": {
+      "size": "Large, 25-34 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Friendly, devoted, eager to please"
+    },
+    "watchlist": [
+      {
+        "condition": "Cancer (haemangiosarcoma, lymphoma)",
+        "risk": "high",
+        "earlySigns": "New lumps, lethargy, pale gums, unexplained weight loss",
+        "prevention": "Twice-yearly vet checks from age 6; check every new lump promptly"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, bunny-hopping gait",
+        "prevention": "CHIC screening; keep lean; moderate exercise while growing"
+      },
+      {
+        "condition": "Subvalvular aortic stenosis",
+        "risk": "moderate",
+        "earlySigns": "Tiring quickly, fainting",
+        "prevention": "Cardiac screening by a specialist in young dogs"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "moderate",
+        "earlySigns": "Head shaking, odour from ears",
+        "prevention": "Dry and clean ears after swimming"
+      }
+    ],
+    "careTips": [
+      "Keeping the dog lean is the single biggest lever on joint and cancer outcomes",
+      "Prone to boredom weight gain — needs daily exercise and mental work"
+    ]
+  },
+  "gordon setter": {
+    "profile": {
+      "size": "Large, 20-36 kg",
+      "lifespan": "12-13 years",
+      "temperament": "Bold, confident, loyal"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen stomach, pacing, unproductive retching",
+        "prevention": "Avoid active running immediately after meals"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Reluctance to jump, stiff hind legs",
+        "prevention": "Maintain lean physique during growth"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Loss of night vision, dilated pupils",
+        "prevention": "Genetic screening"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Lethargy, unexplained weight gain, skin changes",
+        "prevention": "Annual blood thyroid panel"
+      }
+    ],
+    "careTips": [
+      "Requires consistent, patient training as they mature slower than other setters",
+      "Clean long ears and comb black-and-tan feathering hair regularly"
+    ]
+  },
+  "great dane": {
+    "profile": {
+      "size": "Giant, 50-90 kg",
+      "lifespan": "7-10 years",
+      "temperament": "Friendly, patient, dependable"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen hard stomach, foam retching, restlessness",
+        "prevention": "Consider prophylactic gastropexy; restrict post-meal running"
+      },
+      {
+        "condition": "Dilated Cardiomyopathy (DCM)",
+        "risk": "high",
+        "earlySigns": "Lethargy, coughing, weakness",
+        "prevention": "Routine cardiac screening"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness rising, limping after play",
+        "prevention": "Controlled rapid growth diets formulated for giant breeds"
+      },
+      {
+        "condition": "Osteosarcoma",
+        "risk": "moderate",
+        "earlySigns": "Bone pain, swelling on legs, lameness",
+        "prevention": "Immediate vet check for limb lameness"
+      }
+    ],
+    "careTips": [
+      "Feed large-breed puppy formulas to prevent too-rapid bone growth",
+      "Ensure orthopedic bedding to protect large joints from pressure sores"
+    ]
+  },
+  "great pyrenees": {
+    "profile": {
+      "size": "Giant, 39-73 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Calm, independent, patient livestock guardian"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, difficulty with stairs",
+        "prevention": "Screened parents; slow growth; lean weight"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss gastropexy"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; knee checks"
+      },
+      {
+        "condition": "Osteosarcoma",
+        "risk": "moderate",
+        "earlySigns": "Persistent limping, limb swelling",
+        "prevention": "Prompt imaging for unexplained limps"
+      }
+    ],
+    "careTips": [
+      "Thick double coat makes this breed unsuited to tropical climates",
+      "Independent guardian temperament; night barking is normal for the breed"
+    ]
+  },
+  "greater swiss mountain dog": {
+    "profile": {
+      "size": "Giant, 39-64 kg",
+      "lifespan": "8-11 years",
+      "temperament": "Faithful, steady, powerful draught dog"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "Screened parents; controlled growth; lean weight"
+      },
+      {
+        "condition": "Splenic torsion",
+        "risk": "moderate",
+        "earlySigns": "Sudden abdominal pain, collapse - EMERGENCY",
+        "prevention": "Recognise as an emergency; often occurs alongside bloat risk"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "low",
+        "earlySigns": "Seizures beginning 1-5 years",
+        "prevention": "Medication; seizure diary"
+      }
+    ],
+    "careTips": [
+      "Heavy coat and large mass make heat management essential in the tropics",
+      "Slow to mature; protect joints during the long growth period"
+    ]
+  },
+  "groenendael": {
+    "profile": {
+      "size": "Large, 20-30 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Intense, watchful, highly trainable Belgian shepherd"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Altered gait, stiffness",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "moderate",
+        "earlySigns": "Seizures beginning 1-5 years",
+        "prevention": "Medication; seizure diary"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "low",
+        "earlySigns": "Night blindness",
+        "prevention": "Annual eye exams"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "low",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      }
+    ],
+    "careTips": [
+      "Very high drive — needs demanding daily work, not just walks",
+      "Long black coat requires heat management in the tropics"
+    ]
+  },
+  "ibizan hound": {
+    "profile": {
+      "size": "Medium-large, 20-25 kg",
+      "lifespan": "11-14 years",
+      "temperament": "Elegant, athletic, playful sighthound"
+    },
+    "watchlist": [
+      {
+        "condition": "Anaesthetic sensitivity (sighthound)",
+        "risk": "high",
+        "earlySigns": "Prolonged recovery from sedation",
+        "prevention": "Inform every vet before any procedure"
+      },
+      {
+        "condition": "Axonal dystrophy",
+        "risk": "low",
+        "earlySigns": "Incoordination in young dogs",
+        "prevention": "DNA-tested parents where available"
+      },
+      {
+        "condition": "Retinal dysplasia",
+        "risk": "low",
+        "earlySigns": "Vision problems",
+        "prevention": "Annual eye exams"
+      },
+      {
+        "condition": "Seizures",
+        "risk": "low",
+        "earlySigns": "Collapse, paddling, disorientation",
+        "prevention": "Veterinary workup if episodes occur"
+      }
+    ],
+    "careTips": [
+      "Exceptional jumper — fences need to be high and secure",
+      "Thin skin and low body fat; handle with care"
+    ]
+  },
+  "irish setter": {
+    "profile": {
+      "size": "Large, 27-32 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Sweet-natured, active, outgoing"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen hard stomach, non-productive retching",
+        "prevention": "Feed multiple small meals daily, avoid post-meal running"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "high",
+        "earlySigns": "Night vision loss, pupil dilation",
+        "prevention": "DNA testing before breeding"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Difficulty rising, stiff gait after play",
+        "prevention": "Maintain optimal body weight"
+      },
+      {
+        "condition": "Leukocyte Adhesion Deficiency (LAD)",
+        "risk": "moderate",
+        "earlySigns": "Severe recurrent infections in young puppies",
+        "prevention": "DNA screening of parent dogs"
+      }
+    ],
+    "careTips": [
+      "Brush rich red mahogany coat 2-3 times weekly to avoid tangles",
+      "Requires expansive running areas to satisfy high athletic stamina"
+    ]
+  },
+  "irish terrier": {
+    "profile": {
+      "size": "Medium, 11-12 kg",
+      "lifespan": "13-15 years",
+      "temperament": "Bold, spirited, 'daredevil' terrier"
+    },
+    "watchlist": [
+      {
+        "condition": "Hyperkeratosis of footpads",
+        "risk": "moderate",
+        "earlySigns": "Thickened, cracked paw pads in young dogs",
+        "prevention": "DNA test available; protective pad care"
+      },
+      {
+        "condition": "Cystinuria",
+        "risk": "moderate",
+        "earlySigns": "Straining to urinate, blood in urine",
+        "prevention": "Urine screening; dietary management if affected"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "low",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel if signs appear"
+      }
+    ],
+    "careTips": [
+      "Generally hardy and long-lived",
+      "Harsh coat needs hand-stripping; strong dog-to-dog reactivity is common"
+    ]
+  },
+  "irish water spaniel": {
+    "profile": {
+      "size": "Large, 20-30 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Clownish, intelligent, strong swimmer"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, altered gait",
+        "prevention": "CHIC screening; lean weight"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Head shaking, odour",
+        "prevention": "Weekly cleaning; dry thoroughly after swimming"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel in middle age"
+      },
+      {
+        "condition": "Drug sensitivity (sulfonamides)",
+        "risk": "moderate",
+        "earlySigns": "Adverse reaction to certain antibiotics",
+        "prevention": "Flag the breed's sensitivity at every clinic"
+      }
+    ],
+    "careTips": [
+      "Dense curly coat plus water work makes ear hygiene essential",
+      "Needs vigorous exercise, ideally swimming"
+    ]
+  },
+  "irish wolfhound": {
+    "profile": {
+      "size": "Giant, 48-70 kg",
+      "lifespan": "6-8 years",
+      "temperament": "Gentle, dignified, calm giant"
+    },
+    "watchlist": [
+      {
+        "condition": "Dilated cardiomyopathy",
+        "risk": "high",
+        "earlySigns": "Coughing, exercise intolerance, fainting",
+        "prevention": "Annual cardiac screening from age 2 — a leading cause of death"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Osteosarcoma (bone cancer)",
+        "risk": "high",
+        "earlySigns": "Persistent limping, swelling on a limb",
+        "prevention": "Prompt imaging for any unexplained limp"
+      },
+      {
+        "condition": "Portosystemic shunt",
+        "risk": "moderate",
+        "earlySigns": "Poor growth, disorientation after meals",
+        "prevention": "Bile acid testing in poorly growing puppies"
+      }
+    ],
+    "careTips": [
+      "Very short lifespan — owners should know this before committing",
+      "Giant sighthound: both bloat and anaesthetic sensitivity apply"
+    ]
+  },
+  "italian greyhound": {
+    "profile": {
+      "size": "Small, 3.5-5 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Gentle, affectionate, graceful"
+    },
+    "watchlist": [
+      {
+        "condition": "Bone fractures (Radius/Ulna)",
+        "risk": "high",
+        "earlySigns": "Sudden intense limping, inability to bear weight after jumping",
+        "prevention": "Prevent jumping from elevated surfaces (couches, beds)"
+      },
+      {
+        "condition": "Periodontal disease",
+        "risk": "high",
+        "earlySigns": "Bad breath, loose teeth, inflamed gums",
+        "prevention": "Daily tooth brushing routine starting young"
+      },
+      {
+        "condition": "Color Dilution Alopecia",
+        "risk": "moderate",
+        "earlySigns": "Thinning coat, dry flaky skin in blue/fawn coats",
+        "prevention": "Gentle moisturizers and mild shampoos"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping step, limping in back legs",
+        "prevention": "Keep trim body weight"
+      }
+    ],
+    "careTips": [
+      "Provide cozy, padded resting spots and protection from cold air-conditioning",
+      "Handle fine, long limbs gently during play"
+    ]
+  },
+  "japanese spaniel": {
+    "profile": {
+      "size": "Toy, 2-5 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Refined, cat-like, devoted lap companion"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic airway compromise",
+        "risk": "high",
+        "earlySigns": "Snoring, noisy breathing, heat intolerance",
+        "prevention": "Keep cool and lean; avoid exertion in heat"
+      },
+      {
+        "condition": "Eye injuries and corneal ulcers",
+        "risk": "high",
+        "earlySigns": "Squinting, tearing, pawing at eye",
+        "prevention": "Same-day vet for any squint; prominent eyes are vulnerable"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee checks"
+      },
+      {
+        "condition": "Heart murmurs / mitral valve disease",
+        "risk": "moderate",
+        "earlySigns": "Cough, tiring easily",
+        "prevention": "Annual auscultation from middle age"
+      }
+    ],
+    "careTips": [
+      "Flat-faced toy: heat and eye trauma are the urgent risks in Singapore",
+      "Harness rather than collar"
+    ]
+  },
+  "keeshond": {
+    "profile": {
+      "size": "Medium, 16-20 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Friendly, alert, outgoing 'smiling Dutchman'"
+    },
+    "watchlist": [
+      {
+        "condition": "Primary hyperparathyroidism",
+        "risk": "moderate",
+        "earlySigns": "Increased drinking and urination, weakness in older dogs",
+        "prevention": "DNA test available; blood calcium checks"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "moderate",
+        "earlySigns": "Seizures beginning 1-5 years",
+        "prevention": "Medication; seizure diary"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel in middle age"
+      }
+    ],
+    "careTips": [
+      "Very thick double coat is poorly suited to tropical heat",
+      "Vocal and people-oriented; needs company"
+    ]
+  },
+  "kelpie": {
+    "profile": {
+      "size": "Medium, 14-20 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Tireless, intelligent, intensely work-driven"
+    },
+    "watchlist": [
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; annual eye exams"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Cerebellar abiotrophy",
+        "risk": "low",
+        "earlySigns": "Wobbliness and incoordination in young dogs",
+        "prevention": "DNA-tested parents where available"
+      }
+    ],
+    "careTips": [
+      "Bred for all-day work — genuinely unsuitable without a demanding daily outlet",
+      "Generally hardy with a functional build"
+    ]
+  },
+  "kerry blue terrier": {
+    "profile": {
+      "size": "Medium, 15-18 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Spirited, alert, strong-willed"
+    },
+    "watchlist": [
+      {
+        "condition": "Progressive neuronal abiotrophy",
+        "risk": "moderate",
+        "earlySigns": "Head tremors and incoordination in young dogs",
+        "prevention": "DNA-tested parents where available"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Keratoconjunctivitis sicca (dry eye)",
+        "risk": "moderate",
+        "earlySigns": "Thick discharge, red eyes",
+        "prevention": "Tear testing at annual exams"
+      },
+      {
+        "condition": "Spiculosis",
+        "risk": "low",
+        "earlySigns": "Coarse bristly hairs on the coat",
+        "prevention": "Cosmetic; grooming management"
+      }
+    ],
+    "careTips": [
+      "Non-shedding coat needs professional grooming every 6-8 weeks",
+      "Strong dog-to-dog reactivity is common; early socialisation matters"
+    ]
+  },
+  "komondor": {
+    "profile": {
+      "size": "Large to Extra Large, 40-50 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Protective, independent, calm"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen stomach, pacing, unproductive retching",
+        "prevention": "Avoid exertion immediately following meals"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Difficulty rising, bunny-hopping gait",
+        "prevention": "Controlled growth diet; keep weight optimal"
+      },
+      {
+        "condition": "Entropion",
+        "risk": "moderate",
+        "earlySigns": "Eyelids rolling inward, eye rubbing, tearing",
+        "prevention": "Ophthalmic checks and surgical repair if severe"
+      },
+      {
+        "condition": "Otitis Externa",
+        "risk": "high",
+        "earlySigns": "Head shaking, foul ear odor",
+        "prevention": "Clean and dry ear canals hidden under cords"
+      }
+    ],
+    "careTips": [
+      "Requires experienced handling and early socialization due to strong guard instincts",
+      "Systematically split white cords to skin level to prevent severe coat matting"
+    ]
+  },
+  "kuvasz": {
+    "profile": {
+      "size": "Giant, 32-52 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Loyal, independent, protective guardian"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "Screened parents; slow growth; lean weight"
+      },
+      {
+        "condition": "Osteochondritis dissecans",
+        "risk": "moderate",
+        "earlySigns": "Front-limb lameness in growing dogs",
+        "prevention": "Controlled growth diet; avoid over-exercising puppies"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel in middle age"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; rest after eating"
+      }
+    ],
+    "careTips": [
+      "Heavy white double coat is unsuited to tropical heat",
+      "Strong guarding instincts require experienced handling"
+    ]
+  },
+  "labrador retriever": {
+    "profile": {
+      "size": "Large, 25-36 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Outgoing, even-tempered, gentle"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness when rising, reluctance to climb stairs",
+        "prevention": "Maintain lean body weight and avoid high-impact jumping during growth"
+      },
+      {
+        "condition": "Obesity",
+        "risk": "high",
+        "earlySigns": "Loss of visible waist, lethargy, rapid weight gain",
+        "prevention": "Strict portion management and daily physical exercise"
+      },
+      {
+        "condition": "Exercise-Induced Collapse (EIC)",
+        "risk": "moderate",
+        "earlySigns": "Leg weakness and collapse after intense exercise",
+        "prevention": "Genetic screening for EIC mutation"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, bumping into objects in low light",
+        "prevention": "DNA testing of parents prior to breeding"
+      }
+    ],
+    "careTips": [
+      "Keep daily calories in check as Labs love food and gain weight easily",
+      "Provide at least 60 minutes of active exercise or swimming daily"
+    ]
+  },
+  "lakeland terrier": {
+    "profile": {
+      "size": "Small, 7-8 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Confident, bold, energetic terrier"
+    },
+    "watchlist": [
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "moderate",
+        "earlySigns": "Hind-leg limp at 5-8 months",
+        "prevention": "Early orthopaedic assessment"
+      },
+      {
+        "condition": "Lens luxation",
+        "risk": "moderate",
+        "earlySigns": "Painful red eye, sudden vision change - EMERGENCY",
+        "prevention": "DNA test available; prompt ophthalmology referral"
+      },
+      {
+        "condition": "Distichiasis",
+        "risk": "low",
+        "earlySigns": "Squinting, tearing",
+        "prevention": "Ophthalmology assessment"
+      }
+    ],
+    "careTips": [
+      "Generally hardy and long-lived",
+      "Harsh coat needs hand-stripping; high prey drive"
+    ]
+  },
+  "leonberg": {
+    "profile": {
+      "size": "Giant, 41-77 kg",
+      "lifespan": "8-9 years",
+      "temperament": "Calm, friendly, gentle giant"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "Screened parents; controlled growth; lean weight"
+      },
+      {
+        "condition": "Osteosarcoma (bone cancer)",
+        "risk": "high",
+        "earlySigns": "Persistent limping, limb swelling",
+        "prevention": "Prompt imaging for any unexplained limp"
+      },
+      {
+        "condition": "Leonberger polyneuropathy",
+        "risk": "moderate",
+        "earlySigns": "Exercise intolerance, hind-limb weakness, noisy breathing",
+        "prevention": "DNA tests available for several forms"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended abdomen, retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss gastropexy"
+      }
+    ],
+    "careTips": [
+      "Very short lifespan for the size; cancer is a leading cause",
+      "Thick double coat is poorly suited to tropical climates"
+    ]
+  },
+  "lhasa": {
+    "profile": {
+      "size": "Small, 6-8 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Independent, confident, watchful"
+    },
+    "watchlist": [
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; annual eye exams"
+      },
+      {
+        "condition": "Renal dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Excessive drinking and urination in young dogs",
+        "prevention": "Early urine and blood screening"
+      },
+      {
+        "condition": "Dry eye (keratoconjunctivitis sicca)",
+        "risk": "moderate",
+        "earlySigns": "Thick discharge, red eyes",
+        "prevention": "Tear testing at annual exams"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; knee checks"
+      }
+    ],
+    "careTips": [
+      "Long coat needs daily brushing or a short clip in humid climates",
+      "Keep facial hair trimmed away from the eyes"
+    ]
+  },
+  "malamute": {
+    "profile": {
+      "size": "Large, 34-39 kg",
+      "lifespan": "10-14 years",
+      "temperament": "Powerful, friendly, independent sled dog"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Hereditary polyneuropathy",
+        "risk": "moderate",
+        "earlySigns": "Exercise intolerance, wobbly gait, noisy breathing",
+        "prevention": "DNA test available"
+      },
+      {
+        "condition": "Chondrodysplasia (dwarfism)",
+        "risk": "moderate",
+        "earlySigns": "Short bowed limbs in puppies",
+        "prevention": "DNA-tested parents"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat thinning, lethargy",
+        "prevention": "Thyroid panel if signs appear"
+      }
+    ],
+    "careTips": [
+      "Heavy arctic coat makes this breed poorly suited to Singapore's climate",
+      "Very high exercise needs and strong prey drive"
+    ]
+  },
+  "malinois": {
+    "profile": {
+      "size": "Medium to Large, 20-30 kg",
+      "lifespan": "14-16 years",
+      "temperament": "Hardworking, alert, intense"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Lameness, reluctance to jump or run",
+        "prevention": "Keep lean and avoid hard impacts during youth"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night vision loss, disorientation in low light",
+        "prevention": "Genetic screening"
+      },
+      {
+        "condition": "Cataracts",
+        "risk": "moderate",
+        "earlySigns": "Cloudy eye lens, vision loss",
+        "prevention": "Ophthalmic checks"
+      },
+      {
+        "condition": "Hemangiosarcoma",
+        "risk": "low",
+        "earlySigns": "Lethargy, pale gums, collapse",
+        "prevention": "Routine senior health monitoring"
+      }
+    ],
+    "careTips": [
+      "Extremely high exercise and mental workload requirements",
+      "Requires highly experienced owners and daily structured training tasks"
+    ]
+  },
+  "maltese dog": {
+    "profile": {
+      "size": "Toy, 2-4 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Gentle, playful, charming"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Intermittent limping, holding hind leg up briefly",
+        "prevention": "Prevent excess weight gain, place ramps for high furniture"
+      },
+      {
+        "condition": "Portosystemic shunt (Liver shunt)",
+        "risk": "moderate",
+        "earlySigns": "Stunted growth, lethargy, disorientation after meals",
+        "prevention": "Bile acid testing during early vet checks"
+      },
+      {
+        "condition": "Periodontal disease",
+        "risk": "high",
+        "earlySigns": "Foul breath, tooth loss, red inflamed gums",
+        "prevention": "Daily dental hygiene routine from puppyhood"
+      },
+      {
+        "condition": "Reverse sneezing",
+        "risk": "moderate",
+        "earlySigns": "Sudden rapid snorting sounds",
+        "prevention": "Keep free from strong irritants like smoke or harsh chemicals"
+      }
+    ],
+    "careTips": [
+      "Wipe eyes daily with specialized wipes to clean tear stains",
+      "Use non-pull harnesses to protect delicate necks and tracheas"
+    ]
+  },
+  "mexican hairless": {
+    "profile": {
+      "size": "Standard (15-25 kg), Toy/Miniature smaller",
+      "lifespan": "13-18 years",
+      "temperament": "Calm, thoughtful, protective"
+    },
+    "watchlist": [
+      {
+        "condition": "Skin dermatitis and sunburn (Hairless variety)",
+        "risk": "high",
+        "earlySigns": "Redness, flaking skin, blackheads, sun-induced burns",
+        "prevention": "Apply dog-safe sunscreen; bathe with gentle non-drying cleanser"
+      },
+      {
+        "condition": "Early tooth loss / Missing premolars",
+        "risk": "high",
+        "earlySigns": "Tartar accumulation, difficulty chewing dry kibble",
+        "prevention": "Daily dental hygiene and soft or rehydrated food options"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Hind leg stiffness, skipping gait",
+        "prevention": "Keep weight optimal throughout adulthood"
+      },
+      {
+        "condition": "Eye conditions (PRA/Cataracts)",
+        "risk": "moderate",
+        "earlySigns": "Hesitation in low light, cloudy pupil appearance",
+        "prevention": "Annual ophthalmic checks"
+      }
+    ],
+    "careTips": [
+      "Moisturize hairless skin regularly to prevent dryness and clogged pores",
+      "Provide clothing or sweaters in cool climate or heavily air-conditioned spaces"
+    ]
+  },
+  "miniature pinscher": {
+    "profile": {
+      "size": "Toy, 4-5 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Fearless, energetic, 'king of toys'"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping steps, hind-leg hop",
+        "prevention": "Lean weight; annual knee grading"
+      },
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "moderate",
+        "earlySigns": "Hind-leg limp at 5-8 months",
+        "prevention": "Early orthopaedic assessment"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; eye exams"
+      },
+      {
+        "condition": "Dental disease",
+        "risk": "high",
+        "earlySigns": "Bad breath, tartar",
+        "prevention": "Daily brushing; regular cleaning"
+      }
+    ],
+    "careTips": [
+      "Escape artist with high prey drive — secure fencing essential",
+      "Harness rather than collar"
+    ]
+  },
+  "miniature poodle": {
+    "profile": {
+      "size": "Small, 5-8 kg",
+      "lifespan": "13-16 years",
+      "temperament": "Bright, trainable, lively"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee grading"
+      },
+      {
+        "condition": "Progressive retinal atrophy (prcd)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA test available — check parents were tested"
+      },
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "moderate",
+        "earlySigns": "Hind-leg limp in young dogs",
+        "prevention": "Early orthopaedic assessment"
+      },
+      {
+        "condition": "Cushing's disease",
+        "risk": "moderate",
+        "earlySigns": "Increased drinking, pot-belly, coat thinning",
+        "prevention": "Blood testing if signs appear"
+      }
+    ],
+    "careTips": [
+      "Non-shedding coat requires professional grooming every 4-8 weeks",
+      "Ears need drying and cleaning; hair grows inside the canal"
+    ]
+  },
+  "miniature schnauzer": {
+    "profile": {
+      "size": "Small, 5.5-9 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Smart, friendly, obedient"
+    },
+    "watchlist": [
+      {
+        "condition": "Hyperlipidemia / Pancreatitis",
+        "risk": "high",
+        "earlySigns": "Vomiting, severe abdominal pain, loss of appetite",
+        "prevention": "Strict low-fat diet; strictly avoid fatty human food scraps"
+      },
+      {
+        "condition": "Diabetes mellitus",
+        "risk": "moderate",
+        "earlySigns": "Excessive thirst, frequent urination, weight loss despite appetite",
+        "prevention": "Maintain active routine and strict low-fat balanced diet"
+      },
+      {
+        "condition": "Schnauzer Comedo Syndrome",
+        "risk": "moderate",
+        "earlySigns": "Small blackheads/bumps along the spine",
+        "prevention": "Gentle skin cleansers and regular grooming"
+      },
+      {
+        "condition": "Cataracts",
+        "risk": "moderate",
+        "earlySigns": "Cloudiness in eyes, bumping into doorways",
+        "prevention": "Annual ophthalmic checks"
+      }
+    ],
+    "careTips": [
+      "Keep beard clean and dry after eating wet food or drinking water",
+      "Adhere strictly to low-fat diets to safeguard pancreatic health"
+    ]
+  },
+  "newfoundland": {
+    "profile": {
+      "size": "Giant, 55-80 kg",
+      "lifespan": "8-10 years",
+      "temperament": "Sweet-tempered, gentle, patient"
+    },
+    "watchlist": [
+      {
+        "condition": "Subvalvular Aortic Stenosis (SAS)",
+        "risk": "high",
+        "earlySigns": "Fatigue during exercise, fainting, heart murmur",
+        "prevention": "Cardiology screening"
+      },
+      {
+        "condition": "Cystinuria (Bladder stones)",
+        "risk": "high",
+        "earlySigns": "Straining to urinate, bloody urine",
+        "prevention": "DNA screening before breeding"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness, limping, difficulty standing up",
+        "prevention": "Controlled growth diets formulated for giant breeds"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Distended stomach, unproductive retching",
+        "prevention": "Limit exercise directly after meals"
+      }
+    ],
+    "careTips": [
+      "Keep cool in warm climates; provide air conditioning and shade",
+      "Daily coat brushing is necessary to prevent severe matting in double coat"
+    ]
+  },
+  "norfolk terrier": {
+    "profile": {
+      "size": "Small, 5-5.5 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Fearless, sociable, sturdy small terrier"
+    },
+    "watchlist": [
+      {
+        "condition": "Mitral valve disease",
+        "risk": "moderate",
+        "earlySigns": "Cough, tiring easily",
+        "prevention": "Annual cardiac auscultation from middle age"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; knee checks"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "low",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents"
+      },
+      {
+        "condition": "Dental disease",
+        "risk": "moderate",
+        "earlySigns": "Bad breath, tartar",
+        "prevention": "Daily brushing"
+      }
+    ],
+    "careTips": [
+      "One of the more robust small terriers",
+      "Harsh coat needs hand-stripping twice yearly"
+    ]
+  },
+  "norwegian elkhound": {
+    "profile": {
+      "size": "Medium, 20-25 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Bold, friendly, hardy northern spitz"
+    },
+    "watchlist": [
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; annual eye exams"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Fanconi syndrome",
+        "risk": "moderate",
+        "earlySigns": "Excessive drinking and urination, weight loss",
+        "prevention": "Urine glucose monitoring; early renal workup"
+      },
+      {
+        "condition": "Obesity",
+        "risk": "high",
+        "earlySigns": "No visible waist",
+        "prevention": "Measured meals — this breed gains weight readily"
+      }
+    ],
+    "careTips": [
+      "Dense arctic coat is poorly suited to tropical humidity",
+      "Prone to weight gain; portion control matters"
+    ]
+  },
+  "norwich terrier": {
+    "profile": {
+      "size": "Small, 5-5.5 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Bold, affectionate, sturdy"
+    },
+    "watchlist": [
+      {
+        "condition": "Upper airway syndrome",
+        "risk": "moderate",
+        "earlySigns": "Noisy breathing, exercise intolerance",
+        "prevention": "Breed-specific airway assessment; keep lean"
+      },
+      {
+        "condition": "Mitral valve disease",
+        "risk": "moderate",
+        "earlySigns": "Cough, tiring easily",
+        "prevention": "Annual cardiac auscultation"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; knee checks"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "low",
+        "earlySigns": "Seizures beginning 1-5 years",
+        "prevention": "Medication; seizure diary"
+      }
+    ],
+    "careTips": [
+      "Upper airway problems are a recognised breed issue — report noisy breathing",
+      "Harsh coat needs hand-stripping"
+    ]
+  },
+  "old english sheepdog": {
+    "profile": {
+      "size": "Large, 27-45 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Adaptable, gentle, shaggy herder"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiff rising, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Primary ciliary dyskinesia",
+        "risk": "moderate",
+        "earlySigns": "Recurrent respiratory infections from puppyhood",
+        "prevention": "Specialist workup; DNA test where available"
+      },
+      {
+        "condition": "Deafness",
+        "risk": "moderate",
+        "earlySigns": "Not responding to sound",
+        "prevention": "BAER testing in puppies"
+      },
+      {
+        "condition": "Immune-mediated haemolytic anaemia",
+        "risk": "moderate",
+        "earlySigns": "Pale gums, weakness, rapid breathing",
+        "prevention": "Prompt veterinary attention for pale gums"
+      }
+    ],
+    "careTips": [
+      "Profuse coat needs daily grooming or a short clip — essential in humidity",
+      "Coat over the eyes should be trimmed or tied back"
+    ]
+  },
+  "otterhound": {
+    "profile": {
+      "size": "Large, 36-52 kg",
+      "lifespan": "10-13 years",
+      "temperament": "Amiable, boisterous, even-tempered"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen abdomen, pacing, unproductive retching",
+        "prevention": "Avoid heavy exertion immediately after meals"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Difficulty rising, swaying gait, lameness",
+        "prevention": "Keep body weight lean during growth phases"
+      },
+      {
+        "condition": "Otitis Externa (Ear infections)",
+        "risk": "high",
+        "earlySigns": "Head shaking, foul ear odor, discharge",
+        "prevention": "Thoroughly dry folded, long ears after swimming or baths"
+      },
+      {
+        "condition": "Glaucoma",
+        "risk": "moderate",
+        "earlySigns": "Eye pain, excessive tearing, redness",
+        "prevention": "Annual eye checks"
+      }
+    ],
+    "careTips": [
+      "Dry their dense double coat and folded ears completely after water exposure",
+      "Be prepared for heavy beard drippage after drinking or feeding"
+    ]
+  },
+  "papillon": {
+    "profile": {
+      "size": "Toy, 3-5 kg",
+      "lifespan": "13-16 years",
+      "temperament": "Happy, alert, friendly"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Intermittent hind leg hopping, sudden limp",
+        "prevention": "Keep body weight in optimal range"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Poor vision in dark settings, bumping into walls",
+        "prevention": "Genetic screening of parent dogs"
+      },
+      {
+        "condition": "Dental disease",
+        "risk": "high",
+        "earlySigns": "Halitosis, tartar, red/swollen gum line",
+        "prevention": "Daily tooth brushing and regular dental checkups"
+      },
+      {
+        "condition": "Hypoglycemia",
+        "risk": "moderate",
+        "earlySigns": "Shaking, lethargy in small puppies",
+        "prevention": "Frequent, consistent feeding schedules during puppyhood"
+      }
+    ],
+    "careTips": [
+      "Maintain active daily play and training sessions to engage high intelligence",
+      "Clean fringe hair behind ears to avoid tangles and knots"
+    ]
+  },
+  "pekinese": {
+    "profile": {
+      "size": "Toy, 3-6 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Dignified, independent, devoted"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic obstructive airway syndrome",
+        "risk": "high",
+        "earlySigns": "Loud snoring, noisy breathing, heat intolerance, blue gums",
+        "prevention": "Keep cool and lean; avoid exertion in heat; surgery in severe cases"
+      },
+      {
+        "condition": "Eye injuries and corneal ulcers",
+        "risk": "high",
+        "earlySigns": "Squinting, pawing at eye, cloudiness",
+        "prevention": "Prominent eyes are highly vulnerable — same-day vet for any squint"
+      },
+      {
+        "condition": "Intervertebral disc disease",
+        "risk": "moderate",
+        "earlySigns": "Yelping when lifted, hind-leg weakness",
+        "prevention": "Keep lean; avoid jumping off furniture"
+      },
+      {
+        "condition": "Skin fold dermatitis",
+        "risk": "moderate",
+        "earlySigns": "Odour or redness in the facial fold",
+        "prevention": "Clean and dry folds several times weekly"
+      }
+    ],
+    "careTips": [
+      "Heat is the acute danger in Singapore — dawn/dusk walks only",
+      "Long coat plus flat face is a difficult combination in humidity"
+    ]
+  },
+  "pembroke": {
+    "profile": {
+      "size": "Medium, 10-14 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Affectionate, alert, tenacious"
+    },
+    "watchlist": [
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "high",
+        "earlySigns": "Reluctance to jump, back pain, weakness in back legs",
+        "prevention": "Prevent jumping off furniture, keep weight slim"
+      },
+      {
+        "condition": "Degenerative Myelopathy (DM)",
+        "risk": "high",
+        "earlySigns": "Loss of coordination in hind legs, dragging toes",
+        "prevention": "Genetic testing for DM gene mutation"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Bunny-hopping, stiff gait",
+        "prevention": "Maintain a slender weight profile"
+      },
+      {
+        "condition": "Von Willebrand's Disease",
+        "risk": "moderate",
+        "earlySigns": "Excessive bleeding from small cuts or nosebleeds",
+        "prevention": "DNA screening before breeding"
+      }
+    ],
+    "careTips": [
+      "Incorporate mental herding games to burn off their high energy",
+      "Brush double coat multiple times a week to control heavy seasonal shedding"
+    ]
+  },
+  "pomeranian": {
+    "profile": {
+      "size": "Toy, 1.5-3 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Spirited, alert, loyal"
+    },
+    "watchlist": [
+      {
+        "condition": "Tracheal collapse",
+        "risk": "high",
+        "earlySigns": "Dry, goose-honk cough, gagging when pulling on collar",
+        "prevention": "Strictly walk on body harnesses, avoid air pollutants"
+      },
+      {
+        "condition": "Alopecia X (Black Skin Disease)",
+        "risk": "moderate",
+        "earlySigns": "Symmetrical hair loss starting on body trunk",
+        "prevention": "Routine skin health checks, proper hormonal screening"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping step, sudden hind limb weakness",
+        "prevention": "Maintain trim body weight and avoid slick flooring"
+      },
+      {
+        "condition": "Hypoglycemia (as puppies)",
+        "risk": "moderate",
+        "earlySigns": "Lethargy, wobbliness, glassiness in eyes",
+        "prevention": "Feed frequent small meals during early growth stage"
+      }
+    ],
+    "careTips": [
+      "Daily brushing of thick double coat is essential to prevent painful mats",
+      "Avoid excessive high jumps on hard tiles to protect small joints"
+    ]
+  },
+  "pug": {
+    "profile": {
+      "size": "Small, 6-8 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Charming, mischievous, loving"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic Airway Syndrome",
+        "risk": "high",
+        "earlySigns": "Noisy breathing, exercise collapse, overheating",
+        "prevention": "Avoid hot humid weather; keep indoors in air-conditioned rooms"
+      },
+      {
+        "condition": "Obesity",
+        "risk": "high",
+        "earlySigns": "Loss of waistline, rapid weight gain, lethargy",
+        "prevention": "Strict portion control and careful treat allocation"
+      },
+      {
+        "condition": "Corneal ulcers",
+        "risk": "high",
+        "earlySigns": "Squinting, eye cloudiness, rubbing face against rug",
+        "prevention": "Protect eyes from sharp bushes/objects, keep face folds dry"
+      },
+      {
+        "condition": "Pug Dog Encephalitis (PDE)",
+        "risk": "moderate",
+        "earlySigns": "Seizures, head tilt, disorientation, gait changes",
+        "prevention": "Genetic screening for PDE susceptibility"
+      }
+    ],
+    "careTips": [
+      "Clean facial skin folds daily to prevent deep fungal/bacterial infections",
+      "Exercise during cool morning/evening hours to prevent heat stroke"
+    ]
+  },
+  "redbone": {
+    "profile": {
+      "size": "Large, 20-32 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Even-tempered, affectionate, eager"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness when standing, bunny-hopping",
+        "prevention": "Keep lean through adulthood"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Redness, odor, head shaking",
+        "prevention": "Inspect and clean ears weekly"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "low",
+        "earlySigns": "Night blindness",
+        "prevention": "Genetic screening"
+      },
+      {
+        "condition": "Bloat",
+        "risk": "moderate",
+        "earlySigns": "Pacing, distended stomach, retching",
+        "prevention": "Avoid post-meal exertion"
+      }
+    ],
+    "careTips": [
+      "Extremely loyal family companion that requires regular cardiovascular workout",
+      "Groom rich red short coat with a rubber curry brush weekly"
+    ]
+  },
+  "rhodesian ridgeback": {
+    "profile": {
+      "size": "Large, 30-40 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Dignified, intelligent, strong-willed"
+    },
+    "watchlist": [
+      {
+        "condition": "Dermoid Sinus",
+        "risk": "high",
+        "earlySigns": "Small tube-like opening/opening along spine skin",
+        "prevention": "Puppy neck and spine palpation by vet"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness when getting up, reluctance to jump",
+        "prevention": "Maintain slim weight profile during puppy growth"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Lethargy, unexplained weight gain, skin changes",
+        "prevention": "Routine blood thyroid screening"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "moderate",
+        "earlySigns": "Swollen hard stomach, non-productive retching",
+        "prevention": "Avoid strenuous exercise after eating"
+      }
+    ],
+    "careTips": [
+      "Needs early, consistent socialization and confident leadership",
+      "Provide ample physical exercise in enclosed, safe areas"
+    ]
+  },
+  "rottweiler": {
+    "profile": {
+      "size": "Large to Extra Large, 35-60 kg",
+      "lifespan": "8-10 years",
+      "temperament": "Confident, fearless, devoted"
+    },
+    "watchlist": [
+      {
+        "condition": "Osteosarcoma (Bone cancer)",
+        "risk": "high",
+        "earlySigns": "Limb lameness, localized swelling, pain",
+        "prevention": "Early orthopedic evaluation for persistent limping"
+      },
+      {
+        "condition": "Aortic Stenosis",
+        "risk": "moderate",
+        "earlySigns": "Fatigue during play, murmur on vet auscultation",
+        "prevention": "Cardiac screening before breeding"
+      },
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Difficulty rising, stiff gait after resting",
+        "prevention": "Keep lean during puppyhood, avoid excessive jump training"
+      },
+      {
+        "condition": "Cruciate ligament rupture",
+        "risk": "high",
+        "earlySigns": "Sudden rear-leg lameness, holding leg up",
+        "prevention": "Maintain lean muscle mass, avoid sudden twist movements"
+      }
+    ],
+    "careTips": [
+      "Early and thorough socialization is critical to ensure a well-adjusted adult",
+      "Provide structured daily physical exercise and working challenges"
+    ]
+  },
+  "saint bernard": {
+    "profile": {
+      "size": "Giant, 55-82 kg",
+      "lifespan": "8-10 years",
+      "temperament": "Gentle, patient, enormous"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness, difficulty with stairs",
+        "prevention": "Screened parents; slow growth; lifelong lean weight"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Entropion and ectropion",
+        "risk": "moderate",
+        "earlySigns": "Squinting, tearing, drooping lids",
+        "prevention": "Surgical correction where needed"
+      },
+      {
+        "condition": "Osteosarcoma",
+        "risk": "moderate",
+        "earlySigns": "Persistent limping, limb swelling",
+        "prevention": "Prompt imaging for unexplained limps"
+      }
+    ],
+    "careTips": [
+      "Heavy coat and huge mass make heat stroke a serious risk in the tropics",
+      "Slow controlled growth as a puppy protects joints for life"
+    ]
+  },
+  "saluki": {
+    "profile": {
+      "size": "Large, 18-27 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Reserved, graceful, ancient sighthound"
+    },
+    "watchlist": [
+      {
+        "condition": "Anaesthetic sensitivity (sighthound)",
+        "risk": "high",
+        "earlySigns": "Prolonged or difficult recovery from sedation",
+        "prevention": "Inform every vet before any procedure"
+      },
+      {
+        "condition": "Dilated cardiomyopathy",
+        "risk": "moderate",
+        "earlySigns": "Exercise intolerance, cough, fainting",
+        "prevention": "Cardiac screening in middle age"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes, lethargy",
+        "prevention": "Thyroid panel; note sighthounds have breed-specific reference ranges"
+      },
+      {
+        "condition": "Haemangiosarcoma",
+        "risk": "low",
+        "earlySigns": "Sudden weakness, pale gums",
+        "prevention": "Prompt attention to collapse or pale gums"
+      }
+    ],
+    "careTips": [
+      "Sighthound bloodwork has different normal ranges — ensure the vet knows",
+      "Extremely fast with high prey drive; secure fencing essential"
+    ]
+  },
+  "samoyed": {
+    "profile": {
+      "size": "Medium-large, 16-30 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Friendly, gentle, famously smiling"
+    },
+    "watchlist": [
+      {
+        "condition": "Hereditary nephritis (X-linked)",
+        "risk": "moderate",
+        "earlySigns": "Excessive drinking and urination, weight loss in young males",
+        "prevention": "DNA test available"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; eye exams"
+      },
+      {
+        "condition": "Diabetes mellitus",
+        "risk": "moderate",
+        "earlySigns": "Increased drinking and urination, weight loss",
+        "prevention": "Lean weight; prompt testing if signs appear"
+      }
+    ],
+    "careTips": [
+      "Dense white arctic coat is poorly suited to Singapore's climate",
+      "Heavy shedding and high grooming demand"
+    ]
+  },
+  "schipperke": {
+    "profile": {
+      "size": "Small, 4-7 kg",
+      "lifespan": "13-15 years",
+      "temperament": "Curious, confident, tireless little black dog"
+    },
+    "watchlist": [
+      {
+        "condition": "MPS IIIB (Sanfilippo syndrome)",
+        "risk": "moderate",
+        "earlySigns": "Wobbliness and behaviour change from 2-4 years",
+        "prevention": "DNA test available — check parents were tested"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; knee checks"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes",
+        "prevention": "Thyroid panel in middle age"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "low",
+        "earlySigns": "Night blindness",
+        "prevention": "Annual eye exams"
+      }
+    ],
+    "careTips": [
+      "Hardy and long-lived; the MPS IIIB DNA test is the key breed screen",
+      "High energy and strong watchdog instincts"
+    ]
+  },
+  "scotch terrier": {
+    "profile": {
+      "size": "Small, 8-10 kg",
+      "lifespan": "11-13 years",
+      "temperament": "Independent, dignified, determined"
+    },
+    "watchlist": [
+      {
+        "condition": "Transitional cell carcinoma (bladder cancer)",
+        "risk": "high",
+        "earlySigns": "Straining to urinate, blood in urine, frequent attempts",
+        "prevention": "Avoid lawn herbicide exposure; investigate urinary signs promptly — notably elevated risk"
+      },
+      {
+        "condition": "Von Willebrand's disease",
+        "risk": "moderate",
+        "earlySigns": "Prolonged bleeding after injury or surgery",
+        "prevention": "DNA test before any procedure"
+      },
+      {
+        "condition": "Scottie cramp",
+        "risk": "moderate",
+        "earlySigns": "Stiff hopping gait after excitement, resolving at rest",
+        "prevention": "Usually manageable; avoid over-excitement"
+      },
+      {
+        "condition": "Craniomandibular osteopathy",
+        "risk": "low",
+        "earlySigns": "Jaw pain and swelling in puppies",
+        "prevention": "Supportive care; usually self-limiting"
+      }
+    ],
+    "careTips": [
+      "Bladder cancer risk is well documented — never ignore urinary changes",
+      "Harsh coat needs regular stripping or clipping"
+    ]
+  },
+  "scottish deerhound": {
+    "profile": {
+      "size": "Giant, 34-50 kg",
+      "lifespan": "8-11 years",
+      "temperament": "Gentle, dignified, quietly athletic"
+    },
+    "watchlist": [
+      {
+        "condition": "Dilated cardiomyopathy",
+        "risk": "high",
+        "earlySigns": "Exercise intolerance, cough, fainting",
+        "prevention": "Annual cardiac screening from middle age"
+      },
+      {
+        "condition": "Osteosarcoma (bone cancer)",
+        "risk": "high",
+        "earlySigns": "Persistent limping, limb swelling",
+        "prevention": "Prompt imaging for any unexplained limp"
+      },
+      {
+        "condition": "Gastric dilatation-volvulus (bloat)",
+        "risk": "high",
+        "earlySigns": "Distended abdomen, unproductive retching - EMERGENCY",
+        "prevention": "Smaller meals; discuss preventive gastropexy"
+      },
+      {
+        "condition": "Anaesthetic sensitivity (sighthound)",
+        "risk": "high",
+        "earlySigns": "Prolonged recovery from sedation",
+        "prevention": "Inform every vet before any procedure"
+      }
+    ],
+    "careTips": [
+      "Giant sighthound: bloat, bone cancer and anaesthesia are the three key risks",
+      "Needs space to gallop safely; calm indoors"
+    ]
+  },
+  "sealyham terrier": {
+    "profile": {
+      "size": "Small, 8-11 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Alert, outgoing, calm"
+    },
+    "watchlist": [
+      {
+        "condition": "Primary Lens Luxation (PLL)",
+        "risk": "high",
+        "earlySigns": "Eye redness, tearing, sudden vision impairment",
+        "prevention": "DNA testing before breeding"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, disorientation",
+        "prevention": "Genetic screening"
+      },
+      {
+        "condition": "Deafness",
+        "risk": "moderate",
+        "earlySigns": "Unresponsiveness to vocal commands",
+        "prevention": "BAER testing in young puppies"
+      },
+      {
+        "condition": "Atopic Dermatitis",
+        "risk": "moderate",
+        "earlySigns": "Paw chewing, red itchy belly",
+        "prevention": "Hypoallergenic bathing and skin care"
+      }
+    ],
+    "careTips": [
+      "Maintain regular daily walks to keep this low-leg terrier fit",
+      "Comb white wire coat and facial fall hair 2-3 times weekly"
+    ]
+  },
+  "shetland sheepdog": {
+    "profile": {
+      "size": "Medium, 6-11 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Loyal, bright, sensitive"
+    },
+    "watchlist": [
+      {
+        "condition": "Collie Eye Anomaly (CEA)",
+        "risk": "moderate",
+        "earlySigns": "Impaired vision, difficulty navigating obstacles",
+        "prevention": "DNA testing before breeding"
+      },
+      {
+        "condition": "MDR1 Gene Mutation (Drug sensitivity)",
+        "risk": "high",
+        "earlySigns": "Severe neurological reaction to specific meds (e.g., ivermectin)",
+        "prevention": "MDR1 genetic test prior to giving certain medications"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Difficulty rising, swaying gait",
+        "prevention": "Keep body weight lean; controlled growth exercise"
+      },
+      {
+        "condition": "Dermatomyositis",
+        "risk": "moderate",
+        "earlySigns": "Hair loss/crusting around face, feet, and tail tip",
+        "prevention": "Genetic screening and prompt skin treatment"
+      }
+    ],
+    "careTips": [
+      "Always check drug safety with vet regarding MDR1 gene sensitivity",
+      "Brush deep double-coat weekly to prevent painful undercoat mats"
+    ]
+  },
+  "shih-tzu": {
+    "profile": {
+      "size": "Small, 4-7.5 kg",
+      "lifespan": "10-16 years",
+      "temperament": "Affectionate, happy, outgoing"
+    },
+    "watchlist": [
+      {
+        "condition": "Brachycephalic Obstructive Airway Syndrome (BOAS)",
+        "risk": "high",
+        "earlySigns": "Loud snoring, heavy panting, heat intolerance",
+        "prevention": "Keep indoors during hot hours, avoid strenuous exercise"
+      },
+      {
+        "condition": "Eye ulcers / Proptosis",
+        "risk": "high",
+        "earlySigns": "Squinting, excessive tearing, cloudiness",
+        "prevention": "Keep face hair trimmed away from eyes, handle gently"
+      },
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "moderate",
+        "earlySigns": "Reluctance to jump, back pain, weakness in hind legs",
+        "prevention": "Discourage jumping off high sofas, maintain lean weight"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "moderate",
+        "earlySigns": "Head shaking, foul smell, ear scratching",
+        "prevention": "Regularly clean and dry floppy ears, especially after baths"
+      }
+    ],
+    "careTips": [
+      "Must stay in air-conditioned or well-ventilated environments during warm midday heat",
+      "Wipe facial folds daily to prevent tear-staining and bacterial dermatitis"
+    ]
+  },
+  "siberian husky": {
+    "profile": {
+      "size": "Medium, 16-27 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Outgoing, mischievous, loyal"
+    },
+    "watchlist": [
+      {
+        "condition": "Cataracts",
+        "risk": "high",
+        "earlySigns": "Clouding of eye lens, vision impairment",
+        "prevention": "Ophthalmic screening before breeding"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, loss of peripheral vision",
+        "prevention": "Genetic eye testing"
+      },
+      {
+        "condition": "Corneal Dystrophy",
+        "risk": "moderate",
+        "earlySigns": "Small opaque spots on cornea surface",
+        "prevention": "Routine vet eye checks"
+      },
+      {
+        "condition": "Zinc-responsive Dermatosis",
+        "risk": "moderate",
+        "earlySigns": "Crusting, hair loss around mouth, eyes, ears",
+        "prevention": "Dietary zinc supplementation under vet guidance"
+      }
+    ],
+    "careTips": [
+      "Ensure super secure fences as Huskies are expert escape artists",
+      "Provide heavy daily aerobic exercise, ideally in cooler weather conditions"
+    ]
+  },
+  "silky terrier": {
+    "profile": {
+      "size": "Toy, 4-5 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Alert, spirited, confident"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee grading"
+      },
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "moderate",
+        "earlySigns": "Hind-leg limp at 5-8 months",
+        "prevention": "Early orthopaedic assessment"
+      },
+      {
+        "condition": "Tracheal collapse",
+        "risk": "moderate",
+        "earlySigns": "Goose-honk cough",
+        "prevention": "Harness instead of collar"
+      },
+      {
+        "condition": "Dental disease",
+        "risk": "high",
+        "earlySigns": "Bad breath, tartar",
+        "prevention": "Daily brushing; regular cleaning"
+      }
+    ],
+    "careTips": [
+      "Fine silky coat needs daily brushing to prevent mats",
+      "Harness rather than collar"
+    ]
+  },
+  "soft-coated wheaten terrier": {
+    "profile": {
+      "size": "Medium, 14-20 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Happy, exuberant, friendly"
+    },
+    "watchlist": [
+      {
+        "condition": "Protein-losing nephropathy",
+        "risk": "high",
+        "earlySigns": "Weight loss, swelling of limbs or abdomen, increased drinking",
+        "prevention": "Annual urine protein:creatinine testing from middle age"
+      },
+      {
+        "condition": "Protein-losing enteropathy",
+        "risk": "high",
+        "earlySigns": "Chronic diarrhoea, vomiting, weight loss",
+        "prevention": "Early gastroenterology workup; annual albumin checks"
+      },
+      {
+        "condition": "Renal dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Excessive drinking and urination in young dogs",
+        "prevention": "Early renal screening"
+      },
+      {
+        "condition": "Addison's disease",
+        "risk": "moderate",
+        "earlySigns": "Lethargy, vomiting, collapse under stress",
+        "prevention": "Blood testing if vague recurring illness"
+      }
+    ],
+    "careTips": [
+      "Protein-losing diseases are the defining breed risk — annual urine testing is the key screen",
+      "Soft coat mats readily; regular grooming needed"
+    ]
+  },
+  "staffordshire bullterrier": {
+    "profile": {
+      "size": "Medium, 11-17 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Courageous, affectionate, people-loving"
+    },
+    "watchlist": [
+      {
+        "condition": "L-2-hydroxyglutaric aciduria",
+        "risk": "moderate",
+        "earlySigns": "Wobbliness, behaviour change, seizures in young dogs",
+        "prevention": "DNA test available — check parents were tested"
+      },
+      {
+        "condition": "Hereditary cataracts",
+        "risk": "moderate",
+        "earlySigns": "Cloudy eyes, vision change",
+        "prevention": "DNA test available; annual eye exams"
+      },
+      {
+        "condition": "Skin allergies (atopy)",
+        "risk": "high",
+        "earlySigns": "Paw licking, itchy belly, recurrent ear infections",
+        "prevention": "Early allergy workup; year-round parasite control"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      }
+    ],
+    "careTips": [
+      "Check local ownership regulations — this breed type is restricted in Singapore",
+      "Skin allergies flare in humid climates"
+    ]
+  },
+  "standard poodle": {
+    "profile": {
+      "size": "Standard, 20-32 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Proud, highly intelligent, active"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen abdomen, pacing, retching without vomiting",
+        "prevention": "Feed multiple small meals, use slow feeder bowls"
+      },
+      {
+        "condition": "Sebaceous Adenitis",
+        "risk": "moderate",
+        "earlySigns": "Scaling skin, hair loss, silver dander",
+        "prevention": "Regular skin monitoring and moisturizing baths"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Loss of night vision, dilated pupils",
+        "prevention": "Genetic health screening prior to breeding"
+      },
+      {
+        "condition": "Addison's Disease (Hypoadrenocorticism)",
+        "risk": "moderate",
+        "earlySigns": "Lethargy, vomiting, intermittent weakness",
+        "prevention": "Routine blood chemistry tests during regular vet checkups"
+      }
+    ],
+    "careTips": [
+      "Schedule regular coat trimming every 4-6 weeks to prevent severe matting",
+      "Engage their high cognitive capacity with puzzle toys and agility games"
+    ]
+  },
+  "standard schnauzer": {
+    "profile": {
+      "size": "Medium, 14-20 kg",
+      "lifespan": "13-16 years",
+      "temperament": "Spirited, alert, robust"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      },
+      {
+        "condition": "Progressive retinal atrophy",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA-tested parents; eye exams"
+      },
+      {
+        "condition": "Dilated cardiomyopathy",
+        "risk": "low",
+        "earlySigns": "Exercise intolerance, cough",
+        "prevention": "Cardiac screening in middle age"
+      },
+      {
+        "condition": "Allergic skin disease",
+        "risk": "moderate",
+        "earlySigns": "Scratching, paw licking",
+        "prevention": "Parasite control; early allergy workup"
+      }
+    ],
+    "careTips": [
+      "Generally robust and long-lived for its size",
+      "Harsh coat needs stripping or clipping every few months"
+    ]
+  },
+  "sussex spaniel": {
+    "profile": {
+      "size": "Medium, 16-20 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Calm, affectionate, cheerful"
+    },
+    "watchlist": [
+      {
+        "condition": "Otitis Externa (Ear infections)",
+        "risk": "high",
+        "earlySigns": "Head shaking, ear discharge, foul smell",
+        "prevention": "Clean and dry heavy floppy ears regularly"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness after rest, reluctance to climb steps",
+        "prevention": "Maintain slim weight profile"
+      },
+      {
+        "condition": "Pyruvate Kinase Deficiency (PKD)",
+        "risk": "moderate",
+        "earlySigns": "Anemia, exercise fatigue, pale gums",
+        "prevention": "Genetic screening of parents"
+      },
+      {
+        "condition": "Intervertebral Disc Disease (IVDD)",
+        "risk": "moderate",
+        "earlySigns": "Back stiffness, weakness in back legs",
+        "prevention": "Prevent jumping off elevated furniture"
+      }
+    ],
+    "careTips": [
+      "Strict food management is vital as the breed gains weight very easily",
+      "Clean rich golden-liver coat and heavy ears frequently after outdoor walks"
+    ]
+  },
+  "tibetan mastiff": {
+    "profile": {
+      "size": "Giant, 34-73 kg",
+      "lifespan": "10-12 years",
+      "temperament": "Independent, aloof, powerful guardian"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip and elbow dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiff rising, lameness",
+        "prevention": "Screened parents; slow growth; lean weight"
+      },
+      {
+        "condition": "Canine inherited demyelinative neuropathy",
+        "risk": "moderate",
+        "earlySigns": "Weakness and wobbliness in puppies",
+        "prevention": "DNA test available"
+      },
+      {
+        "condition": "Hypothyroidism",
+        "risk": "moderate",
+        "earlySigns": "Weight gain, coat changes, lethargy",
+        "prevention": "Thyroid panel in middle age"
+      },
+      {
+        "condition": "Entropion",
+        "risk": "moderate",
+        "earlySigns": "Squinting, tearing",
+        "prevention": "Surgical correction where needed"
+      }
+    ],
+    "careTips": [
+      "Massive coat makes this breed genuinely unsuited to tropical climates",
+      "Strong independent guardian temperament; needs experienced ownership"
+    ]
+  },
+  "tibetan terrier": {
+    "profile": {
+      "size": "Medium, 8-14 kg",
+      "lifespan": "14-16 years",
+      "temperament": "Sensitive, loyal, agile"
+    },
+    "watchlist": [
+      {
+        "condition": "Progressive retinal atrophy (PRA3)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness",
+        "prevention": "DNA test available; annual eye exams"
+      },
+      {
+        "condition": "Primary lens luxation",
+        "risk": "moderate",
+        "earlySigns": "Painful red eye, sudden vision change - EMERGENCY",
+        "prevention": "DNA test available; prompt ophthalmology referral"
+      },
+      {
+        "condition": "Neuronal ceroid lipofuscinosis",
+        "risk": "low",
+        "earlySigns": "Behaviour change, vision loss, incoordination",
+        "prevention": "DNA test available"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Stiffness, altered gait",
+        "prevention": "Screened parents; lean weight"
+      }
+    ],
+    "careTips": [
+      "Long-lived; eye DNA screening of parents is the key check",
+      "Long coat needs regular grooming or a shorter clip in humidity"
+    ]
+  },
+  "toy poodle": {
+    "profile": {
+      "size": "Toy, 2-4 kg",
+      "lifespan": "12-15+ years",
+      "temperament": "Intelligent, lively, affectionate"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Intermittent skipping, sudden hind-leg limping",
+        "prevention": "Maintain optimal weight, avoid high impact jumps off high furniture"
+      },
+      {
+        "condition": "Tracheal collapse",
+        "risk": "moderate",
+        "earlySigns": "Honking cough when excited or pulling on leash",
+        "prevention": "Use a chest harness instead of a collar"
+      },
+      {
+        "condition": "Periodontal disease",
+        "risk": "high",
+        "earlySigns": "Bad breath, tartar build-up, bleeding gums",
+        "prevention": "Daily tooth brushing, regular professional dental scaling"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Night blindness, bump into objects in dim light",
+        "prevention": "Genetic screening before breeding, regular eye exams"
+      }
+    ],
+    "careTips": [
+      "Keep up with daily coat brushing and regular grooming in hot weather",
+      "Ensure adequate indoor mental stimulation to prevent anxiety"
+    ]
+  },
+  "toy terrier": {
+    "profile": {
+      "size": "Toy, 2-4 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Alert, quick, spirited"
+    },
+    "watchlist": [
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; annual knee grading"
+      },
+      {
+        "condition": "Legg-Calve-Perthes disease",
+        "risk": "moderate",
+        "earlySigns": "Hind-leg limp in young dogs",
+        "prevention": "Early orthopaedic assessment"
+      },
+      {
+        "condition": "Dental disease",
+        "risk": "high",
+        "earlySigns": "Bad breath, tartar",
+        "prevention": "Daily brushing"
+      },
+      {
+        "condition": "Hypoglycaemia (puppies)",
+        "risk": "moderate",
+        "earlySigns": "Weakness, wobbliness, collapse in very small puppies",
+        "prevention": "Frequent small meals in young puppies"
+      }
+    ],
+    "careTips": [
+      "Very small size means fracture and hypoglycaemia risks in puppyhood",
+      "Harness rather than collar"
+    ]
+  },
+  "vizsla": {
+    "profile": {
+      "size": "Medium, 18-30 kg",
+      "lifespan": "12-14 years",
+      "temperament": "Affectionate, energetic, gentle"
+    },
+    "watchlist": [
+      {
+        "condition": "Epilepsy",
+        "risk": "moderate",
+        "earlySigns": "Seizures, muscle spasms, loss of consciousness",
+        "prevention": "Neurological testing and medication management"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Hind leg stiffness, reduced activity",
+        "prevention": "Keep body weight lean"
+      },
+      {
+        "condition": "Sebaceous Adenitis",
+        "risk": "moderate",
+        "earlySigns": "Hair loss, dry scaling skin",
+        "prevention": "Skin barrier care and moisturizing"
+      },
+      {
+        "condition": "Progressive Retinal Atrophy (PRA)",
+        "risk": "moderate",
+        "earlySigns": "Poor night vision, dilated pupils",
+        "prevention": "Genetic DNA testing"
+      }
+    ],
+    "careTips": [
+      "Known as 'Velcro dogs'; require high social interaction with family",
+      "Ensure vigorous daily aerobic exercise to burn high energy levels"
+    ]
+  },
+  "walker hound": {
+    "profile": {
+      "size": "Large, 23-32 kg",
+      "lifespan": "12-13 years",
+      "temperament": "Smart, brave, athletic"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "moderate",
+        "earlySigns": "Difficulty rising, stiff hind leg gait",
+        "prevention": "Maintain slim physique"
+      },
+      {
+        "condition": "Ear infections",
+        "risk": "high",
+        "earlySigns": "Head shaking, foul smell, scratching ear",
+        "prevention": "Weekly ear inspection and cleaning"
+      },
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "moderate",
+        "earlySigns": "Distended belly, pacing, retching",
+        "prevention": "Limit active exercise right after feeding"
+      },
+      {
+        "condition": "Eye conditions (PRA)",
+        "risk": "low",
+        "earlySigns": "Night vision decline",
+        "prevention": "Ophthalmic checks"
+      }
+    ],
+    "careTips": [
+      "Incorporate tracking or scent games to provide mental fulfillment",
+      "Wipe down short coat weekly to remove dust and loose hair"
+    ]
+  },
+  "weimaraner": {
+    "profile": {
+      "size": "Large, 25-40 kg",
+      "lifespan": "11-14 years",
+      "temperament": "Friendly, energetic, obedient"
+    },
+    "watchlist": [
+      {
+        "condition": "Gastric Dilation-Volvulus (Bloat)",
+        "risk": "high",
+        "earlySigns": "Swollen stomach, unproductive retching",
+        "prevention": "Prevent rapid eating and rest after meals"
+      },
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Difficulty rising, hind limb stiffness",
+        "prevention": "Maintain optimal body weight"
+      },
+      {
+        "condition": "Spinal Dysraphism",
+        "risk": "moderate",
+        "earlySigns": "Bunny-hopping gait in young puppies",
+        "prevention": "Genetic screening before breeding"
+      },
+      {
+        "condition": "Entropion",
+        "risk": "moderate",
+        "earlySigns": "Eyelids rolling inward, eye watering",
+        "prevention": "Surgical evaluation if severe"
+      }
+    ],
+    "careTips": [
+      "Needs constant human companionship to prevent severe separation anxiety",
+      "Provide high-intensity physical outlets daily"
+    ]
+  },
+  "welsh springer spaniel": {
+    "profile": {
+      "size": "Medium, 16-25 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Loyal, active, affectionate"
+    },
+    "watchlist": [
+      {
+        "condition": "Hip dysplasia",
+        "risk": "high",
+        "earlySigns": "Stiffness when rising, bunny-hopping gait",
+        "prevention": "Keep body weight lean"
+      },
+      {
+        "condition": "Otitis Externa",
+        "risk": "high",
+        "earlySigns": "Unpleasant ear odor, head shaking",
+        "prevention": "Regular ear cleaning and drying"
+      },
+      {
+        "condition": "Glaucoma",
+        "risk": "moderate",
+        "earlySigns": "Eye redness, pain, cloudy cornea",
+        "prevention": "Annual eye checks"
+      },
+      {
+        "condition": "Epilepsy",
+        "risk": "low",
+        "earlySigns": "Sudden seizures, loss of motor control",
+        "prevention": "Neurological examination"
+      }
+    ],
+    "careTips": [
+      "Needs regular cardiovascular exercise to burn off energy",
+      "Brush attractive red-and-white coat twice weekly to prevent tangles"
+    ]
+  },
+  "west highland white terrier": {
+    "profile": {
+      "size": "Small, 6-10 kg",
+      "lifespan": "12-16 years",
+      "temperament": "Friendly, independent, active"
+    },
+    "watchlist": [
+      {
+        "condition": "Atopic Dermatitis ('Westie Jaw/Skin')",
+        "risk": "high",
+        "earlySigns": "Constant foot chewing, red belly skin, scratching",
+        "prevention": "Routine skin barrier maintenance and allergen control"
+      },
+      {
+        "condition": "Pulmonary Fibrosis ('Westie Lung')",
+        "risk": "moderate",
+        "earlySigns": "Crackling breath sounds, reduced stamina, coughing",
+        "prevention": "Prompt respiratory evaluation if stamina drops"
+      },
+      {
+        "condition": "Craniomandibular Osteopathy",
+        "risk": "moderate",
+        "earlySigns": "Painful jaw, difficulty eating during growth phase",
+        "prevention": "Genetic screening and early veterinary intervention"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Intermittent hind limb stiffness or limping",
+        "prevention": "Keep muscle tone strong with regular walk routines"
+      }
+    ],
+    "careTips": [
+      "Keep double coat well-groomed and dried thoroughly after walks",
+      "Address skin itchiness early to prevent secondary bacterial infections"
+    ]
+  },
+  "whippet": {
+    "profile": {
+      "size": "Medium, 9-19 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Gentle, quiet indoors, explosive outdoors"
+    },
+    "watchlist": [
+      {
+        "condition": "Anaesthetic sensitivity (sighthound)",
+        "risk": "high",
+        "earlySigns": "Prolonged or difficult recovery from sedation",
+        "prevention": "Inform every vet before any procedure"
+      },
+      {
+        "condition": "Mitral valve disease",
+        "risk": "moderate",
+        "earlySigns": "Cough, tiring easily",
+        "prevention": "Annual cardiac auscultation from middle age"
+      },
+      {
+        "condition": "Skin lacerations",
+        "risk": "moderate",
+        "earlySigns": "Cuts and tears from running",
+        "prevention": "Thin skin tears easily — check after off-leash runs"
+      },
+      {
+        "condition": "Deafness",
+        "risk": "low",
+        "earlySigns": "Not responding to sound",
+        "prevention": "BAER testing in puppies"
+      }
+    ],
+    "careTips": [
+      "Sighthound bloodwork and anaesthesia have breed-specific norms — tell the vet",
+      "Calm indoors but needs regular safe sprinting space"
+    ]
+  },
+  "wire-haired fox terrier": {
+    "profile": {
+      "size": "Small, 7-9 kg",
+      "lifespan": "12-15 years",
+      "temperament": "Bold, alert, endlessly energetic"
+    },
+    "watchlist": [
+      {
+        "condition": "Primary lens luxation",
+        "risk": "high",
+        "earlySigns": "Painful red eye, sudden vision change - EMERGENCY",
+        "prevention": "DNA test available; prompt ophthalmology referral"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "moderate",
+        "earlySigns": "Skipping steps",
+        "prevention": "Lean weight; knee checks"
+      },
+      {
+        "condition": "Deafness",
+        "risk": "moderate",
+        "earlySigns": "Not responding to sound",
+        "prevention": "BAER testing in puppies"
+      },
+      {
+        "condition": "Atopic dermatitis",
+        "risk": "moderate",
+        "earlySigns": "Paw licking, itchy skin",
+        "prevention": "Early allergy workup; parasite control"
+      }
+    ],
+    "careTips": [
+      "Lens luxation is a true emergency — sudden eye pain needs same-day care",
+      "Wiry coat needs hand-stripping; very high prey drive"
+    ]
+  },
+  "yorkshire terrier": {
+    "profile": {
+      "size": "Toy, 2-3.5 kg",
+      "lifespan": "11-15 years",
+      "temperament": "Feisty, affectionate, bold"
+    },
+    "watchlist": [
+      {
+        "condition": "Portosystemic Shunt (PSS)",
+        "risk": "moderate",
+        "earlySigns": "Stunted growth, disorientation, lethargy, drooling",
+        "prevention": "Blood screening/bile acid tests in early life"
+      },
+      {
+        "condition": "Tracheal collapse",
+        "risk": "high",
+        "earlySigns": "Goose-honk coughing, distress when pulled by neck collar",
+        "prevention": "Exclusively walk using a harness"
+      },
+      {
+        "condition": "Dental decay / Retained baby teeth",
+        "risk": "high",
+        "earlySigns": "Double rows of teeth, bad breath, tartar build-up",
+        "prevention": "Vet extraction of persistent baby teeth, daily brushing"
+      },
+      {
+        "condition": "Patellar luxation",
+        "risk": "high",
+        "earlySigns": "Gait alteration, sudden skip when trotting",
+        "prevention": "Keep weight optimal and avoid impact jumps"
+      }
+    ],
+    "careTips": [
+      "Tie or trim hair above eyes to maintain clear line of sight",
+      "Establish daily brushing habits for delicate, fine hair coat"
+    ]
+  },
+  "_default": {
+    "profile": {
+      "size": "Varies",
+      "lifespan": "10-14 years typical",
+      "temperament": "Varies by breed and individual"
+    },
+    "watchlist": [
+      {
+        "condition": "Dental disease",
+        "risk": "moderate",
+        "earlySigns": "Bad breath, tartar buildup",
+        "prevention": "Daily brushing; annual dental checks"
+      },
+      {
+        "condition": "Obesity",
+        "risk": "moderate",
+        "earlySigns": "No visible waist, ribs hard to feel",
+        "prevention": "Measured meals and regular exercise"
+      },
+      {
+        "condition": "Parasites (heartworm, ticks)",
+        "risk": "moderate",
+        "earlySigns": "Often none until advanced",
+        "prevention": "Year-round preventives - essential in tropical climates"
+      }
+    ],
+    "careTips": [
+      "Annual vet checkups; twice-yearly for seniors",
+      "This breed isn't in our detailed database yet - ask a vet about breed-specific screening"
+    ]
+  }
+}
