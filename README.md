@@ -1,6 +1,14 @@
 # PawScan v4 — Beginner-Friendly Edition
-## Run it
-Scan the QR with Expo Go (same Wi-Fi). If versions complain, run `npx expo install --fix`.
+## Start the app
+
+git clone <https://github.com/juzt1n/pawscan> pawscan-v4
+cd pawscan-v4
+npm install
+npx expo start
+
+Scan the QR with Expo Go (same Wi-Fi). On Android, scan it inside the Expo Go
+app; on iOS, scan it with the Camera app and tap the banner. The app loads on
+your phone over Wi-Fi. If versions complain, run `npx expo install --fix`.
 
 Demo logins:
 - Any email registers a normal personal account.
