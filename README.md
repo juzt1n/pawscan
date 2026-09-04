@@ -10,6 +10,10 @@ Scan the QR with Expo Go (same Wi-Fi). On Android, scan it inside the Expo Go
 app; on iOS, scan it with the Camera app and tap the banner. The app loads on
 your phone over Wi-Fi. If versions complain, run `npx expo install --fix`.
 
+Demo register: 
+- Personal acount: any email, any password
+- Busniess account: UEN: 9-10 characters letters and digits, AVS: AVS-XXXX-XXX
+
 Demo logins:
 - Any email registers a normal personal account.
 - `admin@pawscan.demo` (any password) opens the admin business-review queue.

@@ -5,7 +5,9 @@
     "version": "3.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "splash": { "backgroundColor": "#243E2C" },
+    "splash": {
+      "backgroundColor": "#243E2C"
+    },
     "ios": {
       "infoPlist": {
         "NSCameraUsageDescription": "PawScan uses the camera to photograph dogs for breed identification.",
@@ -13,7 +15,14 @@
       }
     },
     "android": {
-      "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
-    }
+      "permissions": [
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ]
+    },
+    "plugins": [
+      "expo-sharing",
+      "expo-status-bar"
+    ]
   }
 }

@@ -14,6 +14,7 @@
 import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { T } from "../components/shared";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const SLIDES = [
   {
@@ -38,12 +39,13 @@ const SLIDES = [
 ];
 
 export default function OnboardingScreen({ onDone }) {
+  const insets = useSafeAreaInsets();
   const [i, setI] = useState(0);
   const slide = SLIDES[i];
   const last = i === SLIDES.length - 1;
 
   return (
-    <View style={styles.wrap}>
+   <View style={[styles.wrap, { paddingTop: insets.top + 12, paddingBottom: insets.bottom + 8 }]}>
       {/* Skip is available until the final (disclaimer) slide */}
       <View style={styles.topBar}>
         {!last ? (
@@ -97,7 +99,7 @@ export default function OnboardingScreen({ onDone }) {
 }
 
 const styles = StyleSheet.create({
-  wrap: { flex: 1, backgroundColor: T.mossDark, padding: 24, paddingTop: 20 },
+  wrap: { flex: 1, backgroundColor: T.mossDark, padding: 24 },
   topBar: { flexDirection: "row", justifyContent: "flex-end", height: 30 },
   skip: { color: T.paper, opacity: 0.7, fontSize: 14, fontWeight: "600" },
   body: { flex: 1, justifyContent: "center" },

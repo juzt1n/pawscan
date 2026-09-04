@@ -94,14 +94,14 @@ export default function ForgotPasswordScreen({ onBack }) {
       )}
 
       {/* The security rationale, shown in-app so the demo explains itself */}
-      <View style={styles.noteBox}>
+      {/* <View style={styles.noteBox}>
         <Text style={styles.noteTitle}>WHY THE MESSAGE IS VAGUE</Text>
         <Text style={styles.noteText}>
           The same confirmation appears whether or not the address is
           registered. This prevents the form from being used to discover which
           email addresses have PawScan accounts.
         </Text>
-      </View>
+      </View> */}
     </KeyboardAvoidingView>
   );
 }

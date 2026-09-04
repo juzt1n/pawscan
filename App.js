@@ -74,8 +74,9 @@ export default function App() {
     // admin has changed their status since last login.
     (async () => {
       // First-launch tutorial: show it only if it hasn't been seen before
-      const seen = await hasSeenOnboarding();
-      if (!seen) setShowOnboarding(true);
+      // const seen = await hasSeenOnboarding();
+      // if (!seen) setShowOnboarding(true);
+      setShowOnboarding(true); // for testing purposes (remove this when not needed anymore)
 
       let saved = await getSession();
       if (saved?.accountType === "business") saved = await refreshSessionStatus();
