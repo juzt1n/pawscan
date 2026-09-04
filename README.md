@@ -1,4 +1,4 @@
-# PawScan v4 — Beginner-Friendly Edition
+# PawScan v4 
 ## Start the app
 
 git clone <https://github.com/juzt1n/pawscan> pawscan-v4
