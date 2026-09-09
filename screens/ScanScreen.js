@@ -177,11 +177,6 @@ export default function ScanScreen({ session, onUpgrade}) {
           <TouchableOpacity style={styles.secondaryBtn} onPress={() => pickImage(false)}>
             <Text style={styles.secondaryBtnText}>Choose from gallery</Text>
           </TouchableOpacity>
-          {USE_MOCK && (
-            <Text style={styles.mockHint}>
-              Demo mode: results rotate through 4 test scenarios. Any photo works.
-            </Text>
-          )}
         </View>
       )}
 
