@@ -30,7 +30,6 @@ Demo logins:
 6. `screens/ScanScreen.js` — the main flow: photo, analyze, save, show
 7. The other screens and `components/` — each one explains itself at the top
 
-## The big ideas (worth understanding for the report and viva)
 
 The mock seam. The app never talks to the real AI directly. Everything goes
 through `api.js`, which today returns fake answers shaped exactly like the real
@@ -47,7 +46,7 @@ approves them, then a clinic dashboard; the admin email goes straight to the
 review queue. Free users get breed identification only — the health report is
 locked behind Premium, with an upgrade prompt in its place.
 
-Honest limits (say these proudly, don't hide them):
+Honest limits:
 
 - Login is mocked. No server, no password checking yet.
 - The AI is mocked. Four rotating scenarios, not real predictions.
