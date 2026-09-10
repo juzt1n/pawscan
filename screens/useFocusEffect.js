@@ -1,12 +1,6 @@
 // ============================================================================
 // screens/useFocusEffect.js — "RELOAD MY DATA WHEN I COME BACK TO THIS TAB"
 // ============================================================================
-// PLAIN ENGLISH — the problem this solves:
-// You scan a dog (that saves a record), then tap the History tab. History
-// must RE-READ its list at that moment, or it would show the old, stale list.
-// Screens use this hook to say "run this loading code whenever the user
-// arrives at me".
-//
 // The honest fine print: in OUR app, switching tabs destroys the old screen
 // and builds the new one fresh, so "arriving" = "being built" — and React's
 // normal useEffect (run once when built) is enough. That's all this file does.

@@ -1,12 +1,6 @@
 // ============================================================================
 // screens/OnboardingScreen.js — FIRST LAUNCH TUTORIAL  (URS 2.6)
 // ============================================================================
-// PLAIN ENGLISH: Three swipeable slides shown once, the very first time the
-// app opens. The URS promises "an in-app onboarding tutorial shown on first
-// launch, explaining scanning, health reports, and the veterinary disclaimer"
-// — so slide 3 is the disclaimer, deliberately, and it is the last thing the
-// user reads before reaching the app.
-//
 // "Shown once" is handled by a flag in storage (pawscan:onboarded), so it
 // survives closing the app but is cleared by "reset app data".
 // ============================================================================

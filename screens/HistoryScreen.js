@@ -1,10 +1,6 @@
 // ============================================================================
 // screens/HistoryScreen.js — PAST SCANS  (PRD #11 view, #12 delete)
 // ============================================================================
-// PLAIN ENGLISH: Shows the saved scan list, newest first. Each row has the
-// photo thumbnail, breed, confidence, and date. The ✕ deletes a row — after
-// an "are you sure?" popup, because deletions can't be undone.
-//
 // FlatList (instead of ScrollView + map) is React Native's efficient list:
 // it only draws the rows currently on screen, so even 100 scans stay smooth.
 // ============================================================================

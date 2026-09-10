@@ -1,12 +1,6 @@
 // ============================================================================
 // screens/AdminScreen.js — BUSINESS APPLICATION REVIEW  (URS #29)
 // ============================================================================
-// PLAIN ENGLISH: The administrator's queue. Each pending application shows the
-// two identifiers that must be verified against Singapore's public registers:
-//
-//   UEN         -> check on ACRA's BizFile register
-//   AVS licence -> check on the NParks AVS list of licensed vet centres
-//
 // The admin approves (listing goes live) or rejects (with a reason the clinic
 // will see). Verified listings can also be suspended later - licences lapse
 // and clinics close, so "verified" must be revocable.

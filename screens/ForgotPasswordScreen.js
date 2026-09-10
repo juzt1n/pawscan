@@ -1,11 +1,7 @@
 // ============================================================================
 // screens/ForgotPasswordScreen.js — PASSWORD RESET REQUEST  (URS #05)
 // ============================================================================
-// PLAIN ENGLISH: The user types their email and we say "if that account
-// exists, we've sent a link".
-//
-// SECURITY POINT WORTH KNOWING (good material for the report): we show the
-// SAME confirmation whether or not the email is registered. If we said
+// we show the SAME confirmation whether or not the email is registered. If we said
 // "no such account", an attacker could type addresses one by one and learn
 // who has a PawScan account — that's called account enumeration. Identical
 // responses close that hole. The cost is a slightly vaguer message; the

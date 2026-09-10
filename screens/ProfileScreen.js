@@ -1,7 +1,6 @@
 // ============================================================================
 // screens/ProfileScreen.js — ACCOUNT, PREMIUM, DOGS, EXPORTS, LOGOUT
 // ============================================================================
-// PLAIN ENGLISH: Top to bottom, this screen shows:
 //   1. Account card (name, email, FREE/PREMIUM badge)
 //   2. "Upgrade to Premium" (PRD #17 — the payment is faked)
 //   3. My Dogs (PRD #23) — premium only; free users see a locked message

@@ -1,22 +1,5 @@
 // ============================================================================
-// App.js — THE FRONT DOOR OF THE APP
-// ============================================================================
-// PLAIN ENGLISH: This file decides what you see, in this order:
-//   1. A brief spinner while we check the phone's storage: "was someone
-//      already logged in?"
-//   2. If nobody is logged in → the login/register screen.
-//   3. If someone is logged in → the main app: a header, the current tab's
-//      screen, and the tab bar at the bottom (Scan / History / Breeds /
-//      Profile).
-//
-// "Which tab is open" is just a piece of state (a variable React watches).
-// Tapping a tab changes that variable, and React re-draws the screen area.
-//
-// SAFE AREA NOTE: modern Androids let apps draw UNDER the clock/status bar
-// and UNDER the system buttons at the bottom. Without protection, our header
-// collides with the clock and our tab bar becomes untappable (we hit this
-// bug for real!). The SafeAreaProvider/SafeAreaView pair from
-// react-native-safe-area-context measures those zones and pads around them.
+// App.js — Main App
 // ============================================================================
 
 import { useEffect, useState } from "react";

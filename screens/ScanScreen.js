@@ -1,8 +1,7 @@
 // ============================================================================
 // screens/ScanScreen.js — THE MAIN EVENT
 // ============================================================================
-// PLAIN ENGLISH: The flow on this screen, matching PRD #07/#08/#09:
-//   1. Show the quota banner ("Scans left this day: 4 / 5+")
+//   1. Show the quota banner ("Scans left this day: 2/3+")
 //   2. User takes a photo (camera) or picks one (gallery)
 //   3. User taps "Identify this dog"
 //   4. We check they still have scans left (free users get 5/day; the

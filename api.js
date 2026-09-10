@@ -1,10 +1,6 @@
 // ============================================================================
-// api.js — THE ONE DOOR TO "THE AI"
+// api.js — connecting mock to app
 // ============================================================================
-// PLAIN ENGLISH: Every screen that wants a dog analyzed calls ONE function
-// from this file: analyzeImage(). This file then decides where the answer
-// comes from:
-//
 //   USE_MOCK = true   →  the fake AI in mock.js (works today, no internet)
 //   USE_MOCK = false  →  our real Express server on the laptop, which asks
 //                        the real AI model — the app itself doesn't change!
@@ -88,7 +84,7 @@ function buildResult(ml) {
 }
 
 // ----------------------------------------------------------------------------
-// THE ONE DOOR. Screens call this and get a finished result back.
+// Screens call this and get a finished result back.
 // ----------------------------------------------------------------------------
 export async function analyzeImage(image) {
   if (USE_MOCK) {

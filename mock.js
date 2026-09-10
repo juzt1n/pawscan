@@ -1,22 +1,6 @@
 // ============================================================================
 // mock.js — THE FAKE AI
 // ============================================================================
-// PLAIN ENGLISH: The real AI model lives in Google Colab and isn't connected
-// yet. This file PRETENDS to be it. Every time you press "Identify this dog",
-// the app gets one of the 4 fake answers below (in rotation), formatted
-// EXACTLY the way the real AI will format its answers.
-//
-// Why bother? Because it lets us build and test the whole app today. On
-// integration day we flip ONE switch (in api.js) and the real AI takes over —
-// and nothing else needs to change, because the "shape" of the answer is
-// identical.
-//
-// The shape (agreed with our ML teammate — do not change without agreeing!):
-//   predictions:     the AI's top-5 guesses, best first,
-//                    each { breed: "name", confidence: 0-to-1 number }
-//   belowThreshold:  true if even the best guess is under 40% sure
-//                    (we treat that as "probably not a clear dog photo")
-// ============================================================================
 
 const SCENARIOS = [
   // Scenario 1 — the happy path: the AI is very sure (91%)

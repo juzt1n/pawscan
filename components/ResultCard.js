@@ -1,9 +1,6 @@
 // ============================================================================
 // components/ResultCard.js — HOW A RESULT LOOKS  (PRD #09, #19-#21)
 // ============================================================================
-// PLAIN ENGLISH: The Scan screen hands this component a finished result
-// (built in api.js) and this file just draws it:
-//
 //   result.isDog === false → the "no confident match" card
 //   result.isDog === true  → breed tag → profile → health watchlist →
 //                            care tips → raw model output bars

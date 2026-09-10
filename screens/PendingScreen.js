@@ -1,11 +1,6 @@
 // ============================================================================
 // screens/PendingScreen.js — "APPLICATION UNDER REVIEW"
 // ============================================================================
-// PLAIN ENGLISH: This is the state between applying (URS #02) and being
-// approved (URS #29). The clinic can log in, but has NO listing powers yet.
-// It also handles the rejected and suspended states, so every possible
-// account status has a screen the user can actually land on.
-//
 // WHY THIS SCREEN MATTERS (worth saying in the report): without it, a
 // business user who applies has nowhere to go after login. Defining every
 // account state - and giving each one a screen - is what stops a half-

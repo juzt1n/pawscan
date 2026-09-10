@@ -1,10 +1,6 @@
 // ============================================================================
 // screens/BusinessDashboard.js — APPROVED CLINIC  (URS #24, #25)
 // ============================================================================
-// PLAIN ENGLISH: What a vet clinic sees once an admin has approved them.
-//   US-24  manage the clinic listing (name, address, phone, hours, services)
-//   US-25  view anonymised referral statistics
-//
 // The "Verified" badge is the visible payoff of the whole approval workflow:
 // it only appears because an administrator checked the UEN and licence.
 // ============================================================================

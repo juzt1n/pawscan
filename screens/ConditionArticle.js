@@ -1,11 +1,6 @@
 // ============================================================================
 // screens/ConditionArticle.js — CONDITION DETAIL  (URS #3.3.2 premium)
 // ============================================================================
-// PLAIN ENGLISH: When a user taps a condition in a health watchlist, this
-// screen opens with a fuller, plain-language article about it: what it is,
-// early signs, what helps, and when to see a vet. The disclaimer is repeated
-// here because this is health content.
-//
 // The article text is looked up from a small local library keyed by condition
 // name. Anything we don't have a written article for falls back to the short
 // watchlist detail that was passed in, so the screen never comes up blank.

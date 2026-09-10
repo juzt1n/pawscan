@@ -1,7 +1,6 @@
 // ============================================================================
 // screens/AuthScreen.js — LOGIN & REGISTER  (URS #01 personal, #02 business)
 // ============================================================================
-// PLAIN ENGLISH: One screen, three shapes:
 //   login              -> email + password
 //   register personal  -> name + email + password + confirm + terms
 //   register business  -> the above PLUS clinic name, UEN, AVS licence,

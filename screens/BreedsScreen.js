@@ -1,11 +1,6 @@
 // ============================================================================
 // screens/BreedsScreen.js — THE BREED ENCYCLOPEDIA
 // ============================================================================
-// PLAIN ENGLISH: (PRD #13 browse, #10 breed page, #14 bookmark)
-// This screen has TWO views, switched by the `selected` state:
-//   selected === null    → the searchable LIST of all 120 breeds
-//   selected === "beagle"→ the DETAIL page for that breed
-//
 // Breeds with a hand-written health entry get a "detailed health profile"
 // tag; the rest show the general fallback advice on their detail page,
 // with an honest note saying so.
