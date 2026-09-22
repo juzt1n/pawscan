@@ -1,10 +1,11 @@
 // ============================================================================
 // screens/ScanScreen.js — THE MAIN EVENT
 // ============================================================================
-//   1. Show the quota banner ("Scans left this day: 2/3+")
+// PLAIN ENGLISH: The flow on this screen, matching PRD #07/#08/#09:
+//   1. Show the quota banner ("Scans left today: 4 / 5+")
 //   2. User takes a photo (camera) or picks one (gallery)
 //   3. User taps "Identify this dog"
-//   4. We check they still have scans left (free users get 5/day; the
+//   4. We check they still have scans left (free users get 5/month; the
 //      "Watch ad" link fakes a rewarded ad for +1; premium skips all this)
 //   5. api.js analyzes the photo (mock AI for now)
 //   6. We copy the photo to permanent storage, save the scan to history,
@@ -35,11 +36,11 @@ import {
   FREE_DAILY_QUOTA,
 } from "../lib/storage";
 
-export default function ScanScreen({ session, onUpgrade}) {
+export default function ScanScreen({ session }) {
   const [image, setImage] = useState(null);       // the chosen photo (or null)
   const [loading, setLoading] = useState(false);  // is the AI "thinking"?
   const [result, setResult] = useState(null);     // the analysis answer
-  const [remaining, setRemaining] = useState(null); // scans left this day
+  const [remaining, setRemaining] = useState(null); // scans left today
 
   // Ask storage how many scans are left, and remember the answer
   const refreshQuota = useCallback(async () => {
@@ -88,7 +89,7 @@ export default function ScanScreen({ session, onUpgrade}) {
     // Quota gate (PRD #15/#18): free users with 0 left get stopped here
     if (session.tier !== "premium" && remaining <= 0) {
       Alert.alert(
-        "Daily scans used up",
+        "Monthly scans used up",
         `Free accounts get ${FREE_DAILY_QUOTA} scans per day. Watch an ad for a bonus scan, or upgrade to Premium for unlimited scans.`
       );
       return;
@@ -132,7 +133,7 @@ export default function ScanScreen({ session, onUpgrade}) {
       {
         text: "Finish ad",
         onPress: async () => {
-          await grantAdBonusScan();
+          await grantAdBonusScan(session);
           await refreshQuota();
         },
       },
@@ -156,7 +157,7 @@ export default function ScanScreen({ session, onUpgrade}) {
         <Text style={styles.quotaText}>
           {session.tier === "premium"
             ? "★ Premium — unlimited scans"
-            : `Scans left this day: ${remaining ?? "…"} / ${FREE_DAILY_QUOTA}+`}
+            : `Scans left today: ${remaining ?? "…"} / ${FREE_DAILY_QUOTA}+`}
         </Text>
         {session.tier !== "premium" && (
           <TouchableOpacity onPress={watchAd}>
@@ -176,6 +177,7 @@ export default function ScanScreen({ session, onUpgrade}) {
           <TouchableOpacity style={styles.secondaryBtn} onPress={() => pickImage(false)}>
             <Text style={styles.secondaryBtnText}>Choose from gallery</Text>
           </TouchableOpacity>
+
         </View>
       )}
 
@@ -206,7 +208,7 @@ export default function ScanScreen({ session, onUpgrade}) {
       )}
 
       {/* The result, plus the mandatory disclaimer on health outputs */}
-      {result && <ResultCard result={result} onReset={reset}  session={session} onUpgrade={onUpgrade}/>}
+      {result && <ResultCard result={result} onReset={reset} />}
       {result?.isDog && <VetDisclaimer />}
     </ScrollView>
   );

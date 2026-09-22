@@ -261,10 +261,6 @@ export default function AuthScreen({ onAuthed, onForgotPassword }) {
             </Text>
           </TouchableOpacity>
 
-          <Text style={styles.mockNote}>
-            Demo build: authentication is mocked locally. Log in as
-            admin@pawscan.demo to review business applications.
-          </Text>
         </View>
       </ScrollView>
     </KeyboardAvoidingView>

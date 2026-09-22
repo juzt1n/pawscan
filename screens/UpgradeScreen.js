@@ -1,6 +1,9 @@
 // ============================================================================
 // screens/UpgradeScreen.js — PLAN COMPARISON  (PRD #17, URS upgrade flow)
 // ============================================================================
+// PLAIN ENGLISH: A proper side-by-side of Free vs Premium, replacing the old
+// pop-up alert. The user sees exactly what upgrading unlocks before paying.
+//
 // Payment itself is SIMULATED in this demo build (stated on screen). Pressing
 // "Upgrade" calls upgradeToPremium() in storage, which flips the tier; App.js
 // then receives the refreshed session so the quota banner and premium badges
@@ -11,7 +14,7 @@ import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Alert } from "rea
 import { upgradeToPremium } from "../lib/storage";
 import { T } from "../components/shared";
 
-const FREE = ["5 scans per month", "Breed encyclopaedia", "Scan history", "Bookmarks"];
+const FREE = ["3 scans per day", "Breed encyclopaedia", "Scan history", "Bookmarks"];
 const PREMIUM = [
   "Unlimited scans",
   "Dog profiles with health tracking",

@@ -1,6 +1,9 @@
 // ============================================================================
 // components/ResultCard.js — HOW A RESULT LOOKS  (PRD #09, #19-#21)
 // ============================================================================
+// PLAIN ENGLISH: The Scan screen hands this component a finished result
+// (built in api.js) and this file just draws it:
+//
 //   result.isDog === false → the "no confident match" card
 //   result.isDog === true  → breed tag → profile → health watchlist →
 //                            care tips → raw model output bars
@@ -11,13 +14,7 @@
 // ============================================================================
 
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 import { T } from "./shared";
 import ConditionArticle from "../screens/ConditionArticle";
 
@@ -25,10 +22,13 @@ import ConditionArticle from "../screens/ConditionArticle";
 const riskColor = (r) =>
   r === "high" ? T.riskHigh : r === "moderate" ? T.riskMod : T.riskLow;
 
+// Numeric rank so we can sort high-risk conditions to the top of the watchlist
+const riskRank = (r) => (r === "high" ? 3 : r === "moderate" ? 2 : 1);
+
 // "golden retriever" → "Golden Retriever" (capitalize each word)
 const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
-export default function ResultCard({ result, onReset, session, onUpgrade}) {
+export default function ResultCard({ result, onReset }) {
   // When a user taps a condition, we show the full article as an overlay.
   const [openCondition, setOpenCondition] = useState(null);
   // ---------- Case 1: the AI wasn't confident enough ----------
@@ -37,9 +37,7 @@ export default function ResultCard({ result, onReset, session, onUpgrade}) {
       <View style={[styles.section, { marginTop: 16 }]}>
         <Text style={styles.sectionTitle}>NO CONFIDENT MATCH</Text>
         <Text style={styles.text}>{result.notDogNote}</Text>
-        {result.rawPredictions && (
-          <RawPredictions preds={result.rawPredictions} />
-        )}
+        {result.rawPredictions && <RawPredictions preds={result.rawPredictions} />}
         <TouchableOpacity style={styles.btn} onPress={onReset}>
           <Text style={styles.btnText}>Try another photo</Text>
         </TouchableOpacity>
@@ -48,8 +46,7 @@ export default function ResultCard({ result, onReset, session, onUpgrade}) {
   }
 
   // ---------- Case 2: we have a breed ----------
-  const { breed, profile, healthWatchlist, careTips, healthDataCoverage } =
-    result;
+  const { breed, profile, healthWatchlist, careTips, healthDataCoverage } = result;
 
   // If a condition is open, show its article instead of the result card
   if (openCondition) {
@@ -70,8 +67,7 @@ export default function ResultCard({ result, onReset, session, onUpgrade}) {
       <View style={styles.breedTag}>
         <Text style={styles.breedName}>{titleCase(breed.primary)}</Text>
         <Text style={styles.breedMeta}>
-          {(breed.confidenceScore * 100).toFixed(1)}% · {breed.confidence}{" "}
-          confidence
+          {(breed.confidenceScore * 100).toFixed(1)}% · {breed.confidence} confidence
           {breed.alternatives?.length
             ? `\nCould also be: ${breed.alternatives.map(titleCase).join(" or ")}`
             : ""}
@@ -90,74 +86,56 @@ export default function ResultCard({ result, onReset, session, onUpgrade}) {
 
       {/* The health watchlist. If we only had generic data (breed not in our
           database yet), we say so in the title — honesty over pretending. */}
-
-      {session?.tier === "premium" ? (
-        healthWatchlist?.length > 0 && (
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
-              HEALTH WATCHLIST{" "}
-              {healthDataCoverage === "generic"
-                ? "(GENERAL — BREED NOT IN DATABASE YET)"
-                : ""}
-            </Text>
-            {healthWatchlist.map((h, i) => (
-              <TouchableOpacity
-                key={i}
-                activeOpacity={0.6}
-                onPress={() => setOpenCondition(h)}
-                style={[
-                  styles.watchItem,
-                  i > 0 && { borderTopWidth: 1, borderTopColor: T.line },
-                ]}
-              >
-                <View style={styles.watchHeader}>
-                  <View
-                    style={[styles.dot, { backgroundColor: riskColor(h.risk) }]}
-                  />
-                  <Text style={styles.condition}>{h.condition}</Text>
-                  <Text
-                    style={[styles.riskLabel, { color: riskColor(h.risk) }]}
-                  >
-                    {h.risk?.toUpperCase()}
-                  </Text>
-                </View>
-                <Text style={styles.watchDetail}>
-                  Early signs: {h.earlySigns}
-                </Text>
-                <Text style={styles.watchDetail}>
-                  Prevention: {h.prevention}
-                </Text>
-                <Text style={styles.readMore}>Read more →</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )
-      ) : (
+      {healthWatchlist?.length > 0 && (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>HEALTH REPORT</Text>
-          <Text style={styles.text}>
-            See this breed's health predispositions, early signs, and
-            prevention.
+          <Text style={styles.sectionTitle}>
+            HEALTH WATCHLIST{" "}
+            {healthDataCoverage === "generic" ? "(GENERAL — BREED NOT IN DATABASE YET)" : ""}
           </Text>
-          <TouchableOpacity onPress={onUpgrade}>
-            <Text
-              style={[
-                styles.text,
-                { color: T.moss, fontWeight: "700", marginTop: 8 },
-              ]}
-            >
-              Upgrade to Premium to unlock →
-            </Text>
-          </TouchableOpacity>
+          {[...healthWatchlist]
+            .sort((a, b) => riskRank(b.risk) - riskRank(a.risk)) // high risk first
+            .map((h, i) => {
+              const high = h.risk === "high";
+              return (
+                <TouchableOpacity
+                  key={i}
+                  activeOpacity={0.6}
+                  onPress={() => setOpenCondition(h)}
+                  style={[
+                    styles.watchItem,
+                    i > 0 && { borderTopWidth: 1, borderTopColor: T.line },
+                    high && styles.watchItemHigh, // tinted card + red accent bar
+                  ]}
+                >
+                  <View style={styles.watchHeader}>
+                    <View style={[styles.dot, { backgroundColor: riskColor(h.risk) }]} />
+                    <Text style={[styles.condition, high && styles.conditionHigh]}>
+                      {h.condition}
+                    </Text>
+                    {/* High risk gets a solid badge; others a coloured label */}
+                    {high ? (
+                      <View style={styles.highBadge}>
+                        <Text style={styles.highBadgeText}>HIGH RISK</Text>
+                      </View>
+                    ) : (
+                      <Text style={[styles.riskLabel, { color: riskColor(h.risk) }]}>
+                        {h.risk?.toUpperCase()}
+                      </Text>
+                    )}
+                  </View>
+                  <Text style={styles.watchDetail}>Early signs: {h.earlySigns}</Text>
+                  <Text style={styles.watchDetail}>Prevention: {h.prevention}</Text>
+                  <Text style={styles.readMore}>Read more →</Text>
+                </TouchableOpacity>
+              );
+            })}
         </View>
       )}
 
       {/* Care tips on a dark card, to stand apart from the medical content */}
       {careTips?.length > 0 && (
         <View style={[styles.section, { backgroundColor: T.mossDark }]}>
-          <Text style={[styles.sectionTitle, { color: T.amber }]}>
-            CARE TIPS
-          </Text>
+          <Text style={[styles.sectionTitle, { color: T.amber }]}>CARE TIPS</Text>
           {careTips.map((t, i) => (
             <Text key={i} style={[styles.text, { color: T.paper }]}>
               • {t}
@@ -166,10 +144,8 @@ export default function ResultCard({ result, onReset, session, onUpgrade}) {
         </View>
       )}
 
-      {/* The AI's full top-3, as bars */}
-      {result.rawPredictions && (
-        <RawPredictions preds={result.rawPredictions} />
-      )}
+      {/* The AI's full top-5, as bars */}
+      {result.rawPredictions && <RawPredictions preds={result.rawPredictions} />}
 
       <TouchableOpacity style={styles.btn} onPress={onReset}>
         <Text style={styles.btnText}>Scan another dog</Text>
@@ -178,22 +154,17 @@ export default function ResultCard({ result, onReset, session, onUpgrade}) {
   );
 }
 
-// The top-3 bar chart. Each bar's width = that guess's percentage.
+// The top-5 bar chart. Each bar's width = that guess's percentage.
 function RawPredictions({ preds }) {
   return (
     <View style={styles.rawBox}>
-      <Text style={styles.rawTitle}>MODEL OUTPUT (TOP 3)</Text>
-      {preds.slice(0, 3).map((p, i) => (
+      <Text style={styles.rawTitle}>MODEL OUTPUT (TOP 5)</Text>
+      {preds.map((p, i) => (
         <View key={i} style={styles.rawRow}>
           <Text style={styles.rawBreed}>{titleCase(p.breed)}</Text>
           <View style={styles.barTrack}>
             {/* Math.max(...,2) keeps tiny percentages visible as a sliver */}
-            <View
-              style={[
-                styles.barFill,
-                { width: `${Math.max(p.confidence * 100, 2)}%` },
-              ]}
-            />
+            <View style={[styles.barFill, { width: `${Math.max(p.confidence * 100, 2)}%` }]} />
           </View>
           <Text style={styles.rawPct}>{(p.confidence * 100).toFixed(1)}%</Text>
         </View>
@@ -220,13 +191,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   breedName: { fontSize: 24, fontWeight: "700", color: T.ink },
-  breedMeta: {
-    fontSize: 13,
-    color: T.ink,
-    opacity: 0.75,
-    marginTop: 4,
-    lineHeight: 18,
-  },
+  breedMeta: { fontSize: 13, color: T.ink, opacity: 0.75, marginTop: 4, lineHeight: 18 },
   section: {
     backgroundColor: "#fff",
     borderWidth: 1,
@@ -244,12 +209,25 @@ const styles = StyleSheet.create({
   text: { fontSize: 14, color: T.ink, marginBottom: 4, lineHeight: 20 },
   factKey: { fontSize: 10, letterSpacing: 1, color: T.ink, opacity: 0.55 },
   watchItem: { paddingVertical: 10 },
-  watchHeader: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    marginBottom: 4,
+  // High-risk conditions: pale red tint, rounded, with a red accent bar on the left
+  watchItemHigh: {
+    backgroundColor: "#FBEFE9",
+    borderLeftWidth: 4,
+    borderLeftColor: T.riskHigh,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    marginTop: 6,
+    borderTopWidth: 0,
   },
+  conditionHigh: { fontWeight: "800", color: T.riskHigh },
+  highBadge: {
+    backgroundColor: T.riskHigh,
+    borderRadius: 5,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+  },
+  highBadgeText: { color: "#fff", fontSize: 9, fontWeight: "800", letterSpacing: 0.6 },
+  watchHeader: { flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 4 },
   dot: { width: 10, height: 10, borderRadius: 5 },
   condition: { fontSize: 15, fontWeight: "600", color: T.ink, flexShrink: 1 },
   readMore: { fontSize: 12.5, color: T.moss, fontWeight: "700", marginTop: 6 },
@@ -270,12 +248,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
     marginBottom: 8,
   },
-  rawRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    marginBottom: 6,
-  },
+  rawRow: { flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 6 },
   rawBreed: { fontSize: 12, color: T.ink, width: 130 },
   barTrack: {
     flex: 1,
@@ -286,13 +259,7 @@ const styles = StyleSheet.create({
   },
   barFill: { height: 8, backgroundColor: T.moss, borderRadius: 4 },
   rawPct: { fontSize: 12, color: T.ink, width: 48, textAlign: "right" },
-  watchDetail: {
-    fontSize: 13,
-    color: T.ink,
-    opacity: 0.8,
-    paddingLeft: 18,
-    marginBottom: 2,
-  },
+  watchDetail: { fontSize: 13, color: T.ink, opacity: 0.8, paddingLeft: 18, marginBottom: 2 },
   btn: {
     backgroundColor: T.moss,
     borderRadius: 10,
