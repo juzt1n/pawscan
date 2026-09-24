@@ -1,9 +1,7 @@
 // ============================================================================
 // screens/BusinessDashboard.js — APPROVED CLINIC  (URS #24, #25)
 // ============================================================================
-// The "Verified" badge is the visible payoff of the whole approval workflow:
-// it only appears because an administrator checked the UEN and licence.
-// ============================================================================
+
 
 import { useState, useCallback } from "react";
 import {

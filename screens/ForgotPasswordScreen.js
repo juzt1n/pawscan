@@ -1,15 +1,7 @@
 // ============================================================================
 // screens/ForgotPasswordScreen.js — PASSWORD RESET REQUEST  (URS #05)
 // ============================================================================
-// we show the SAME confirmation whether or not the email is registered. If we said
-// "no such account", an attacker could type addresses one by one and learn
-// who has a PawScan account — that's called account enumeration. Identical
-// responses close that hole. The cost is a slightly vaguer message; the
-// benefit is that the form can't be used as a lookup tool.
-//
-// DEMO LIMITATION: no email is actually sent. The real system sends a
-// single-use, time-limited token via the backend.
-// ============================================================================
+
 
 import { useState } from "react";
 import {

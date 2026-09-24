@@ -1,17 +1,6 @@
 // ============================================================================
 // screens/ScanScreen.js — THE MAIN EVENT
 // ============================================================================
-// PLAIN ENGLISH: The flow on this screen, matching PRD #07/#08/#09:
-//   1. Show the quota banner ("Scans left today: 4 / 5+")
-//   2. User takes a photo (camera) or picks one (gallery)
-//   3. User taps "Identify this dog"
-//   4. We check they still have scans left (free users get 5/month; the
-//      "Watch ad" link fakes a rewarded ad for +1; premium skips all this)
-//   5. api.js analyzes the photo (mock AI for now)
-//   6. We copy the photo to permanent storage, save the scan to history,
-//      and show the result card + the mandatory vet disclaimer
-// ============================================================================
-
 import { useEffect, useState, useCallback } from "react";
 import {
   ScrollView,
@@ -178,6 +167,25 @@ export default function ScanScreen({ session }) {
             <Text style={styles.secondaryBtnText}>Choose from gallery</Text>
           </TouchableOpacity>
 
+          {/* Photo guidance — helps the model identify the breed accurately.
+              Addresses assessor feedback: "give instructions on how to take a
+              picture so the AI can detect more accurately." */}
+          <View style={styles.tips}>
+            <Text style={styles.tipsTitle}>FOR THE BEST SCAN</Text>
+            {[
+              "Fit the whole dog in the frame",
+              "Use good, even lighting",
+              "Get close — the dog should fill most of the photo",
+              "A side or front view works best",
+              "One dog per photo, plain background if you can",
+            ].map((t) => (
+              <View key={t} style={styles.tipRow}>
+                <Text style={styles.tipCheck}>✓</Text>
+                <Text style={styles.tipText}>{t}</Text>
+              </View>
+            ))}
+          </View>
+
         </View>
       )}
 
@@ -269,6 +277,24 @@ const styles = StyleSheet.create({
   },
   secondaryBtnText: { color: T.moss, fontWeight: "600", fontSize: 15 },
   mockHint: { fontSize: 12, color: T.ink, opacity: 0.55, textAlign: "center", lineHeight: 17 },
+  tips: {
+    alignSelf: "stretch",
+    backgroundColor: T.amberSoft,
+    borderRadius: 10,
+    padding: 14,
+    marginTop: 4,
+    gap: 6,
+  },
+  tipsTitle: {
+    fontSize: 10.5,
+    letterSpacing: 1.5,
+    fontWeight: "800",
+    color: T.moss,
+    marginBottom: 2,
+  },
+  tipRow: { flexDirection: "row", gap: 8, alignItems: "flex-start" },
+  tipCheck: { color: T.moss, fontSize: 13, fontWeight: "800", marginTop: 1 },
+  tipText: { flex: 1, fontSize: 13, color: T.ink, lineHeight: 18 },
   card: {
     backgroundColor: "#fff",
     borderRadius: 14,

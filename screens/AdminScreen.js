@@ -1,15 +1,7 @@
 // ============================================================================
 // screens/AdminScreen.js — ADMIN SHELL  (URS #27 / #29 / #30)
 // ============================================================================
-// PLAIN ENGLISH: The admin area has three sections. This shell shows a section
-// switcher at the top and renders one of the three sub-screens below it:
-//
-//   Businesses → review clinic applications (approve / reject / suspend)  #29
-//   Users      → manage user accounts (search, suspend, reinstate)        #27
-//   Analytics  → system statistics and the audit log                      #30
-//
-// Logout lives here in the shell, so it is available from every section.
-// ============================================================================
+
 
 import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";

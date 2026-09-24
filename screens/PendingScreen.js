@@ -1,11 +1,7 @@
 // ============================================================================
 // screens/PendingScreen.js — "APPLICATION UNDER REVIEW"
 // ============================================================================
-// WHY THIS SCREEN MATTERS (worth saying in the report): without it, a
-// business user who applies has nowhere to go after login. Defining every
-// account state - and giving each one a screen - is what stops a half-
-// verified account from silently getting real privileges.
-// ============================================================================
+
 
 import { useState, useCallback } from "react";
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from "react-native";

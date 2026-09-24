@@ -1,9 +1,7 @@
 // ============================================================================
 // screens/HistoryScreen.js — PAST SCANS  (PRD #11 view, #12 delete)
 // ============================================================================
-// FlatList (instead of ScrollView + map) is React Native's efficient list:
-// it only draws the rows currently on screen, so even 100 scans stay smooth.
-// ============================================================================
+
 
 import { useState, useCallback } from "react";
 import {

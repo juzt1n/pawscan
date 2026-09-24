@@ -1,11 +1,7 @@
 // ============================================================================
 // screens/admin/AdminAnalytics.js — ANALYTICS & AUDIT LOG  (URS #30)
 // ============================================================================
-// PLAIN ENGLISH: A dashboard of system statistics and an append-only audit log
-// of administrator actions. Figures are demo values (see lib/storage.js); the
-// real system aggregates these from the database. The audit log updates live
-// as the admin acts elsewhere (e.g. suspending a user).
-// ============================================================================
+
 
 import { useState, useCallback } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";

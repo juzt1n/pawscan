@@ -1,10 +1,7 @@
 // ============================================================================
 // screens/ConditionArticle.js — CONDITION DETAIL  (URS #3.3.2 premium)
 // ============================================================================
-// The article text is looked up from a small local library keyed by condition
-// name. Anything we don't have a written article for falls back to the short
-// watchlist detail that was passed in, so the screen never comes up blank.
-// ============================================================================
+
 
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { T } from "../components/shared";

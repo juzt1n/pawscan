@@ -1,10 +1,7 @@
 // ============================================================================
 // screens/BreedsScreen.js — THE BREED ENCYCLOPEDIA
 // ============================================================================
-// Breeds with a hand-written health entry get a "detailed health profile"
-// tag; the rest show the general fallback advice on their detail page,
-// with an honest note saying so.
-// ============================================================================
+
 
 import { useState, useEffect } from "react";
 import {

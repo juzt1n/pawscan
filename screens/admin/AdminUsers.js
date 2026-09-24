@@ -1,11 +1,7 @@
 // ============================================================================
 // screens/admin/AdminUsers.js — USER MANAGEMENT  (URS #27)
 // ============================================================================
-// PLAIN ENGLISH: A searchable table of user accounts. The admin can search by
-// name or email, see each account's tier and status, and suspend or reinstate
-// an account. Runs on demo data (see lib/storage.js) since there is no backend
-// user directory yet.
-// ============================================================================
+
 
 import { useState, useCallback } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Alert } from "react-native";

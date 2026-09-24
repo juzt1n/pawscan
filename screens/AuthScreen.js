@@ -1,17 +1,7 @@
 // ============================================================================
 // screens/AuthScreen.js — LOGIN & REGISTER  (URS #01 personal, #02 business)
 // ============================================================================
-//   login              -> email + password
-//   register personal  -> name + email + password + confirm + terms
-//   register business  -> the above PLUS clinic name, UEN, AVS licence,
-//                         address and phone (URS use case #02)
-//
-// A business registration does NOT create a verified clinic. It creates an
-// APPLICATION with status "pending". An admin must approve it (URS #29) after
-// checking the UEN against ACRA and the licence against the AVS register.
-// That two-step design is the whole point: anyone can type a number, so the
-// trust boundary is the admin review, not the form.
-// ============================================================================
+
 
 import { useState } from "react";
 import {

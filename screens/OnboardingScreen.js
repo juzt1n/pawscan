@@ -1,9 +1,7 @@
 // ============================================================================
 // screens/OnboardingScreen.js — FIRST LAUNCH TUTORIAL  (URS 2.6)
 // ============================================================================
-// "Shown once" is handled by a flag in storage (pawscan:onboarded), so it
-// survives closing the app but is cleared by "reset app data".
-// ============================================================================
+
 
 import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
