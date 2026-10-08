@@ -11,6 +11,7 @@
 
 import { mockPredict } from "./mock";
 import healthDB from "./data/breed_health.json";
+import { getOverride } from "./lib/breedContent";
 
 // THE SWITCH. Flip to false on integration day (and set the address below).
 export const USE_MOCK = true;
@@ -42,9 +43,14 @@ function healthKey(breed) {
 export function getHealthEntry(breed) {
   const key = healthKey(breed);
   return {
-    entry: healthDB[key],
+    entry: getOverride(key) || healthDB[key], // admin edit wins (lib/breedContent.js)
     coverage: key === "_default" ? "generic" : "breed-specific",
   };
+}
+
+// The shipped (un-edited) entry — used by the admin editor's reset button.
+export function getOriginalHealthEntry(breedKey) {
+  return healthDB[breedKey] || null;
 }
 
 // ----------------------------------------------------------------------------

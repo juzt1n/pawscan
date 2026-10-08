@@ -32,6 +32,7 @@ import {
   hasSeenOnboarding,
   markOnboardingSeen,
 } from "./lib/storage";
+import { loadBreedOverrides } from "./lib/breedContent";
 import { T } from "./components/shared";
 
 // The four tabs. Adding a 5th tab = add a line here + a screen below.
@@ -56,6 +57,9 @@ export default function App() {
     // Read the saved session, then (for business accounts) re-check whether an
     // admin has changed their status since last login.
     (async () => {
+      // Load admin-edited encyclopedia articles before any screen draws
+      await loadBreedOverrides();
+
       // First-launch tutorial: show it only if it hasn't been seen before
       // const seen = await hasSeenOnboarding();
       // if (!seen) setShowOnboarding(true);

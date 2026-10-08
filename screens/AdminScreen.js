@@ -1,5 +1,5 @@
 // ============================================================================
-// screens/AdminScreen.js — ADMIN SHELL  (URS #27 / #29 / #30)
+// screens/AdminScreen.js — ADMIN SHELL  (URS #27 / #28 / #29 / #30)
 // ============================================================================
 
 
@@ -10,10 +10,12 @@ import { T } from "../components/shared";
 import AdminBusinessReview from "./admin/AdminBusinessReview";
 import AdminUsers from "./admin/AdminUsers";
 import AdminAnalytics from "./admin/AdminAnalytics";
+import AdminEncyclopedia from "./admin/AdminEncyclopedia";
 
 const SECTIONS = [
   ["businesses", "Businesses"],
   ["users", "Users"],
+  ["encyclopedia", "Breeds"],
   ["analytics", "Analytics"],
 ];
 
@@ -49,6 +51,7 @@ export default function AdminScreen({ onLogout }) {
       <View style={{ flex: 1 }}>
         {section === "businesses" && <AdminBusinessReview />}
         {section === "users" && <AdminUsers />}
+        {section === "encyclopedia" && <AdminEncyclopedia />}
         {section === "analytics" && <AdminAnalytics />}
       </View>
     </View>
@@ -57,16 +60,16 @@ export default function AdminScreen({ onLogout }) {
 
 const styles = StyleSheet.create({
   switcher: {
-    flexDirection: "row", alignItems: "center", gap: 6,
+    flexDirection: "row", flexWrap: "wrap", alignItems: "center", gap: 6,
     paddingHorizontal: 12, paddingVertical: 10,
     backgroundColor: "#fff", borderBottomWidth: 1, borderBottomColor: T.line,
   },
   tab: {
-    paddingVertical: 7, paddingHorizontal: 12, borderRadius: 8,
+    paddingVertical: 7, paddingHorizontal: 9, borderRadius: 8,
     borderWidth: 1.5, borderColor: T.moss,
   },
   tabOn: { backgroundColor: T.moss },
-  tabText: { fontSize: 12, fontWeight: "800", color: T.moss, letterSpacing: 0.5 },
+  tabText: { fontSize: 11.5, fontWeight: "800", color: T.moss, letterSpacing: 0.5 },
   tabTextOn: { color: "#fff" },
   logout: { marginLeft: "auto", paddingVertical: 7, paddingHorizontal: 10 },
   logoutText: { color: T.riskHigh, fontWeight: "700", fontSize: 13 },
