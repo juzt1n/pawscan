@@ -17,6 +17,7 @@ import { request } from "./lib/http";
 // THE SWITCH now lives in lib/config.js (with the backend address).
 export { USE_MOCK } from "./lib/config";
 import { USE_MOCK } from "./lib/config";
+import { imageFile } from "./lib/imageFile";
 
 
 const THRESHOLD_NOTE =
@@ -101,11 +102,7 @@ export async function analyzeImage(image) {
   // our Express server, which asks the real AI and sends back the finished
   // result (already merged with health data — so no buildResult here).
   const form = new FormData();
-  form.append("image", {
-    uri: image.uri,
-    name: "photo.jpg",
-    type: image.mediaType || "image/jpeg",
-  });
+  form.append("image", imageFile(image.uri));
   return request("POST", "/analyze", undefined, { form });
 }
 
