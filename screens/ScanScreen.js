@@ -16,6 +16,7 @@ import * as ImagePicker from "expo-image-picker";
 import ResultCard from "../components/ResultCard";
 import { T, VetDisclaimer } from "../components/shared";
 import { analyzeImage, USE_MOCK } from "../api";
+import { shrinkImage } from "../lib/shrinkImage";
 import {
   remainingScans,
   consumeScan,
@@ -69,7 +70,7 @@ export default function ScanScreen({ session }) {
     if (!res.canceled && res.assets?.[0]) {
       const asset = res.assets[0];
       setResult(null); // a new photo clears any old result
-      setImage({ uri: asset.uri, mediaType: asset.mimeType || "image/jpeg" });
+      setImage(await shrinkImage(asset)); // resize so uploads stay small (lib/shrinkImage.js)
     }
   };
 

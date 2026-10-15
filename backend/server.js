@@ -28,6 +28,16 @@ app.use(helmet());
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 600, standardHeaders: true, legacyHeaders: false }));
 app.use(express.json({ limit: "100kb" }));
 
+// One log line per API request (shows up in Render's Logs tab)
+app.use((req, res, next) => {
+  const start = Date.now();
+  res.on("finish", () => {
+    if (req.path === "/health") return;
+    console.log(`${req.method} ${req.originalUrl} -> ${res.statusCode} in ${Date.now() - start} ms (${req.headers["content-length"] || 0} bytes in)`);
+  });
+  next();
+});
+
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 
 const authLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 40, standardHeaders: true, legacyHeaders: false });
