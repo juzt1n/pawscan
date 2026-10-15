@@ -1,0 +1,38 @@
+# Dependencies (every folder: app, backend)
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Secrets - never upload these
+.env
+.env.local
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+*.mobileprovision
+
+# The trained model is 107 MB, over GitHub's 100 MB file limit.
+# Keep it on Google Drive and copy it into model-service/ before deploying.
+*.keras
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*

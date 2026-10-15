@@ -1,0 +1,4 @@
+# Deploy everything in this folder, including the .keras model
+# (the repo .gitignore excludes *.keras, and gcloud would otherwise obey it).
+__pycache__/
+*.pyc

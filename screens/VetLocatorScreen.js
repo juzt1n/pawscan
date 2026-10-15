@@ -8,13 +8,17 @@ import {
   ScrollView, View, Text, TouchableOpacity, StyleSheet, Linking, Platform,
 } from "react-native";
 import { useFocusEffect } from "./useFocusEffect";
-import { getNearbyClinics } from "../lib/storage";
+import { getNearbyClinics, logClinicEvent } from "../lib/storage";
 import { T } from "../components/shared";
 
 export default function VetLocatorScreen({ onBack }) {
   const [clinics, setClinics] = useState([]);
 
-  const load = useCallback(async () => setClinics(await getNearbyClinics()), []);
+  const load = useCallback(async () => {
+    const list = await getNearbyClinics();
+    setClinics(list);
+    list.forEach((c) => logClinicEvent(c.id, "view")); // counted, never linked to the user
+  }, []);
   useFocusEffect(load);
 
   // Open the phone's native map app with the clinic address as the destination
@@ -63,11 +67,11 @@ export default function VetLocatorScreen({ onBack }) {
           <Text style={styles.address}>{c.address}</Text>
 
           <View style={styles.actions}>
-            <TouchableOpacity style={styles.primaryBtn} onPress={() => openDirections(c.address)}>
+            <TouchableOpacity style={styles.primaryBtn} onPress={() => { logClinicEvent(c.id, "directions"); openDirections(c.address); }}>
               <Text style={styles.primaryBtnText}>Directions</Text>
             </TouchableOpacity>
             {c.phone ? (
-              <TouchableOpacity style={styles.secondaryBtn} onPress={() => call(c.phone)}>
+              <TouchableOpacity style={styles.secondaryBtn} onPress={() => { logClinicEvent(c.id, "call"); call(c.phone); }}>
                 <Text style={styles.secondaryBtnText}>Call</Text>
               </TouchableOpacity>
             ) : null}

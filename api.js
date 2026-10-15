@@ -12,13 +12,12 @@
 import { mockPredict } from "./mock";
 import healthDB from "./data/breed_health.json";
 import { getOverride } from "./lib/breedContent";
+import { request } from "./lib/http";
 
-// THE SWITCH. Flip to false on integration day (and set the address below).
-export const USE_MOCK = true;
+// THE SWITCH now lives in lib/config.js (with the backend address).
+export { USE_MOCK } from "./lib/config";
+import { USE_MOCK } from "./lib/config";
 
-// Your laptop's address on your home Wi-Fi (find it with `ipconfig`).
-// NOT "localhost" — on the phone, localhost means the phone itself!
-const BACKEND_URL = "http://192.168.1.100:3001";
 
 const THRESHOLD_NOTE =
   "The model couldn't confidently match a breed. The photo may not contain a dog, or the dog may be unclear or partially hidden.";
@@ -107,10 +106,7 @@ export async function analyzeImage(image) {
     name: "photo.jpg",
     type: image.mediaType || "image/jpeg",
   });
-
-  const res = await fetch(`${BACKEND_URL}/analyze`, { method: "POST", body: form });
-  if (!res.ok) throw new Error(`Server responded ${res.status}`);
-  return res.json();
+  return request("POST", "/analyze", undefined, { form });
 }
 
 // ---------------------------------------------------------------------------

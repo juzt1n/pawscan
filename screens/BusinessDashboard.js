@@ -14,15 +14,15 @@ import {
   Alert,
 } from "react-native";
 import { useFocusEffect } from "./useFocusEffect";
-import { getMyBusiness, updateBusinessListing, logout } from "../lib/storage";
+import { getMyBusiness, updateBusinessListing, getBusinessStats, logout } from "../lib/storage";
 import { T } from "../components/shared";
 
-// Demo statistics. In the real system these come from the backend, aggregated
-// and anonymised so a clinic can never identify individual users.
-const DEMO_STATS = [
-  { label: "Listing views", value: "248", period: "last 30 days" },
-  { label: "Direction requests", value: "37", period: "last 30 days" },
-  { label: "Profile taps", value: "64", period: "last 30 days" },
+// Referral statistics come from the backend, aggregated and anonymised so a
+// clinic can never identify individual users (the server stores no user ids).
+const statRows = (s) => [
+  { label: "Listing views", value: String(s?.views ?? "–"), period: "last 30 days" },
+  { label: "Direction requests", value: String(s?.directions ?? "–"), period: "last 30 days" },
+  { label: "Calls", value: String(s?.calls ?? "–"), period: "last 30 days" },
 ];
 
 export default function BusinessDashboard({ session, onLogout }) {
@@ -32,9 +32,18 @@ export default function BusinessDashboard({ session, onLogout }) {
   const [phone, setPhone] = useState("");
   const [hours, setHours] = useState("");
   const [services, setServices] = useState("");
+  const [stats, setStats] = useState(null);
+
+  const [loadError, setLoadError] = useState(null);
 
   const load = useCallback(async () => {
-    const b = await getMyBusiness(session.email);
+    let b = null;
+    try {
+      b = await getMyBusiness(session.email);
+      setLoadError(b ? null : "We couldn't find your clinic listing.");
+    } catch (e) {
+      setLoadError(e?.message || "Couldn't load your clinic. Please check your connection.");
+    }
     setBiz(b);
     if (b) {
       setAddress(b.address || "");
@@ -42,17 +51,26 @@ export default function BusinessDashboard({ session, onLogout }) {
       setHours(b.hours || "");
       setServices(b.services || "");
     }
+    try {
+      setStats(await getBusinessStats());
+    } catch {
+      setStats(null); // statistics are optional; the dashboard still works
+    }
   }, [session.email]);
 
   useFocusEffect(load);
 
   const save = async () => {
-    const updated = await updateBusinessListing(biz.id, {
-      address, phone, hours, services,
-    });
-    setBiz(updated);
-    setEditing(false);
-    Alert.alert("Listing updated", "Your clinic details have been saved.");
+    try {
+      const updated = await updateBusinessListing(biz.id, {
+        address, phone, hours, services,
+      });
+      setBiz(updated);
+      setEditing(false);
+      Alert.alert("Listing updated", "Your clinic details have been saved.");
+    } catch (e) {
+      Alert.alert("Couldn't save", e?.message || "Failed to save changes. Please check your internet connection.");
+    }
   };
 
   const doLogout = async () => {
@@ -60,7 +78,21 @@ export default function BusinessDashboard({ session, onLogout }) {
     onLogout();
   };
 
-  if (!biz) return null;
+  if (!biz) {
+    return (
+      <View style={styles.wrap}>
+        {loadError ? <Text style={styles.privacyNote}>{loadError}</Text> : null}
+        {loadError ? (
+          <TouchableOpacity style={styles.logoutBtn} onPress={load}>
+            <Text style={styles.logoutText}>Try again</Text>
+          </TouchableOpacity>
+        ) : null}
+        <TouchableOpacity style={styles.logoutBtn} onPress={doLogout}>
+          <Text style={styles.logoutText}>Logout</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   return (
     <ScrollView contentContainerStyle={styles.wrap}>
@@ -116,7 +148,7 @@ export default function BusinessDashboard({ session, onLogout }) {
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>REFERRAL STATISTICS</Text>
         <View style={styles.statRow}>
-          {DEMO_STATS.map((s) => (
+          {statRows(stats).map((s) => (
             <View key={s.label} style={styles.stat}>
               <Text style={styles.statValue}>{s.value}</Text>
               <Text style={styles.statLabel}>{s.label}</Text>

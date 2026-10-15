@@ -5,6 +5,7 @@
 
 import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { T } from "../components/shared";
+import { getConditionArticle } from "../api";
 
 // A tiny starter library. In the final system this lives in the database
 // (same "data not code" principle as the breed health file) and is managed
@@ -76,8 +77,18 @@ function findArticle(condition) {
   return null;
 }
 
+// "When to see a vet" advice for the shorter articles in data/conditions.json
+const URGENCY_ADVICE = {
+  emergency: "This can become an emergency. If you see these signs, contact a vet or an emergency clinic straight away.",
+  soon: "Book a vet appointment soon if you notice any of the signs above.",
+  routine: "Mention it at your dog's next routine check-up, or sooner if the signs above appear.",
+};
+
 export default function ConditionArticle({ condition, risk, breed, fallback, onBack }) {
+  // 1) the full hand-written article, if there is one; 2) otherwise the shorter
+  // article from data/conditions.json (53 conditions) plus the breed's own notes
   const article = findArticle(condition);
+  const short = article ? null : getConditionArticle(condition);
   const riskColor =
     risk === "high" ? T.riskHigh : risk === "moderate" ? T.riskMod : T.riskLow;
 
@@ -122,8 +133,33 @@ export default function ConditionArticle({ condition, risk, breed, fallback, onB
             <Text style={styles.vetBody}>{article.vet}</Text>
           </View>
         </>
+      ) : short ? (
+        <>
+          <Section title="What it is">
+            <Text style={styles.body}>{short.whatItIs}</Text>
+          </Section>
+          {short.whyItMatters ? (
+            <Section title="Why it matters">
+              <Text style={styles.body}>{short.whyItMatters}</Text>
+            </Section>
+          ) : null}
+          {fallback?.earlySigns ? (
+            <Section title="Early signs to watch for">
+              <Text style={styles.body}>{fallback.earlySigns}</Text>
+            </Section>
+          ) : null}
+          {fallback?.prevention ? (
+            <Section title="What helps">
+              <Text style={styles.body}>{fallback.prevention}</Text>
+            </Section>
+          ) : null}
+          <View style={styles.vetCard}>
+            <Text style={styles.vetHead}>WHEN TO SEE A VET</Text>
+            <Text style={styles.vetBody}>{URGENCY_ADVICE[short.urgency] || URGENCY_ADVICE.soon}</Text>
+          </View>
+        </>
       ) : (
-        // Fallback for conditions without a full written article yet
+        // Fallback for conditions without any article yet
         <Section title="Summary">
           <Text style={styles.body}>
             {fallback?.earlySigns ? `Early signs: ${fallback.earlySigns}\n` : ""}

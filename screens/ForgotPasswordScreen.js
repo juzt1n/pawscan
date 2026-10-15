@@ -14,17 +14,23 @@ import {
   Platform,
 } from "react-native";
 import { T } from "../components/shared";
+import { requestPasswordReset } from "../lib/storage";
 
 export default function ForgotPasswordScreen({ onBack }) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(null);
 
-  const submit = () => {
+  const submit = async () => {
     setError(null);
     if (!email.trim()) return setError("Please enter your email address.");
-    // Deliberately no check for whether the account exists - see note above.
-    setSent(true);
+    try {
+      // The server answers the same way whether or not the account exists.
+      await requestPasswordReset(email.trim());
+      setSent(true);
+    } catch (e) {
+      setError(e?.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (

@@ -11,9 +11,8 @@ const FREE = ["3 scans per day", "Breed encyclopaedia", "Scan history", "Bookmar
 const PREMIUM = [
   "Unlimited scans",
   "Dog profiles with health tracking",
-  "PDF vet report export",
+  "PDF vet report and CSV export",
   "Full condition articles",
-  "Find nearby vets",
   "No advertisements",
 ];
 
@@ -27,9 +26,13 @@ export default function UpgradeScreen({ onBack, onSessionChange }) {
         {
           text: "Upgrade",
           onPress: async () => {
-            const updated = await upgradeToPremium();
-            onSessionChange(updated);
-            onBack();
+            try {
+              const updated = await upgradeToPremium();
+              onSessionChange(updated);
+              onBack();
+            } catch (e) {
+              Alert.alert("Upgrade failed", e?.message || "Please try again.");
+            }
           },
         },
       ]

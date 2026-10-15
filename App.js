@@ -33,6 +33,7 @@ import {
   markOnboardingSeen,
 } from "./lib/storage";
 import { loadBreedOverrides } from "./lib/breedContent";
+import { USE_MOCK } from "./lib/config";
 import { T } from "./components/shared";
 
 // The four tabs. Adding a 5th tab = add a line here + a screen below.
@@ -61,12 +62,19 @@ export default function App() {
       await loadBreedOverrides();
 
       // First-launch tutorial: show it only if it hasn't been seen before
-      // const seen = await hasSeenOnboarding();
-      // if (!seen) setShowOnboarding(true);
-      setShowOnboarding(true); // for testing purposes (remove this when not needed anymore)
+      const seen = await hasSeenOnboarding();
+      if (!seen) setShowOnboarding(true);
 
       let saved = await getSession();
-      if (saved?.accountType === "business") saved = await refreshSessionStatus();
+      // With the real backend, re-check every account (an admin may have approved,
+      // suspended or upgraded it). Offline, only business status can change.
+      if (saved && (!USE_MOCK || saved.accountType === "business")) {
+        try {
+          saved = await refreshSessionStatus();
+        } catch {
+          /* no connection: keep the saved session; screens will retry */
+        }
+      }
       setSession(saved);   // null if nobody
       setBooting(false);   // done checking → stop showing the spinner
     })();

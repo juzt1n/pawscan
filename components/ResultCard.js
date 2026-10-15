@@ -8,7 +8,7 @@
 //   result.isDog === true  → breed tag → profile → health watchlist →
 //                            care tips → raw model output bars
 //
-// The raw output bars at the bottom show ALL top-5 guesses with their
+// The raw output bars at the bottom show the top-3 guesses with their
 // percentages — great for demos, because it shows the AI's actual
 // "thinking" instead of hiding it behind one answer.
 // ============================================================================
@@ -28,7 +28,9 @@ const riskRank = (r) => (r === "high" ? 3 : r === "moderate" ? 2 : 1);
 // "golden retriever" → "Golden Retriever" (capitalize each word)
 const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
-export default function ResultCard({ result, onReset }) {
+export default function ResultCard({ result, onReset, session }) {
+  // Free accounts see the breed, profile and care tips; the health report is Premium.
+  const isPremium = session?.tier === "premium";
   // When a user taps a condition, we show the full article as an overlay.
   const [openCondition, setOpenCondition] = useState(null);
   // ---------- Case 1: the AI wasn't confident enough ----------
@@ -37,7 +39,7 @@ export default function ResultCard({ result, onReset }) {
       <View style={[styles.section, { marginTop: 16 }]}>
         <Text style={styles.sectionTitle}>NO CONFIDENT MATCH</Text>
         <Text style={styles.text}>{result.notDogNote}</Text>
-        {result.rawPredictions && <RawPredictions preds={result.rawPredictions} />}
+        {result.rawPredictions && <RawPredictions preds={result.rawPredictions.slice(0, 3)} />}
         <TouchableOpacity style={styles.btn} onPress={onReset}>
           <Text style={styles.btnText}>Try another photo</Text>
         </TouchableOpacity>
@@ -86,7 +88,17 @@ export default function ResultCard({ result, onReset }) {
 
       {/* The health watchlist. If we only had generic data (breed not in our
           database yet), we say so in the title — honesty over pretending. */}
-      {healthWatchlist?.length > 0 && (
+      {!isPremium && (
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>HEALTH REPORT</Text>
+          <Text style={styles.text}>
+            See this breed's health predispositions, early signs, and prevention.
+          </Text>
+          <Text style={styles.readMore}>Upgrade to Premium on the Profile tab to unlock →</Text>
+        </View>
+      )}
+
+      {isPremium && healthWatchlist?.length > 0 && (
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>
             HEALTH WATCHLIST{" "}
@@ -144,8 +156,8 @@ export default function ResultCard({ result, onReset }) {
         </View>
       )}
 
-      {/* The AI's full top-5, as bars */}
-      {result.rawPredictions && <RawPredictions preds={result.rawPredictions} />}
+      {/* The AI's top 3, as bars */}
+      {result.rawPredictions && <RawPredictions preds={result.rawPredictions.slice(0, 3)} />}
 
       <TouchableOpacity style={styles.btn} onPress={onReset}>
         <Text style={styles.btnText}>Scan another dog</Text>
@@ -154,11 +166,11 @@ export default function ResultCard({ result, onReset }) {
   );
 }
 
-// The top-5 bar chart. Each bar's width = that guess's percentage.
+// The top-3 bar chart. Each bar's width = that guess's percentage.
 function RawPredictions({ preds }) {
   return (
     <View style={styles.rawBox}>
-      <Text style={styles.rawTitle}>MODEL OUTPUT (TOP 5)</Text>
+      <Text style={styles.rawTitle}>MODEL OUTPUT (TOP 3)</Text>
       {preds.map((p, i) => (
         <View key={i} style={styles.rawRow}>
           <Text style={styles.rawBreed}>{titleCase(p.breed)}</Text>

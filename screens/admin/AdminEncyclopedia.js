@@ -144,6 +144,7 @@ function BreedEditor({ breedKey, onClose }) {
       return Alert.alert("No conditions", "An article needs at least one condition.");
     }
 
+    try {
     await saveBreedEntry(
       breedKey,
       {
@@ -162,6 +163,9 @@ function BreedEditor({ breedKey, onClose }) {
       },
       DEMO_ADMIN_EMAIL
     );
+    } catch (e) {
+      return Alert.alert("Couldn't save", e?.message || "Failed to save. Please check your connection and try again.");
+    }
     Alert.alert("Saved", `${titleCase(breedKey)} article updated.`);
     onClose();
   };
@@ -176,8 +180,12 @@ function BreedEditor({ breedKey, onClose }) {
           text: "Reset",
           style: "destructive",
           onPress: async () => {
-            await resetBreedEntry(breedKey, DEMO_ADMIN_EMAIL);
-            onClose();
+            try {
+              await resetBreedEntry(breedKey, DEMO_ADMIN_EMAIL);
+              onClose();
+            } catch (e) {
+              Alert.alert("Couldn't reset", e?.message || "Please try again.");
+            }
           },
         },
       ]

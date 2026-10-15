@@ -33,7 +33,22 @@ export default function AdminBusinessReview() {
   const [apps, setApps] = useState([]);
   const [filter, setFilter] = useState("pending");
 
-  const load = useCallback(async () => setApps(await getBusinesses()), []);
+  const load = useCallback(async () => {
+    try {
+      setApps(await getBusinesses());
+    } catch (e) {
+      Alert.alert("Couldn't load applications", e?.message || "Error, please try again later!");
+    }
+  }, []);
+  // Runs an admin action and reports any failure instead of failing silently
+  const act = async (fn) => {
+    try {
+      await fn();
+    } catch (e) {
+      Alert.alert("Action failed", e?.message || "Error, please try again later!");
+    }
+    load();
+  };
   useFocusEffect(load);
 
   const approve = (app) => {
@@ -44,10 +59,8 @@ export default function AdminBusinessReview() {
         { text: "Cancel", style: "cancel" },
         {
           text: "Approve",
-          onPress: async () => {
-            await reviewBusinessApplication(app.id, "approved");
-            load();
-          },
+          onPress: () =>
+            act(() => reviewBusinessApplication(app.id, "approved")),
         },
       ]
     );
@@ -59,19 +72,15 @@ export default function AdminBusinessReview() {
       { text: "Cancel", style: "cancel" },
       {
         text: "UEN not found",
-        onPress: async () => {
-          await reviewBusinessApplication(app.id, "rejected",
-            "UEN could not be found on the ACRA register.");
-          load();
-        },
+        onPress: () =>
+          act(() => reviewBusinessApplication(app.id, "rejected",
+            "UEN could not be found on the ACRA register.")),
       },
       {
         text: "Licence invalid",
-        onPress: async () => {
-          await reviewBusinessApplication(app.id, "rejected",
-            "AVS veterinary centre licence could not be verified.");
-          load();
-        },
+        onPress: () =>
+          act(() => reviewBusinessApplication(app.id, "rejected",
+            "AVS veterinary centre licence could not be verified.")),
       },
     ]);
   };
@@ -82,10 +91,8 @@ export default function AdminBusinessReview() {
       {
         text: "Suspend",
         style: "destructive",
-        onPress: async () => {
-          await suspendBusiness(app.id, "Licence lapsed or clinic no longer operating.");
-          load();
-        },
+        onPress: () =>
+          act(() => suspendBusiness(app.id, "Licence lapsed or clinic no longer operating.")),
       },
     ]);
   };

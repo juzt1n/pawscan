@@ -15,7 +15,13 @@ export default function AdminUsers() {
   const [users, setUsers] = useState([]);
   const [query, setQuery] = useState("");
 
-  const load = useCallback(async () => setUsers(await getUsers()), []);
+  const load = useCallback(async () => {
+    try {
+      setUsers(await getUsers());
+    } catch (e) {
+      Alert.alert("Couldn't load users", e?.message || "Error loading user list. Please try again later.");
+    }
+  }, []);
   useFocusEffect(load);
 
   const toggle = (u) => {
@@ -27,12 +33,16 @@ export default function AdminUsers() {
         text: verb,
         style: next === "suspended" ? "destructive" : "default",
         onPress: async () => {
-          const updated = await setUserStatus(u.id, next);
-          await addAuditEntry(
-            `${next === "suspended" ? "Suspended" : "Reinstated"} user ${u.email}`,
-            next === "suspended" ? "warn" : "ok"
-          );
-          setUsers(updated);
+          try {
+            const updated = await setUserStatus(u.id, next);
+            await addAuditEntry(
+              `${next === "suspended" ? "Suspended" : "Reinstated"} user ${u.email}`,
+              next === "suspended" ? "warn" : "ok"
+            );
+            setUsers(updated);
+          } catch (e) {
+            Alert.alert("Action failed", e?.message || "Error, please try again later!");
+          }
         },
       },
     ]);

@@ -33,7 +33,11 @@ export default function ScanScreen({ session }) {
 
   // Ask storage how many scans are left, and remember the answer
   const refreshQuota = useCallback(async () => {
-    setRemaining(await remainingScans(session));
+    try {
+      setRemaining(await remainingScans(session));
+    } catch {
+      /* server waking up or offline: keep the last number; the server still enforces the quota */
+    }
   }, [session]);
 
   // Do that once when the screen appears
@@ -76,9 +80,9 @@ export default function ScanScreen({ session }) {
     if (!image) return;
 
     // Quota gate (PRD #15/#18): free users with 0 left get stopped here
-    if (session.tier !== "premium" && remaining <= 0) {
+    if (session.tier !== "premium" && remaining !== null && remaining <= 0) {
       Alert.alert(
-        "Monthly scans used up",
+        "Daily scans used up",
         `Free accounts get ${FREE_DAILY_QUOTA} scans per day. Watch an ad for a bonus scan, or upgrade to Premium for unlimited scans.`
       );
       return;
@@ -88,27 +92,34 @@ export default function ScanScreen({ session }) {
     setResult(null);
     try {
       const data = await analyzeImage(image); // the one door (api.js)
-      await consumeScan(session);             // use up 1 scan (premium: no-op)
+      setResult(data);                        // show it straight away
+      await consumeScan(session);             // use up 1 scan (premium / real mode: no-op)
       await refreshQuota();                   // update the banner number
-      setResult(data);
 
       // Save successful identifications to history (PRD #11).
       // persistImage copies the photo out of the temporary cache folder so
       // it still exists later for the History thumbnail and the PDF report.
+      // A failed save must not hide the result the user is already looking at.
       if (data.isDog) {
-        await addScan({
-          breed: data.breed.primary,
-          confidence: data.breed.confidenceScore,
-          imageUri: await persistImage(image.uri),
-        });
+        try {
+          await addScan({
+            breed: data.breed.primary,
+            confidence: data.breed.confidenceScore,
+            imageUri: await persistImage(image.uri),
+          });
+        } catch (saveErr) {
+          console.error(saveErr);
+          Alert.alert("Not saved to history", saveErr?.message || "The result couldn't be saved to your history.");
+        }
       }
     } catch (err) {
       console.error(err); // full details go to the Expo terminal
+      if (err?.code === "QUOTA_EXHAUSTED") await refreshQuota(); // server says 0 left
       Alert.alert(
-        "Analysis failed",
+        err?.code === "QUOTA_EXHAUSTED" ? "Daily scans used up" : "Analysis failed",
         USE_MOCK
           ? "Unexpected mock error — check the terminal."
-          : "Couldn't reach the PawScan server. Is the backend running?"
+          : err?.message || "Couldn't reach the PawScan server. Please try again."
       );
     } finally {
       setLoading(false); // stop the spinner whether it worked or not
@@ -122,7 +133,11 @@ export default function ScanScreen({ session }) {
       {
         text: "Finish ad",
         onPress: async () => {
-          await grantAdBonusScan(session);
+          try {
+            await grantAdBonusScan(session);
+          } catch (e) {
+            Alert.alert("Ad bonus", e?.message || "Please try again later.");
+          }
           await refreshQuota();
         },
       },
@@ -216,7 +231,7 @@ export default function ScanScreen({ session }) {
       )}
 
       {/* The result, plus the mandatory disclaimer on health outputs */}
-      {result && <ResultCard result={result} onReset={reset} />}
+      {result && <ResultCard result={result} onReset={reset} session={session} />}
       {result?.isDog && <VetDisclaimer />}
     </ScrollView>
   );

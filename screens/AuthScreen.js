@@ -50,34 +50,42 @@ export default function AuthScreen({ onAuthed, onForgotPassword }) {
     // Rule 7a - required fields (applies to every shape of this form)
     if (!email.trim() || !password) return setError("Please fill in all fields.");
 
-    if (mode === "login") {
-      return onAuthed(await login(email.trim()));
+    try {
+      if (mode === "login") {
+        return onAuthed(await login(email.trim(), undefined, password));
+      }
+
+      // ---- registration checks ----
+      if (password.length < 8)
+        return setError("Password must be at least 8 characters.");
+      if (password !== confirm) {
+        setConfirm("");                       // PRD says: clear the confirm box
+        return setError("Passwords do not match.");
+      }
+      if (!agreed)
+        return setError("Please accept the terms, including the veterinary disclaimer.");
+
+      if (isBusiness) {
+        if (!clinicName.trim() || !uen.trim() || !avsLicence.trim() || !address.trim() || !phone.trim())
+          return setError("Please complete all clinic details.");
+        if (!UEN_PATTERN.test(uen.trim()))
+          return setError("UEN must be 9-10 letters or digits (e.g. 53412345X).");
+
+        // URS #02 - creates a PENDING application, not a verified listing
+        return onAuthed(
+          await registerBusiness({
+            email: email.trim(), password, clinicName, uen, avsLicence, address, phone,
+          })
+        );
+      }
+
+      if (!name.trim()) return setError("Please fill in all fields.");
+      onAuthed(await login(email.trim(), name.trim(), password));
+    } catch (e) {
+      // Server messages are written for users: "Invalid email or password.",
+      // "This email is already registered...", "Account temporarily locked..."
+      setError(e?.message || "Something went wrong. Please try again.");
     }
-
-    // ---- registration checks ----
-    if (password !== confirm) {
-      setConfirm("");                       // PRD says: clear the confirm box
-      return setError("Passwords do not match.");
-    }
-    if (!agreed)
-      return setError("Please accept the terms, including the veterinary disclaimer.");
-
-    if (isBusiness) {
-      if (!clinicName.trim() || !uen.trim() || !avsLicence.trim() || !address.trim())
-        return setError("Please complete all clinic details.");
-      if (!UEN_PATTERN.test(uen.trim()))
-        return setError("UEN must be 9-10 letters or digits (e.g. 53412345X).");
-
-      // URS #02 - creates a PENDING application, not a verified listing
-      return onAuthed(
-        await registerBusiness({
-          email: email.trim(), clinicName, uen, avsLicence, address, phone,
-        })
-      );
-    }
-
-    if (!name.trim()) return setError("Please fill in all fields.");
-    onAuthed(await login(email.trim(), name.trim()));
   };
 
   return (

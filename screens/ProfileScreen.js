@@ -69,11 +69,15 @@ export default function ProfileScreen({ session, onSessionChange, onLogout }) {
         "Breed must be one of the 120 supported breeds (or leave blank for mixed/unknown)."
       );
     }
-    await addDog({
-      name: dogName.trim(),
-      breed: breedKey || "mixed / unknown",
-      age: dogAge.trim() || "unknown",
-    });
+    try {
+      await addDog({
+        name: dogName.trim(),
+        breed: breedKey || "mixed / unknown",
+        age: dogAge.trim() || "unknown",
+      });
+    } catch (e) {
+      return Alert.alert("Couldn't save dog", e?.message || "Failed to create profile, please try again later!");
+    }
     setDogs(await getDogs()); // refresh the list
     // Clear and close the form
     setDogName("");
@@ -174,7 +178,7 @@ export default function ProfileScreen({ session, onSessionChange, onLogout }) {
             <Text style={styles.fieldLabel}>EMAIL</Text>
             <Text style={styles.readonlyField}>{session.email}</Text>
             <Text style={styles.readonlyHint}>
-              Email is your account ID and can't be changed in this demo.
+              Email is your account ID and can't be changed.
             </Text>
             <View style={styles.editButtons}>
               <TouchableOpacity style={styles.cancelBtn} onPress={() => setEditing(false)}>
@@ -270,12 +274,20 @@ export default function ProfileScreen({ session, onSessionChange, onLogout }) {
       {/* 5. Exports — debug tool today, PDPA data-portability story later */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>MY DATA</Text>
-        <TouchableOpacity style={styles.secondaryBtn} onPress={doExportCSV}>
-          <Text style={styles.secondaryBtnText}>Export scan history (CSV)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.secondaryBtn} onPress={doExportPDF}>
-          <Text style={styles.secondaryBtnText}>Export vet report (PDF)</Text>
-        </TouchableOpacity>
+        {session.tier !== "premium" ? (
+          <Text style={styles.lockedText}>
+            Exporting your scan history and a PDF vet report is a Premium feature.
+          </Text>
+        ) : (
+          <>
+            <TouchableOpacity style={styles.secondaryBtn} onPress={doExportCSV}>
+              <Text style={styles.secondaryBtnText}>Export scan history (CSV)</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.secondaryBtn} onPress={doExportPDF}>
+              <Text style={styles.secondaryBtnText}>Export vet report (PDF)</Text>
+            </TouchableOpacity>
+          </>
+        )}
       </View>
 
       {/* 6. Logout */}
