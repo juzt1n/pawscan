@@ -1,0 +1,268 @@
+{
+  "_note": "Article content for the condition information page (URS: tap a condition to read more). Keys are normalised: lowercase, punctuation and bracketed text stripped. api.js does the matching, so 'Gastric Dilation-Volvulus (Bloat)' and 'gastric dilatation-volvulus' both resolve here. Falls back gracefully when a condition has no article yet.",
+  "hip dysplasia": {
+    "whatItIs": "A malformation of the hip joint where the ball and socket do not fit together properly. The joint wears unevenly over time, leading to pain and arthritis.",
+    "whyItMatters": "It is one of the most common inherited orthopaedic problems in dogs, and one of the most influenced by owner decisions: body weight and growth rate materially change how severe it becomes.",
+    "urgency": "routine"
+  },
+  "hip and elbow dysplasia": {
+    "whatItIs": "Malformation of the hip and elbow joints, where the bones do not fit together smoothly. Both joints wear unevenly and develop arthritis over time.",
+    "whyItMatters": "Large and giant breeds are most affected. Screening schemes (OFA, PennHIP, BVA) grade breeding animals specifically to reduce it.",
+    "urgency": "routine"
+  },
+  "elbow dysplasia": {
+    "whatItIs": "A group of developmental abnormalities in the elbow joint that cause the joint surfaces to fit together imperfectly.",
+    "whyItMatters": "Often shows as front-limb lameness in young, growing dogs rather than in old age.",
+    "urgency": "routine"
+  },
+  "patellar luxation": {
+    "whatItIs": "The kneecap slips out of its groove, usually towards the inside of the leg. Graded 1 to 4 by how easily and how often it displaces.",
+    "whyItMatters": "Very common in toy and small breeds. Mild grades may need no treatment; higher grades cause arthritis and often need surgery.",
+    "urgency": "routine"
+  },
+  "gastric dilatation-volvulus": {
+    "whatItIs": "The stomach fills with gas and then twists on itself, cutting off its own blood supply. Also called bloat or GDV.",
+    "whyItMatters": "This is a true emergency. Without surgery within hours it is usually fatal. Deep-chested breeds are most at risk, and a preventive surgery (gastropexy) can be done during neutering.",
+    "urgency": "emergency"
+  },
+  "hypothyroidism": {
+    "whatItIs": "The thyroid gland produces too little thyroid hormone, slowing the body's metabolism.",
+    "whyItMatters": "Easily missed because the signs look like ordinary ageing. It is diagnosed with a blood test and managed well with daily medication.",
+    "urgency": "routine"
+  },
+  "progressive retinal atrophy": {
+    "whatItIs": "An inherited condition in which the light-sensing cells at the back of the eye gradually die, leading to blindness.",
+    "whyItMatters": "There is no treatment, but a DNA test exists for many breeds, so responsible breeding can eliminate it. Dogs adapt remarkably well to gradual vision loss.",
+    "urgency": "routine"
+  },
+  "ear infections": {
+    "whatItIs": "Inflammation and infection of the ear canal, usually bacterial or yeast, often triggered by moisture or allergies.",
+    "whyItMatters": "Breeds with heavy drop ears are most affected, and Singapore's humidity makes recurrence more likely. Repeated infections can permanently narrow the canal.",
+    "urgency": "soon"
+  },
+  "otitis externa": {
+    "whatItIs": "Inflammation of the external ear canal, the medical name for the common ear infection.",
+    "whyItMatters": "Frequently a symptom of an underlying allergy rather than a standalone problem, so recurring cases deserve an allergy workup.",
+    "urgency": "soon"
+  },
+  "epilepsy": {
+    "whatItIs": "A neurological condition causing recurrent seizures with no other identifiable cause.",
+    "whyItMatters": "Usually first appears between one and five years of age. Most dogs live a normal lifespan with medication. Keeping a written seizure diary genuinely helps the vet adjust treatment.",
+    "urgency": "soon"
+  },
+  "intervertebral disc disease": {
+    "whatItIs": "The cushioning discs between the spinal vertebrae bulge or rupture, pressing on the spinal cord.",
+    "whyItMatters": "Long-backed and short-legged breeds are predisposed. Sudden hind-limb weakness or dragging is an emergency, since prompt surgery greatly improves the outcome.",
+    "urgency": "emergency"
+  },
+  "brachycephalic obstructive airway syndrome": {
+    "whatItIs": "Flat-faced breeds have soft tissue crowded into a shortened skull, narrowing the airway. Also called BOAS.",
+    "whyItMatters": "In Singapore's heat and humidity this is the single most dangerous breed trait: affected dogs cannot cool themselves efficiently and can collapse from heatstroke on an ordinary walk.",
+    "urgency": "soon"
+  },
+  "brachycephalic airway compromise": {
+    "whatItIs": "Restricted airflow caused by the shortened skull shape of flat-faced breeds.",
+    "whyItMatters": "Heat intolerance is the practical danger in tropical climates. Weight control and surgical correction of narrowed nostrils both help substantially.",
+    "urgency": "soon"
+  },
+  "tracheal collapse": {
+    "whatItIs": "The windpipe's cartilage rings weaken and flatten, narrowing the airway during breathing.",
+    "whyItMatters": "Produces the characteristic goose-honk cough in toy breeds. Using a harness instead of a neck collar is the simplest and most effective thing an owner can do.",
+    "urgency": "soon"
+  },
+  "dental disease": {
+    "whatItIs": "Plaque hardens into tartar, inflaming the gums and eventually destroying the tissue and bone holding the teeth.",
+    "whyItMatters": "The most common disease in adult dogs and one of the most preventable. Small breeds suffer worst because their teeth are crowded.",
+    "urgency": "routine"
+  },
+  "obesity": {
+    "whatItIs": "Excess body fat, most simply assessed by whether you can feel the ribs and see a waist from above.",
+    "whyItMatters": "It worsens nearly every other condition on this list, particularly joint disease and breathing problems, and shortens lifespan measurably.",
+    "urgency": "routine"
+  },
+  "glaucoma": {
+    "whatItIs": "Pressure builds inside the eye, damaging the optic nerve.",
+    "whyItMatters": "A painful red eye with sudden vision change is an emergency: sight can be lost within a day or two without treatment.",
+    "urgency": "emergency"
+  },
+  "cataracts": {
+    "whatItIs": "The lens of the eye becomes cloudy, blocking light from reaching the retina.",
+    "whyItMatters": "May be inherited or secondary to diabetes. Surgery can restore vision in suitable cases.",
+    "urgency": "routine"
+  },
+  "corneal ulcers": {
+    "whatItIs": "A wound or erosion on the clear surface of the eye.",
+    "whyItMatters": "Breeds with prominent eyes are highly vulnerable. Any squinting deserves same-day attention, because an untreated ulcer can perforate the eye.",
+    "urgency": "emergency"
+  },
+  "entropion": {
+    "whatItIs": "The eyelid rolls inward so the eyelashes rub against the surface of the eye.",
+    "whyItMatters": "Constant irritation causes ulcers and scarring. Surgical correction is straightforward and permanent.",
+    "urgency": "soon"
+  },
+  "dilated cardiomyopathy": {
+    "whatItIs": "The heart muscle thins and stretches, so the heart pumps less effectively.",
+    "whyItMatters": "Often silent until quite advanced, which is why at-risk breeds are screened with echocardiography before symptoms appear.",
+    "urgency": "soon"
+  },
+  "mitral valve disease": {
+    "whatItIs": "The valve between the left heart chambers thickens and leaks, so blood flows backwards with each beat.",
+    "whyItMatters": "Extremely common in older small breeds. Counting your dog's resting breathing rate at home is a simple way to spot early deterioration.",
+    "urgency": "soon"
+  },
+  "osteosarcoma": {
+    "whatItIs": "An aggressive cancer of the bone, most often in the limbs of large and giant breeds.",
+    "whyItMatters": "Frequently mistaken for a sprain at first. Any limp in a large-breed dog that does not resolve within a couple of weeks deserves an X-ray.",
+    "urgency": "soon"
+  },
+  "legg-calve-perthes disease": {
+    "whatItIs": "The blood supply to the head of the femur fails, causing the bone to break down inside the hip joint.",
+    "whyItMatters": "Affects small breeds in puppyhood, typically between five and eight months. Surgery usually gives an excellent outcome.",
+    "urgency": "soon"
+  },
+  "anaesthetic sensitivity": {
+    "whatItIs": "Sighthounds metabolise certain anaesthetic drugs differently because of their low body fat and distinct liver enzymes.",
+    "whyItMatters": "Not a disease, but critical safety information. Tell every veterinary clinic your dog is a sighthound before any procedure, including dental cleaning.",
+    "urgency": "routine"
+  },
+  "deafness": {
+    "whatItIs": "Partial or complete hearing loss, often congenital and linked to coat colour patterns such as merle or piebald.",
+    "whyItMatters": "Confirmed with a BAER test. Deaf dogs live full lives but need hand-signal training and must never be off-leash near traffic.",
+    "urgency": "routine"
+  },
+  "diabetes mellitus": {
+    "whatItIs": "The body cannot regulate blood sugar, either through insufficient insulin or poor response to it.",
+    "whyItMatters": "Increased drinking and urination with weight loss are the classic early signs. Managed with daily insulin and consistent feeding.",
+    "urgency": "soon"
+  },
+  "allergic skin disease": {
+    "whatItIs": "An overreaction of the immune system to environmental or food triggers, showing up in the skin rather than the nose.",
+    "whyItMatters": "Paw licking and recurring ear infections are the usual first signs. Humid climates worsen flare-ups year-round rather than seasonally.",
+    "urgency": "routine"
+  },
+  "skin fold dermatitis": {
+    "whatItIs": "Infection in the warm, moist skin folds of wrinkled breeds.",
+    "whyItMatters": "Almost entirely preventable with a few minutes of routine cleaning and thorough drying several times a week.",
+    "urgency": "routine"
+  },
+  "cushings disease": {
+    "whatItIs": "The body produces too much cortisol, usually because of a small benign tumour on the pituitary or adrenal gland.",
+    "whyItMatters": "Signs are easy to dismiss as ageing: drinking more, a pot-bellied appearance, and thinning coat. It is treatable with medication.",
+    "urgency": "routine"
+  },
+  "von willebrands disease": {
+    "whatItIs": "An inherited clotting disorder in which the blood lacks a protein needed to stop bleeding.",
+    "whyItMatters": "Usually silent until injury or surgery. A DNA test result on file before any procedure can prevent a serious bleeding event.",
+    "urgency": "routine"
+  },
+  "degenerative myelopathy": {
+    "whatItIs": "A progressive disease of the spinal cord that causes gradual hind-limb weakness in older dogs. It is not painful.",
+    "whyItMatters": "A DNA test identifies at-risk dogs. There is no cure, but physiotherapy and mobility aids maintain quality of life for a long time.",
+    "urgency": "routine"
+  },
+  "exercise-induced collapse": {
+    "whatItIs": "An inherited condition where intense exercise triggers hind-limb weakness and collapse, with recovery after rest.",
+    "whyItMatters": "A DNA test exists. Affected dogs live normally when high-intensity activity is managed.",
+    "urgency": "soon"
+  },
+  "parasites": {
+    "whatItIs": "Internal and external parasites including heartworm, ticks, fleas and intestinal worms.",
+    "whyItMatters": "In tropical climates parasite pressure is year-round rather than seasonal, so preventives should never be paused over a 'cold season'.",
+    "urgency": "routine"
+  },
+  "periodontal disease": {
+    "whatItIs": "Inflammation and destruction of the tissues supporting the teeth, caused by long-term plaque and tartar.",
+    "whyItMatters": "Painful and very common, yet largely preventable with daily brushing. Bacteria from diseased gums can also affect the heart and kidneys.",
+    "urgency": "routine"
+  },
+  "skin allergies": {
+    "whatItIs": "An overreaction to environmental or food allergens that shows up as itchy, inflamed skin.",
+    "whyItMatters": "Paw licking and repeated ear infections are usually the first sign. Humid climates cause year-round rather than seasonal flare-ups.",
+    "urgency": "routine"
+  },
+  "atopic dermatitis": {
+    "whatItIs": "A lifelong allergic skin condition triggered by environmental allergens such as dust mites, pollens and moulds.",
+    "whyItMatters": "Manageable but not curable. Early identification of triggers reduces the number of secondary skin and ear infections.",
+    "urgency": "routine"
+  },
+  "cruciate ligament rupture": {
+    "whatItIs": "Tearing of the ligament that stabilises the knee joint, usually from gradual degeneration rather than a single injury.",
+    "whyItMatters": "One of the most common orthopaedic surgeries in dogs. Keeping the dog lean substantially reduces the risk, including in the opposite knee.",
+    "urgency": "soon"
+  },
+  "fanconi syndrome": {
+    "whatItIs": "The kidney tubules fail to reabsorb nutrients, so glucose, protein and electrolytes are lost in the urine.",
+    "whyItMatters": "Manageable for years with a strict supplementation protocol, but only if caught early — which is why at-risk breeds have urine monitored from young adulthood.",
+    "urgency": "soon"
+  },
+  "collie eye anomaly": {
+    "whatItIs": "An inherited malformation of the tissues at the back of the eye, present from birth.",
+    "whyItMatters": "Mild cases cause no visible problem and are found only on an eye exam, which is exactly why breeding stock must be DNA tested and screened.",
+    "urgency": "routine"
+  },
+  "aortic stenosis": {
+    "whatItIs": "A narrowing below the aortic valve that forces the heart to work harder to pump blood out.",
+    "whyItMatters": "Often detected as a heart murmur in a young dog. Severity varies widely, so specialist cardiac assessment matters before assuming it is harmless.",
+    "urgency": "soon"
+  },
+  "subvalvular aortic stenosis": {
+    "whatItIs": "A narrowing just below the aortic valve, restricting blood flow leaving the heart.",
+    "whyItMatters": "Usually found as a murmur in puppies. Severe cases can cause fainting or sudden death, so it should never be dismissed without an echocardiogram.",
+    "urgency": "soon"
+  },
+  "portosystemic shunt": {
+    "whatItIs": "An abnormal blood vessel that lets blood bypass the liver, so toxins are not filtered out.",
+    "whyItMatters": "Typically seen in poorly growing puppies who seem disoriented after meals. Often correctable with surgery.",
+    "urgency": "soon"
+  },
+  "lens luxation": {
+    "whatItIs": "The lens slips out of position inside the eye, often blocking fluid drainage.",
+    "whyItMatters": "A painful red eye with sudden vision change is an emergency; rapid treatment can save the eye.",
+    "urgency": "emergency"
+  },
+  "cancer": {
+    "whatItIs": "Uncontrolled growth of abnormal cells, which may form lumps or affect internal organs.",
+    "whyItMatters": "Some breeds carry markedly elevated risk. Having every new lump checked promptly, rather than watching it, is the single most useful owner habit.",
+    "urgency": "soon"
+  },
+  "hereditary cataracts": {
+    "whatItIs": "Clouding of the lens caused by an inherited gene rather than age or diabetes.",
+    "whyItMatters": "DNA tests exist for several breeds. Surgery can restore vision in suitable cases.",
+    "urgency": "routine"
+  },
+  "hyperlipidaemia": {
+    "whatItIs": "Persistently high levels of fat in the blood, which can inflame the pancreas.",
+    "whyItMatters": "Diet discipline genuinely matters here — a single fatty treat can trigger a painful bout of pancreatitis in predisposed breeds.",
+    "urgency": "soon"
+  },
+  "urinary stones": {
+    "whatItIs": "Mineral crystals that form stones in the bladder or urinary tract.",
+    "whyItMatters": "Straining to urinate in a male dog is an emergency, because a stone can block the urethra completely.",
+    "urgency": "emergency"
+  },
+  "protein-losing nephropathy": {
+    "whatItIs": "The kidneys leak protein into the urine because their filtering membranes are damaged.",
+    "whyItMatters": "Silent in early stages, so at-risk breeds are screened with an annual urine protein test rather than waiting for symptoms.",
+    "urgency": "soon"
+  },
+  "cervical vertebral instability": {
+    "whatItIs": "Compression of the spinal cord in the neck, also called wobbler syndrome.",
+    "whyItMatters": "Causes an unsteady, scuffing gait in large breeds. A neck-neutral harness rather than a collar reduces further strain.",
+    "urgency": "soon"
+  },
+  "addisons disease": {
+    "whatItIs": "The adrenal glands produce too little cortisol and aldosterone.",
+    "whyItMatters": "Called the great pretender because signs are vague and intermittent until a sudden crisis. A blood test rules it in or out cheaply.",
+    "urgency": "soon"
+  },
+  "mdr1 drug sensitivity": {
+    "whatItIs": "A genetic variant that prevents certain drugs from being pumped out of the brain, causing severe reactions to ordinary doses.",
+    "whyItMatters": "Not a disease but critical safety information. The DNA test result should be recorded at every clinic your dog visits.",
+    "urgency": "routine"
+  },
+  "copper toxicosis": {
+    "whatItIs": "Copper accumulates in the liver because the body cannot excrete it normally, gradually damaging liver tissue.",
+    "whyItMatters": "A DNA test identifies affected dogs, and a copper-restricted diet started early prevents most of the damage.",
+    "urgency": "soon"
+  }
+}
