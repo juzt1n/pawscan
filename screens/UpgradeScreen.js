@@ -3,8 +3,9 @@
 // ============================================================================
 // ============================================================================
 
-import { ScrollView, View, Text, TouchableOpacity, StyleSheet, Alert } from "react-native";
-import { upgradeToPremium } from "../lib/storage";
+import { useState } from "react";
+import { ScrollView, View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import CheckoutScreen from "./CheckoutScreen";
 import { T } from "../components/shared";
 
 const FREE = ["3 scans per day", "Breed encyclopaedia", "Scan history", "Bookmarks"];
@@ -17,27 +18,18 @@ const PREMIUM = [
 ];
 
 export default function UpgradeScreen({ onBack, onSessionChange }) {
-  const buy = () => {
-    Alert.alert(
-      "Confirm upgrade",
-      "Demo build: no real payment is taken. Continue to unlock Premium?",
-      [
-        { text: "Cancel", style: "cancel" },
-        {
-          text: "Upgrade",
-          onPress: async () => {
-            try {
-              const updated = await upgradeToPremium();
-              onSessionChange(updated);
-              onBack();
-            } catch (e) {
-              Alert.alert("Upgrade failed", e?.message || "Please try again.");
-            }
-          },
-        },
-      ]
+  const [checkout, setCheckout] = useState(false);
+  const buy = () => setCheckout(true);
+
+  if (checkout) {
+    return (
+      <CheckoutScreen
+        onBack={() => setCheckout(false)}
+        onSessionChange={onSessionChange}
+        onDone={onBack}
+      />
     );
-  };
+  }
 
   return (
     <ScrollView contentContainerStyle={styles.wrap}>

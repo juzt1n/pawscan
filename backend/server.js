@@ -9,6 +9,7 @@ import scanRoutes from "./src/routes/scans.js";
 import clinicRoutes from "./src/routes/clinics.js";
 import adminRoutes from "./src/routes/admin.js";
 import breedRoutes from "./src/routes/breeds.js";
+import stripeRoutes from "./src/routes/stripe.js";
 
 for (const k of ["MONGODB_URI", "JWT_SECRET", "MODEL_URL", "HF_TOKEN"]) {
   if (!process.env[k]) {
@@ -47,6 +48,7 @@ app.use("/api", scanRoutes);
 app.use("/api", clinicRoutes);
 app.use("/api", breedRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/stripe", stripeRoutes);
 
 app.use((req, res) => res.status(404).json({ error: "Not found" }));
 
