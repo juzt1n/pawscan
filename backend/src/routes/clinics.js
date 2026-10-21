@@ -2,6 +2,7 @@ import { Router } from "express";
 import { getDb } from "../db.js";
 import { createUser, requireAuth, requireRole, signToken, validPassword } from "../auth.js";
 import { wrap, oid, sessionOf, audit } from "../util.js";
+import { geocodeSG } from "../geocode.js";
 
 const router = Router();
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -30,6 +31,8 @@ const toClinic = (c) => ({
   address: c.address,
   phone: c.phone,
   distanceKm: c.distM != null ? Math.round(c.distM / 100) / 10 : null,
+  lat: c.location?.coordinates?.[1] ?? null,
+  lng: c.location?.coordinates?.[0] ?? null,
   hours: c.hours || null,
   verified: true,
 });
@@ -61,6 +64,10 @@ router.post("/businesses/register", wrap(async (req, res) => {
   }
 
   const doc = { ownerId: user._id, clinicName, uen, avsLicence, address, phone, hours: null, status: "pending", reviewReason: null, createdAt: new Date(), reviewedAt: null };
+  // Map position for the vet locator, looked up from the address (null if not found)
+  const location = await geocodeSG(address);
+  if (location) doc.location = location;
+  else doc.geoFailedFor = address;
   try {
     const r = await clinics().insertOne(doc);
     doc._id = r.insertedId;
@@ -91,8 +98,15 @@ router.patch("/businesses/:id", requireAuth, wrap(async (req, res) => {
     if (typeof req.body[field] === "string") set[field] = req.body[field].trim().slice(0, max);
   }
   if (set.clinicName === "") delete set.clinicName;
+  const update = { $set: set };
+  // A new address needs a new map position
+  if (set.address && set.address !== c.address) {
+    const location = await geocodeSG(set.address);
+    if (location) { set.location = location; update.$unset = { geoFailedFor: "" }; }
+    else { set.geoFailedFor = set.address; update.$unset = { location: "" }; }
+  }
   const updated = Object.keys(set).length
-    ? await clinics().findOneAndUpdate({ _id: id }, { $set: set }, { returnDocument: "after" })
+    ? await clinics().findOneAndUpdate({ _id: id }, update, { returnDocument: "after" })
     : c;
   const owner = await getDb().collection("users").findOne({ _id: updated.ownerId });
   res.json(toBusiness(updated, owner?.email || ""));
@@ -137,6 +151,15 @@ router.post("/businesses/:id/review", requireAuth, requireRole("admin"), wrap(as
 // ---- Vet locator (URS #22) -------------------------------------------------
 // Only admin-approved clinics are ever shown. Pass ?lat=&lng= to sort by distance.
 router.get("/clinics/nearby", requireAuth, wrap(async (req, res) => {
+  // Approved clinics registered before geocoding existed get a map position now (a few at a time)
+  const missing = await clinics()
+    .find({ status: "approved", location: { $exists: false }, geoFailedFor: { $exists: false } })
+    .limit(5).toArray();
+  for (const m of missing) {
+    const location = await geocodeSG(m.address);
+    await clinics().updateOne({ _id: m._id }, location ? { $set: { location } } : { $set: { geoFailedFor: m.address } });
+  }
+
   const lat = parseFloat(req.query.lat);
   const lng = parseFloat(req.query.lng);
   let rows;
