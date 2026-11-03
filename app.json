@@ -31,7 +31,8 @@
         {
           "locationWhenInUsePermission": "PawScan uses your location to show the verified vet clinics nearest to you."
         }
-      ]
+      ],
+      "expo-secure-store"
     ]
   }
 }
