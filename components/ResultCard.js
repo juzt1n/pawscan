@@ -28,7 +28,7 @@ const riskRank = (r) => (r === "high" ? 3 : r === "moderate" ? 2 : 1);
 // "golden retriever" → "Golden Retriever" (capitalize each word)
 const titleCase = (s) => s.replace(/\b\w/g, (c) => c.toUpperCase());
 
-export default function ResultCard({ result, onReset, session }) {
+export default function ResultCard({ result, onReset, session, onUpgrade }) {
   // Free accounts see the breed, profile and care tips; the health report is Premium.
   const isPremium = session?.tier === "premium";
   // When a user taps a condition, we show the full article as an overlay.
@@ -94,7 +94,10 @@ export default function ResultCard({ result, onReset, session }) {
           <Text style={styles.text}>
             See this breed's health predispositions, early signs, and prevention.
           </Text>
-          <Text style={styles.readMore}>Upgrade to Premium on the Profile tab to unlock →</Text>
+          {/* Opens the plan screen (App.js passes onUpgrade down through ScanScreen) */}
+          <TouchableOpacity onPress={onUpgrade} disabled={!onUpgrade} accessibilityRole="button">
+            <Text style={styles.readMore}>Upgrade to Premium to unlock →</Text>
+          </TouchableOpacity>
         </View>
       )}
 

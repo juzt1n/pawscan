@@ -26,7 +26,7 @@ import {
   FREE_DAILY_QUOTA,
 } from "../lib/storage";
 
-export default function ScanScreen({ session }) {
+export default function ScanScreen({ session, onUpgrade }) {
   const [image, setImage] = useState(null);       // the chosen photo (or null)
   const [loading, setLoading] = useState(false);  // is the AI "thinking"?
   const [result, setResult] = useState(null);     // the analysis answer
@@ -232,7 +232,7 @@ export default function ScanScreen({ session }) {
       )}
 
       {/* The result, plus the mandatory disclaimer on health outputs */}
-      {result && <ResultCard result={result} onReset={reset} session={session} />}
+      {result && <ResultCard result={result} onReset={reset} session={session} onUpgrade={onUpgrade} />}
       {result?.isDog && <VetDisclaimer />}
     </ScrollView>
   );

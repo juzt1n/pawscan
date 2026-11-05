@@ -86,19 +86,6 @@ export default function App() {
   };
 
 
-if (showUpgrade) {
-  return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
-        <StatusBar style="light" />
-        <UpgradeScreen
-          onBack={() => setShowUpgrade(false)}
-          onSessionChange={(s) => { setSession(s); setShowUpgrade(false); }}
-        />
-      </SafeAreaView>
-    </SafeAreaProvider>
-  );
-}
   // ------- 1. Still checking storage → spinner -------
   if (booting) {
     return (
@@ -234,6 +221,18 @@ if (showUpgrade) {
           ))}
         </View>
       </SafeAreaView>
+
+      {/* The plan screen opens ON TOP of the tabs instead of replacing them, so the
+          scan result underneath is kept. Back closes it and the result is still
+          there; after paying, the same result shows the full Premium report. */}
+      {showUpgrade && (
+        <SafeAreaView style={[StyleSheet.absoluteFill, styles.safe]} edges={["top", "bottom"]}>
+          <UpgradeScreen
+            onBack={() => setShowUpgrade(false)}
+            onSessionChange={(s) => { setSession(s); setShowUpgrade(false); }}
+          />
+        </SafeAreaView>
+      )}
     </SafeAreaProvider>
   );
 }
