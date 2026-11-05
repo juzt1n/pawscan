@@ -5,9 +5,6 @@
     "version": "3.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "splash": {
-      "backgroundColor": "#243E2C"
-    },
     "ios": {
       "infoPlist": {
         "NSCameraUsageDescription": "PawScan uses the camera to photograph dogs for breed identification.",
@@ -30,6 +27,13 @@
         "expo-location",
         {
           "locationWhenInUsePermission": "PawScan uses your location to show the verified vet clinics nearest to you."
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#243E2C"
         }
       ]
     ]
