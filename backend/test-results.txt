@@ -1,0 +1,66 @@
+
+ RUN  v5.1.0 /Users/sharon/Documents/GitHub/pawscan/backend
+
+ ✓ test/quota.test.js > TC-ADS-01 quota resets at SGT midnight > 23:59 SGT same day: still 0 left 39ms
+ ✓ test/quota.test.js > TC-ADS-01 quota resets at SGT midnight > 00:01 SGT next day: full 3 again 3ms
+ ✓ test/quota.test.js > TC-ADS-01 quota resets at SGT midnight > ad bonus adds to the limit 0ms
+ ✓ test/quota.test.js > TC-ADS-01 quota resets at SGT midnight > premium is unlimited (null) 0ms
+ ✓ test/auth.test.js > Account & Authentication > TC-ACC-01 register succeeds 359ms
+ ✓ test/scan.test.js > Scanning, quota, history > TC-SCAN-03 valid image accepted, model called 21ms
+ ✓ test/scan.test.js > Scanning, quota, history > invalid file bytes rejected 5ms
+ ✓ test/me.test.js > Profile > TC-ACC-09 name and phone saved, email cannot change 10ms
+ ✓ test/me.test.js > Profile > blank name ignored 4ms
+ ✓ test/me.test.js > Quota, ads, premium > TC-ADS-01 banner data: 3 remaining at start 6ms
+ ✓ test/me.test.js > Quota, ads, premium > TC-ADS-03 watching an ad adds exactly +1 immediately 11ms
+ ✓ test/me.test.js > Quota, ads, premium > ad bonus capped at 5 per day 30ms
+ ✓ test/me.test.js > Quota, ads, premium > TC-ADS-04 premium account has unlimited quota 5ms
+ ✓ test/me.test.js > Quota, ads, premium > TC-ADS-05 premium ad-bonus is a no-op 4ms
+ ✓ test/auth.test.js > Account & Authentication > TC-ACC-02 duplicate email rejected 298ms
+ ✓ test/scan.test.js > Scanning, quota, history > TC-ADS-01 free quota runs out after 3 scans 327ms
+ ✓ test/me.test.js > Premium gating and bookmarks > free user cannot create dog profile, premium can 310ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > checkout session requires login 7ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > checkout session returns a URL and carries the user id 8ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > missing sessionId rejected 7ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > unpaid session does NOT upgrade 10ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > someone else's paid session is rejected (fails until Bug 1 is fixed) 6ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > own paid session upgrades to premium 8ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > TC-ADS-05 premium sees unlimited quota 3ms
+ ✓ test/stripe.test.js > TC-ADS-04 premium upgrade via Stripe > free users cannot self-upgrade without paying (fails if /me/upgrade still exists) 5ms
+ ✓ test/admin.test.js > System Admin and Audit > admin routes reject non-admins 9ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-01 edit breed shows publicly and is tagged edited 12ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-01 reset restores factory data and removes edited tag 10ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-01 edit with no condition rejected 4ms
+ ✓ test/me.test.js > Premium gating and bookmarks > TC-HR-04 bookmark toggles on and off 6ms
+ ✓ test/clinics.test.js > Business registration and approval > TC-ACC-03 business registers as pending 296ms
+ ✓ test/scan.test.js > Scanning, quota, history > TC-ADS-01 quota resets after midnight 322ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-02 suspend blocks login and is audited 312ms
+ ✓ test/clinics.test.js > Business registration and approval > TC-ACC-03 pending clinic NOT in vet locator 11ms
+ ✓ test/clinics.test.js > Business registration and approval > missing mandatory field rejected 3ms
+ ✓ test/clinics.test.js > Business registration and approval > TC-SYS-03 admin approves, clinic appears and action is audited 19ms
+ ✓ test/clinics.test.js > Business registration and approval > non-admin cannot review 3ms
+ ✓ test/clinics.test.js > Business registration and approval > rejected or suspended clinic is hidden 12ms
+ ✓ test/me.test.js > Premium gating and bookmarks > TC-ADS-02 bookmarks and quota follow the account across logins 302ms
+ ✓ test/clinics.test.js > Vet locator and listing > TC-VET-01 sorted by proximity with required fields 313ms
+ ✓ test/me.test.js > Account deletion > DELETE /me removes the user and login fails 302ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-02 reactivate restores login 299ms
+ ✓ test/admin.test.js > System Admin and Audit > admin accounts cannot be suspended 3ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-04 analytics returns metrics and 12-day trend 13ms
+ ✓ test/admin.test.js > System Admin and Audit > TC-SYS-04 audit log is append-only 8ms
+ ✓ test/clinics.test.js > Vet locator and listing > locator requires login 2ms
+ ✓ test/clinics.test.js > Vet locator and listing > TC-VET-02 owner edit shows immediately in locator 10ms
+ ✓ test/scan.test.js > Scanning, quota, history > TC-ADS-02 quota is per account, not per device 587ms
+ ✓ test/clinics.test.js > Vet locator and listing > another business cannot edit someone else's listing 283ms
+ ✓ test/clinics.test.js > Vet locator and listing > TC-VET-03 stats are anonymous counts over 30 days 11ms
+ ✓ test/clinics.test.js > Vet locator and listing > invalid event type rejected 1ms
+ ✓ test/scan.test.js > Scanning, quota, history > quota not deducted when model service is down 285ms
+ ✓ test/auth.test.js > Account & Authentication > TC-ACC-05 lockout after 5 failed logins 1444ms
+ ✓ test/scan.test.js > Scanning, quota, history > TC-SCAN-06/07 history newest first, delete removes record 338ms
+ ✓ test/auth.test.js > Account & Authentication > lock expires after 15 min 263ms
+ ✓ test/auth.test.js > Account & Authentication > TC-ACC-08 forgot gives identical response for known and unknown email 5ms
+ ✓ test/auth.test.js > Account & Authentication > TC-ACC-07 expired reset token fails, password unchanged 265ms
+
+ Test Files  7 passed (7)
+      Tests  57 passed (57)
+   Start at  05:42:09
+   Duration  5.47s (tests 93%, import 6%)
+

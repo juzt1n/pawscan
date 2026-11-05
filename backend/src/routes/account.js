@@ -26,13 +26,6 @@ router.patch("/me", requireAuth, wrap(async (req, res) => {
   res.json(await sessionFor(user));
 }));
 
-// PRD #17 Upgrade. DEMO: no real payment is taken here (see README).
-router.post("/me/upgrade", requireAuth, wrap(async (req, res) => {
-  const user = await users().findOneAndUpdate({ _id: req.user._id }, { $set: { tier: "premium" } }, { returnDocument: "after" });
-  await audit("system", "Account upgraded to premium", String(user._id), "info");
-  res.json(await sessionFor(user));
-}));
-
 // PDPA: deleting the account removes scans, images, dogs, health reports (Section 10.4)
 router.delete("/me", requireAuth, wrap(async (req, res) => {
   if (req.user.accountType === "admin") return res.status(403).json({ error: "Admin accounts cannot be deleted here." });

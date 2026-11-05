@@ -91,6 +91,9 @@ router.post("/activate-premium", requireAuth, async (req, res) => {
     if (session.payment_status !== "paid") {
       return res.status(400).json({ error: "Payment not completed" });
     }
+    if (session.metadata?.userId !== String(req.user._id)) {
+      return res.status(403).json({ error: "This payment belongs to another account." });
+    }
 
     await getDb().collection("users").updateOne(
       { _id: new ObjectId(String(req.user._id)) },
