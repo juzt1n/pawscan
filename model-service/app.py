@@ -63,6 +63,10 @@ if num_outputs != len(BREEDS):
         f"class_names.json has {len(BREEDS)} names but the model outputs {num_outputs}."
     )
 
+# Warm-up: TensorFlow builds its graph on the first prediction, which makes the
+# first real scan slow. Run one dummy prediction now, while the service starts.
+model(np.zeros((1, IMG_SIZE, IMG_SIZE, 3), dtype=np.float32), training=False)
+
 app = FastAPI(title="PawScan model service")
 
 # Shared secret (PRD: only the Express backend may call this service).
@@ -100,7 +104,8 @@ def predict(image: UploadFile = File(...), _auth: None = Depends(require_key)):
     arr = tf.image.resize(arr, (IMG_SIZE, IMG_SIZE)).numpy()      # same resize as training
     batch = np.expand_dims(arr, axis=0)                           # (1, 224, 224, 3)
 
-    probs = model.predict(batch, verbose=0)[0]
+    # Calling the model directly is much faster than model.predict() for one image
+    probs = model(batch, training=False).numpy()[0]
     top = np.argsort(probs)[::-1][:TOP_K]
 
     return {
